@@ -89,3 +89,43 @@ ccjm-crises-2025:
   label: CCJM 2025
   citation: "Rodriguez Alvarez P, San Martin VT, Morey-Vargas OL. Hyperglycemic crises in adults: a look at the 2024 consensus report. Cleve Clin J Med 2025;92(3):152–158."
   url: https://www.ccjm.org/content/92/3/152
+esc-af-2024:
+  label: ESC 2024 AF
+  citation: "Van Gelder IC, Rienstra M, Bunting KV, et al. 2024 ESC Guidelines for the management of atrial fibrillation, developed in collaboration with EACTS. Eur Heart J 2024;45(36):3314–3414."
+  url: https://doi.org/10.1093/eurheartj/ehae176
+esc-svt-2019:
+  label: ESC 2019 SVT
+  citation: "Brugada J, Katritsis DG, Arbelo E, et al. 2019 ESC Guidelines for the management of patients with supraventricular tachycardia. Eur Heart J 2020;41(5):655–720."
+  url: https://doi.org/10.1093/eurheartj/ehz467
+esc-va-2022:
+  label: ESC 2022 VA
+  citation: "Zeppenfeld K, Tfelt-Hansen J, de Riva M, et al. 2022 ESC Guidelines for the management of patients with ventricular arrhythmias and the prevention of sudden cardiac death. Eur Heart J 2022;43(40):3997–4126."
+  url: https://doi.org/10.1093/eurheartj/ehac262
+esc-pacing-2021:
+  label: ESC 2021 pacing
+  citation: "Glikson M, Nielsen JC, Kronborg MB, et al. 2021 ESC Guidelines on cardiac pacing and cardiac resynchronization therapy. Eur Heart J 2021;42(35):3427–3520."
+  url: https://doi.org/10.1093/eurheartj/ehab364
+rcuk-tachy-2025:
+  label: RCUK 2025
+  citation: "Resuscitation Council UK. Adult tachyarrhythmia algorithm, 2025 (aligned with the ERC 2025 guidelines)."
+  url: https://www.resus.org.uk/sites/default/files/2025-10/Adult%20tachyarrhythmia%20algorithm%202025.pdf
+rcuk-brady-2025:
+  label: RCUK 2025
+  citation: "Resuscitation Council UK. Adult bradyarrhythmia algorithm, 2025 (aligned with the ERC 2025 guidelines)."
+  url: https://www.resus.org.uk/sites/default/files/2025-10/Adult%20bradyarrhythmia%202025.pdf
+nemlc-doac-2022:
+  label: NEMLC 2022
+  citation: "National Department of Health, NEMLC. Direct oral anticoagulants for chronic non-valvular atrial fibrillation: medicine review and costing, ratified 8 December 2022."
+  url: https://health.gov.za/wp-content/uploads/2024/12/Direct-Oral-Anticoagulants-for-chronic-non-valvular-atrial-fibrillation-8-December-2022-final-1.pdf
+invictus:
+  label: INVICTUS
+  citation: "Connolly SJ, Karthikeyan G, Ntsekhe M, et al. Rivaroxaban in rheumatic heart disease-associated atrial fibrillation (INVICTUS). N Engl J Med 2022;387:978–988."
+  url: https://doi.org/10.1056/NEJMoa2209051
+revert:
+  label: REVERT
+  citation: "Appelboam A, Reuben A, Mann C, et al. Postural modification to the standard Valsalva manoeuvre for emergency treatment of supraventricular tachycardias (REVERT). Lancet 2015;386:1747–1753."
+  url: https://doi.org/10.1016/S0140-6736(15)61485-4
+race7:
+  label: RACE 7 ACWAS
+  citation: "Pluymaekers NAHA, Dudink EAMP, Luermans JGLM, et al. Early or delayed cardioversion in recent-onset atrial fibrillation (RACE 7 ACWAS). N Engl J Med 2019;380:1499–1508."
+  url: https://doi.org/10.1056/NEJMoa1900353
