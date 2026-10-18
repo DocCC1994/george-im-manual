@@ -17,6 +17,22 @@ ndoh-morphine-2024:
   label: NDoH 2024
   citation: "National Department of Health. Circular: Morphine for pulmonary oedema (March 2023, published July 2024)."
   url: https://health.gov.za/wp-content/uploads/2024/07/Morphine-Circular_March-2023-published-July-2024.pdf
+esc-htn-2024:
+  label: ESC 2024
+  citation: "McEvoy JW, McCarthy CP, Bruno RM, et al. 2024 ESC Guidelines for the management of elevated blood pressure and hypertension. Eur Heart J 2024;45(38):3912–4018."
+  url: https://doi.org/10.1093/eurheartj/ehae178
+esc-he-2019:
+  label: ESC Council 2019
+  citation: "van den Born BJH, Lip GYH, Brguljan-Hitij J, et al. ESC Council on hypertension position document on the management of hypertensive emergencies. Eur Heart J Cardiovasc Pharmacother 2019;5(1):37–46 (corrigendum doi:10.1093/ehjcvp/pvy040)."
+  url: https://doi.org/10.1093/ehjcvp/pvy032
+aha-htn-2025:
+  label: AHA/ACC 2025
+  citation: "Jones DW, Ferdinand KC, Taler SJ, et al. 2025 AHA/ACC/multisociety guideline for the prevention, detection, evaluation and management of high blood pressure in adults. Hypertension 2025."
+  url: https://doi.org/10.1161/HYP.0000000000000249
+esc-aorta-2024:
+  label: ESC 2024 aorta
+  citation: "Mazzolai L, Teixido-Tura G, Lanzi S, et al. 2024 ESC Guidelines for the management of peripheral arterial and aortic diseases. Eur Heart J 2024;45(36):3538–3700."
+  url: https://doi.org/10.1093/eurheartj/ehae179
 esc-acs-2023:
   label: ESC 2023
   citation: "Byrne RA et al. 2023 ESC Guidelines for the management of acute coronary syndromes. Eur Heart J 2023;44:3720–3826."

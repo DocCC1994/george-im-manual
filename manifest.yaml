@@ -20,7 +20,7 @@ systems:
       - nste-acs
       - heart-failure
       - {id: arrhythmias, title: "Arrhythmias: AF, SVT, VT, bradycardia and heart block", start: New, priority: P1}
-      - {id: hypertensive-emergency, title: Hypertensive emergencies, start: Rewrite (2021), priority: P1}
+      - hypertensive-emergency
       - {id: pulmonary-embolism, title: Pulmonary embolism, start: New, priority: P1}
       - {id: infective-endocarditis, title: Infective endocarditis, start: New (added), priority: P1}
       - {id: valvular-heart-disease, title: Valvular heart disease (including rheumatic heart disease), start: New (added), priority: P1}
