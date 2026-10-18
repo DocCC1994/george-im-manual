@@ -1,0 +1,160 @@
+/* =====================================================================
+   George Hospital IM Acute Handbook & Reference Manual — house style
+   GRH protocol look: Carlito (metric twin of Calibri), thin black grid
+   borders, grey header bands. Only CHECK / DECISION markers are coloured
+   (they must all be resolved before a release build).
+   ===================================================================== */
+
+@page {
+  size: A4; margin: 13mm 10mm 12mm 10mm;
+  @top-left { content: string(runhead); width: 100%; vertical-align: bottom; padding-bottom: 1.2mm;
+              border-bottom: .5pt solid #7f7f7f; font: 700 7.4pt Carlito, Calibri, sans-serif; color: #404040; letter-spacing: .4pt; }
+  @bottom-center { content: string(watermark); font: 700 7pt Carlito, Calibri, sans-serif; color: #595959; letter-spacing: .5pt; }
+  @bottom-right { content: counter(page); font: 700 7.6pt Carlito, Calibri, sans-serif; color: #404040; }
+}
+@page cover { margin: 0; @top-left { content: none; border: none; } @bottom-center { content: none; } @bottom-right { content: none; } }
+@page divider { @top-left { content: none; border: none; } @bottom-right { content: none; } }
+
+:root { --ink: #000; --band: #d9d9d9; --band-dark: #bfbfbf; --rule: #000; --quiet: #404040; --tint: #f2f2f2; }
+html { font-family: Carlito, Calibri, "Segoe UI", Arial, sans-serif; font-size: 8.7pt; line-height: 1.22; color: #000; background: #fff; }
+body { margin: 0; }
+a { color: #000; text-decoration: underline; text-decoration-color: #7f7f7f; }
+a.btn { text-decoration: none; }
+p { margin: 0 0 1.4pt; }
+ul, ol { margin: 0 0 1.6pt; padding-left: 4.2mm; }
+li { margin-bottom: .6pt; }
+b { font-weight: 700; }
+sup, sub { font-size: 70%; line-height: 0; position: relative; vertical-align: baseline; }
+sup { top: -.42em; } sub { top: .22em; }
+h1, h2, h3, h4, h5, h6 { bookmark-level: none; }
+
+/* ---------- page shell ---------- */
+.sheet { break-before: page; position: relative; }
+.runhead { string-set: runhead content(text); height: 0; overflow: hidden; margin: 0; }
+.wm { string-set: watermark content(text); height: 0; overflow: hidden; margin: 0; }
+.toc-link { position: absolute; top: -4.6mm; right: 0; font-size: 7.4pt; }
+.bm { bookmark-label: content(text); height: 0; overflow: hidden; margin: 0; }
+
+/* title block, as on the GRH protocols */
+table.hdr { width: 100%; border-collapse: collapse; border: .8pt solid var(--rule); margin: 1.6mm 0 2.2mm; text-align: center; }
+table.hdr td { padding: .7mm 2mm; }
+table.hdr .h1 { background: var(--band-dark); font-size: 11.5pt; font-weight: 700; text-transform: uppercase; padding: 1.1mm 2mm; }
+table.hdr .h1 small { display: block; font-size: 8.4pt; font-weight: 400; font-style: italic; text-transform: none; margin-top: .2mm; }
+table.hdr .meta { border-top: .8pt solid var(--rule); font-weight: 700; font-size: 9pt; }
+table.hdr .meta span { margin: 0 6mm; }
+
+/* footer: bordered row, like the protocol signature block */
+.foot { margin-top: 1.8mm; border: .8pt solid var(--rule); padding: .7mm 1.8mm; display: flex; justify-content: space-between; align-items: center; font-size: 7.2pt; line-height: 1.18; break-inside: avoid; }
+.foot .appr { margin-top: .5mm; padding-top: .5mm; border-top: .4pt solid #bfbfbf; }
+.btn { border: .6pt solid var(--rule); padding: .3mm 1.6mm; color: #000 !important; font-weight: 700; font-size: 7.6pt; white-space: nowrap; background: var(--band); }
+
+/* ---------- content building blocks ---------- */
+h3 { font-size: 8.4pt; font-weight: 700; text-transform: uppercase; background: var(--band); border: .6pt solid var(--rule); padding: .5mm 1.6mm; margin: 2mm 0 0; break-after: avoid; }
+h3:first-child { margin-top: 0; }
+h3 .cite, h3 .cite a { text-transform: none; font-weight: 400; }
+h3 + table.t { margin-top: 0; }
+h3 + table.t tr:first-child th { border-top: none; }
+h3 + p, h3 + ul, h3 + ol, h3 + .flow { margin-top: 1mm; }
+
+/* acute template: label column + content, full grid */
+table.rows { width: 100%; border-collapse: collapse; border: .8pt solid var(--rule); }
+table.rows > tbody > tr > th { width: 20mm; text-align: center; vertical-align: top; font-size: 7.6pt; font-weight: 700; padding: 1.2mm 1mm; border: .6pt solid var(--rule); }
+table.rows > tbody > tr > td { vertical-align: top; padding: 1mm 1.8mm; border: .6pt solid var(--rule); }
+table.rows tr { break-inside: avoid; }
+
+/* grid tables */
+table.t { width: 100%; border-collapse: collapse; margin: 0 0 1.8mm; }
+table.t th { background: var(--band); font-weight: 700; text-align: left; padding: .6mm 1.2mm; border: .6pt solid var(--rule); font-size: 8.2pt; vertical-align: top; }
+table.t td { padding: .5mm 1.2mm; border: .6pt solid var(--rule); vertical-align: top; font-size: 8.2pt; }
+table.t tr { break-inside: avoid; }
+table.t.sm td, table.t.sm th { font-size: 7.6pt; padding: .45mm 1mm; }
+
+/* side boxes: one simple style, named by their grey title band */
+.box { border: .8pt solid var(--rule); padding: 0 1.8mm 1.2mm; margin: 0 0 2mm; break-inside: avoid; }
+.box .bh { margin: 0 -1.8mm 1.2mm; padding: .6mm 1.8mm; background: var(--band); border-bottom: .6pt solid var(--rule); font-size: 8.2pt; font-weight: 700; text-transform: uppercase; }
+.box table.t { margin-bottom: 1mm; }
+.card { border: 1.2pt solid var(--rule); padding: 0 2mm 1.4mm; margin: 0 0 2mm; break-inside: avoid; }
+.card .bh { margin: 0 -2mm 1.2mm; padding: .6mm 2mm; background: var(--band-dark); border-bottom: .6pt solid var(--rule); font-size: 8.2pt; font-weight: 700; text-transform: uppercase; }
+
+/* stepped flow (e.g. diuretic algorithm) */
+.flow .step { border: .6pt solid var(--rule); padding: 1mm 1.8mm; }
+.flow .arrow { text-align: center; font-size: 8pt; line-height: 1; margin: .4mm 0; }
+.flow table.split { width: 100%; border-collapse: collapse; }
+.flow table.split td { width: 50%; padding: 1mm 1.8mm; vertical-align: top; border: .6pt solid var(--rule); }
+.flow td.poor { background: var(--band); }
+
+/* small 2x2 grid (e.g. haemodynamic profile) */
+table.prof { width: 100%; border-collapse: collapse; margin: .8mm 0 1mm; }
+table.prof th, table.prof td { border: .6pt solid var(--rule); padding: .5mm 1.2mm; vertical-align: top; font-size: 90%; }
+table.prof th { background: var(--band); text-align: left; }
+table.prof td.hot { background: var(--band-dark); font-weight: 700; }
+
+/* traffic-light table, greyscale: shading deepens with severity; the words carry the meaning */
+table.tl th.g { background: #fff; } table.tl th.a { background: var(--band); } table.tl th.r { background: #a6a6a6; }
+table.tl td.g { background: #fff; } table.tl td.a { background: var(--tint); } table.tl td.r { background: var(--band); }
+
+/* availability tags and evidence classes */
+.avail { font-size: 6.8pt; font-weight: 700; padding: 0 1.4pt; white-space: nowrap; }
+.avail.y { border: .6pt solid var(--rule); }
+.avail.s { background: var(--band); border: .6pt solid var(--rule); }
+.avail.n { border: .6pt dashed var(--rule); font-weight: 400; }
+.cls { font-size: 6.8pt; font-weight: 700; white-space: nowrap; }
+
+/* editorial markers: colour kept on purpose (resolved before release) */
+.chk { background: #fef0c7; color: #93370d; font-weight: 700; font-size: 7.2pt; padding: 0 1.2pt; border-radius: 1pt; white-space: normal; }
+.dec { background: #fee4e2; color: #b42318; font-weight: 700; font-size: 7.2pt; padding: 0 1.2pt; border-radius: 1pt; white-space: normal; }
+.cite { font-size: 7.4pt; white-space: nowrap; }
+.xref-off { text-decoration: none; }
+.note { font-style: italic; margin-top: 2mm; }
+
+/* layout */
+.cols { display: flex; gap: 3mm; }
+.cols > .main { flex: 1 1 0; min-width: 0; }
+.cols > .side { flex: 0 0 60mm; }
+
+/* ---------- book variants ---------- */
+.acute { font-size: 10pt; line-height: 1.25; }
+.acute table.t td, .acute table.t th { font-size: 9pt; }
+.acute table.t.sm td, .acute table.t.sm th { font-size: 8.4pt; }
+.acute table.rows > tbody > tr > th { font-size: 8.2pt; width: 22mm; }
+.acute table.rows > tbody > tr > td { padding: 1.3mm 2mm; }
+.acute .cols > .side { flex-basis: 64mm; }
+.acute .chk, .acute .dec { font-size: 7.8pt; }
+.compact { font-size: 8.3pt; line-height: 1.19; }
+.compact table.t td, .compact table.t th, .compact table.t.sm td, .compact table.t.sm th { font-size: 7.4pt; padding: .4mm 1mm; }
+.large { font-size: 9.6pt; line-height: 1.28; }
+.large table.t td, .large table.t th, .large table.t.sm td, .large table.t.sm th { font-size: 8.6pt; padding: .7mm 1.2mm; }
+.large .cols > .side { flex-basis: 66mm; }
+
+/* ---------- front matter ---------- */
+.cover { page: cover; height: 297mm; position: relative; padding-top: 36mm; box-sizing: border-box; text-align: center; }
+.cover .frame { margin: 0 22mm; border: .8pt solid var(--rule); text-align: center; }
+.cover .band { background: var(--band-dark); padding: 6mm 4mm 5mm; border-bottom: .8pt solid var(--rule); }
+.cover .band .k { font-size: 12pt; font-weight: 700; letter-spacing: 1pt; }
+.cover .band .t { font-size: 26pt; font-weight: 700; margin-top: 3mm; line-height: 1.1; }
+.cover .meta { padding: 3mm; font-size: 12pt; font-weight: 700; }
+.cover .meta span { margin: 0 6mm; }
+.cover .logo { display: block; width: 70mm; margin: 22mm auto 0; }
+.cover .draft { margin: 14mm auto 0; width: 120mm; border: .8pt solid var(--rule); padding: 2mm; font-size: 11pt; font-weight: 700; letter-spacing: .6pt; }
+.cover .dept { position: absolute; bottom: 22mm; left: 0; right: 0; text-align: center; font-size: 13pt; font-weight: 700; }
+
+table.toc { width: 100%; border-collapse: collapse; }
+table.toc td { border: .6pt solid var(--rule); padding: .55mm 1.4mm; font-size: 8.6pt; }
+table.toc tr.sys td { background: var(--band); font-weight: 700; text-transform: uppercase; font-size: 8.2pt; }
+table.toc tr.part td { background: var(--band-dark); font-weight: 700; text-transform: uppercase; font-size: 9pt; }
+table.toc tr.sub td.name { padding-left: 6mm; font-style: italic; }
+table.toc td.pg { width: 12mm; text-align: right; }
+table.toc td.st { width: 24mm; font-size: 7.6pt; }
+a.pg::after, .pgref::after { content: target-counter(attr(href), page); }
+
+.divider { page: divider; break-before: page; padding-top: 90mm; text-align: center; }
+.divider .frame { border: .8pt solid var(--rule); margin: 0 25mm; }
+.divider .band { background: var(--band-dark); padding: 6mm; font-size: 22pt; font-weight: 700; text-transform: uppercase; border-bottom: .8pt solid var(--rule); }
+.divider .sub { padding: 3mm; font-size: 11pt; }
+
+/* editor report */
+.ed-topic { break-before: page; }
+.ed-topic table.t td, .ed-topic table.t th { font-size: 8pt; }
+table.mk td, table.mk th { font-size: 7.8pt; }
+table.mk td.ty { width: 16mm; }
+table.mk td.n { width: 7mm; text-align: right; }
