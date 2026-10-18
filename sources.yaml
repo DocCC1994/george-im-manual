@@ -1,0 +1,91 @@
+# Every external source is defined once here. In topic files, link with href="src:<key>".
+# When a guideline is updated, change the url here and every page that cites it follows.
+
+stg-ch3:
+  label: STG 2024, Ch 3
+  citation: "National Department of Health. Adult Hospital Level STGs and EML, 6th ed. 2024, Chapter 3: Cardiovascular system."
+  url: https://www.health.gov.za/wp-content/uploads/2024/12/Adult-Hospital-Chapter-3_Cardiovascular-System-with-supporting-NEMLC-report-appendix-reviews-2020-4-review-Version-1.0-1-November-2024-1.pdf
+stg-full:
+  label: STG 2024 (full)
+  citation: "National Department of Health. Hospital Level (Adults) STGs and EML, 6th ed. 2024 (full text)."
+  url: https://www.health.gov.za/wp-content/uploads/2025/07/Hospital-Level-Adults-Standard-Treatment-Guidelines-and-Essential-Medicines-List-6th-Edition-2024.pdf
+ndoh-sk-2023:
+  label: NDoH 2023
+  citation: "National Department of Health. Notice: Streptokinase 1 500 000 IU injection discontinuation, 10 December 2023."
+  url: https://knowledgehub.health.gov.za/system/files/elibdownloads/2023-12/Circular%20-streptokinase%20discontinuation%20-%2010%20December%202023.pdf
+ndoh-morphine-2024:
+  label: NDoH 2024
+  citation: "National Department of Health. Circular: Morphine for pulmonary oedema (March 2023, published July 2024)."
+  url: https://health.gov.za/wp-content/uploads/2024/07/Morphine-Circular_March-2023-published-July-2024.pdf
+esc-acs-2023:
+  label: ESC 2023
+  citation: "Byrne RA et al. 2023 ESC Guidelines for the management of acute coronary syndromes. Eur Heart J 2023;44:3720–3826."
+  url: https://academic.oup.com/eurheartj/article/44/38/3720/7243210
+jcm-2024-acs:
+  label: JCM 2024
+  citation: "Licordari R et al. The evolving field of acute coronary syndrome management: a critical appraisal of the 2023 ESC guidelines. J Clin Med 2024;13(7):1885."
+  url: https://pmc.ncbi.nlm.nih.gov/articles/PMC11012418
+sahj-2025-stemi:
+  label: SA Heart J 2025
+  citation: "Beyers B et al. Management and outcomes of patients with STEMI in the Western Cape Province of South Africa. SA Heart J 2025;22(1)."
+  url: https://www.journals.ac.za/SAHJ/article/view/6753
+sahpra-metalyse:
+  label: SAHPRA PI
+  citation: "SAHPRA. Metalyse (tenecteplase) professional information, 30 Oct 2024."
+  url: https://pi-pil-repository.sahpra.org.za/wp-content/uploads/2024/11/pi-metalyse-30oct2024.pdf
+mdcalc-heart:
+  label: HEART score (MDCalc)
+  citation: "MDCalc. HEART score for major cardiac events."
+  url: https://www.mdcalc.com/heart-score-major-cardiac-events
+mdcalc-timi:
+  label: TIMI (MDCalc)
+  citation: "MDCalc. TIMI risk score for UA/NSTEMI."
+  url: https://www.mdcalc.com/timi-risk-score-ua-nstemi
+esc-hf-2026:
+  label: ESC 2026
+  citation: "ESC. 2026 ESC Guidelines for the management of heart failure. Eur Heart J 2026;47(38):5346."
+  url: https://academic.oup.com/eurheartj/article/47/38/5346/8766302
+esc-hf-2026-doi:
+  label: doi:10.1093/eurheartj/ehag100
+  citation: "2026 ESC HF guideline (DOI)."
+  url: https://doi.org/10.1093/eurheartj/ehag100
+esc-hf-2026-slides:
+  label: ESC 2026 slide set
+  citation: "ESC. Official slide set, 2026 ESC Guidelines for the management of heart failure."
+  url: https://dam-assets.escardio.org/download/b2e587389baa11f185de06bdfb3e4be9
+safp-2025-hf:
+  label: SAFP 2025
+  citation: "Rossouw L, Lachman AS, von Pressentin KB. An approach to heart failure for the public-sector primary care clinician. S Afr Fam Pract 2025;67(1):a6126."
+  url: https://safpj.co.za/index.php/safpj/article/view/6126
+strong-hf:
+  label: STRONG-HF
+  citation: "Mebazaa A et al. STRONG-HF. Lancet 2022."
+  url: https://doi.org/10.1016/S0140-6736(22)02076-1
+advor:
+  label: ADVOR
+  citation: "Mullens W et al. ADVOR. N Engl J Med 2022."
+  url: https://doi.org/10.1056/NEJMoa2203094
+deliver:
+  label: DELIVER
+  citation: "Solomon SD et al. DELIVER. N Engl J Med 2022."
+  url: https://www.nejm.org/doi/full/10.1056/NEJMoa2206286
+finearts-hf:
+  label: FINEARTS-HF
+  citation: "Solomon SD et al. FINEARTS-HF. N Engl J Med 2024."
+  url: https://doi.org/10.1056/NEJMoa2407107
+icardio-2025:
+  label: iCARDIO 2025
+  citation: "iCARDIO Alliance Global Implementation Guidelines on Heart Failure 2025. Cardiovasc J Afr 2025;36(2)."
+  url: https://cvja.co.za/journal/icardio-alliance-global-implementation-guidelines-on-heart-failure-2025/
+stg-ch8:
+  label: STG 2025, Ch 8
+  citation: "National Department of Health. Adult Hospital Level STGs and EML: Chapter 8 Endocrine disorders, with supporting NEMLC report (21 July 2025)."
+  url: https://www.health.gov.za/wp-content/uploads/2025/08/Adult-Hospital-Chapter-8-Endocrine-Disorders-with-supporting-NEMLC-report-21-July-2025.pdf
+ada-crises-2024:
+  label: ADA/EASD/JBDS 2024
+  citation: "Umpierrez GE, Davis GM, ElSayed NA, et al. Hyperglycemic crises in adults with diabetes: a consensus report. Diabetes Care 2024;47(8):1257–1275."
+  url: https://doi.org/10.2337/dci24-0032
+ccjm-crises-2025:
+  label: CCJM 2025
+  citation: "Rodriguez Alvarez P, San Martin VT, Morey-Vargas OL. Hyperglycemic crises in adults: a look at the 2024 consensus report. Cleve Clin J Med 2025;92(3):152–158."
+  url: https://www.ccjm.org/content/92/3/152
