@@ -55,6 +55,13 @@ Links:
 - Acute Handbook pages have no subtitle and each sheet fits one page (use `data-part` for a second page).
 - Only CHECK and DECISION are in colour; everything else is black, white or grey.
 - Write K<sup>+</sup>, SpO<sub>2</sub> with `<sup>`/`<sub>`; avoid ▲ ▼ ′ (not in Carlito): use ↓ and '.
+- No Latin abbreviations: 12hrly, 8hrly, 4hrly (not bd/tds/12-hourly); "at night" (not nocte); "orally" (not PO);
+  "as needed" (not prn); "now" or "immediately" (not stat). IV, IM, SC and SL are fine. The build warns on any it finds.
+- The book is for doctors. Include a nursing instruction only when it changes the patient's outcome
+  (for example, hourly glucose during an insulin infusion), never routine ward care.
+- Every topic carries an approval line (approved_by, approved_rank, approved_date in topic.yaml); the release build
+  refuses while any is empty.
+- An abbreviations page is added at the end of the project.
 - Evidence order: SA STG/EML, then ESC (or the relevant international guideline), then the old GRH protocol.
 
 ## Workflow
