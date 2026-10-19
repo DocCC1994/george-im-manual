@@ -26,6 +26,11 @@ editors as DECISION markers, not silent choices.
 
 ## House rules (also in README.md)
 - No Latin abbreviations: 12hrly, 8hrly, 4hrly; "at night", "orally", "as needed", "now". IV/IM/SC/SL are fine.
+- Drug naming: class first, agent in brackets, e.g. "3rd-gen cephalosporin (ceftriaxone)". Alternatives: George
+  first-choice agent in full as the first option, others by class only ("alternatives: FQ, carbapenem"). If the George
+  first-choice agent is unclear, name the most likely one and add a CHECK.
+- Abbreviations: standard ones from the start, never spelled out (3rd-gen, LMWH, UFH, DOAC, ACEi, ARB, BB, CCB, FQ,
+  PPI, SGLT2i). Only ones any SA registrar would recognise immediately.
 - Doctors only. Nursing instructions only when they change the patient's outcome, never routine ward care.
 - Evidence order: SA STG/EML (2024/2025 chapters) → ESC or the relevant international guideline → old GRH protocol.
   Where they differ, show it and add a DECISION.

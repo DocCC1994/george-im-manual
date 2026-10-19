@@ -57,6 +57,13 @@ Links:
 - Write K<sup>+</sup>, SpO<sub>2</sub> with `<sup>`/`<sub>`; avoid ▲ ▼ ′ (not in Carlito): use ↓ and '.
 - No Latin abbreviations: 12hrly, 8hrly, 4hrly (not bd/tds/12-hourly); "at night" (not nocte); "orally" (not PO);
   "as needed" (not prn); "now" or "immediately" (not stat). IV, IM, SC and SL are fine. The build warns on any it finds.
+- Drug naming: lead with the drug class, then the agent in brackets, e.g. "3rd-gen cephalosporin (ceftriaxone)", never
+  the agent alone. Where there are alternatives, give the George first-choice agent in full as the first option and
+  list the alternatives by class only (e.g. "alternatives: FQ, carbapenem"), so the book transfers to other
+  formularies. If the George first-choice agent is not clear from the STG or the old GRH protocol, name the most
+  likely agent and add a CHECK.
+- Abbreviations: use standard ones from the start without spelling them out (3rd-gen, LMWH, UFH, DOAC, ACEi, ARB, BB,
+  CCB, FQ, PPI, SGLT2i). Only use ones any SA registrar would recognise immediately.
 - The book is for doctors. Include a nursing instruction only when it changes the patient's outcome
   (for example, hourly glucose during an insulin infusion), never routine ward care.
 - Every topic carries an approval line (approved_by, approved_rank, approved_date in topic.yaml); the release build
