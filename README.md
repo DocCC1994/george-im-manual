@@ -64,9 +64,10 @@ Links:
 - Every topic carries an approval line (approved_by, approved_rank, approved_date in topic.yaml); the release build
   refuses while any is empty.
 - An abbreviations page is added at the end of the project.
-- Evidence order: SA STG/EML, then ESC (or the relevant international guideline), then the old GRH protocol.
+- Evidence order: SA STG/EML or another official, current SA guideline; then European guidelines (ESC, ESH, EASL,
+  ERS, etc.), preferred over American ones where no SA guideline is official or up to date; then the old GRH protocol.
 - Guideline PDFs: before writing a topic, ask the owner in that topic's thread for the PDF of each relevant
-  guideline other than the SA STG/EML (full title, issuing body and year). He uploads it into that thread so it is
+  guideline other than the SA STG/EML, European first (full title, issuing body and year). He uploads it into that thread so it is
   read only for that topic. The STG/EML 2024 (updated Dec 2025) is already in
   /mnt/project-files/sources/stg-eml-2024/ and is never requested.
 

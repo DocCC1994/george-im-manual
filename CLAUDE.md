@@ -27,7 +27,9 @@ editors as DECISION markers, not silent choices.
 ## House rules (also in README.md)
 - No Latin abbreviations: 12hrly, 8hrly, 4hrly; "at night", "orally", "as needed", "now". IV/IM/SC/SL are fine.
 - Doctors only. Nursing instructions only when they change the patient's outcome, never routine ward care.
-- Evidence order: SA STG/EML (2024/2025 chapters) → ESC or the relevant international guideline → old GRH protocol.
+- Evidence order: SA STG/EML (2024/2025 chapters) or another official, current SA guideline → European guideline
+  (ESC, ESH, EASL, ERS, etc.; preferred over American ones) where no SA guideline is official or up to date → other
+  international guideline → old GRH protocol.
   Where they differ, show it and add a DECISION.
 - Drugs and doses are handled carefully per topic; every dose box needs a CHECK until a pharmacist has checked it.
 - Abbreviations page, who-to-call block, phone/web version, indices and QR codes: later, not now.
@@ -35,7 +37,7 @@ editors as DECISION markers, not silent choices.
 - Length: 1–2 printed pages per topic in the Acute Handbook and 1–2 in the Reference Manual. Brevity and clarity
   come first. If a topic cannot fit, propose splitting it into separate topics rather than running long.
 - Guideline PDFs: before writing a topic, ask the owner in that topic's thread for the PDF of each relevant guideline
-  other than the SA STG/EML, giving the full title, issuing body and year so he can fetch it with his university
+  other than the SA STG/EML (European first), giving the full title, issuing body and year so he can fetch it with his university
   access. He uploads it into that topic's thread, so it is read only for that topic. The SA STG/EML 2024 (updated
   Dec 2025) is already in /mnt/project-files/sources/stg-eml-2024/ (index.md maps sections to part and page); never
   request it. Do not draft from secondhand online summaries while waiting.
@@ -71,10 +73,10 @@ editors as DECISION markers, not silent choices.
    on guideline PDFs (follow manifest order and priority). If a waiting thread now has its PDFs or a go-ahead,
    write that topic instead.
 3. Open the topic's thread and post the guideline request there (full title, issuing body and year of each
-   relevant guideline other than the STG/EML). Start writing once the owner uploads the PDFs or says to go ahead
+   relevant guideline other than the STG/EML; European before American). Start writing once the owner uploads the PDFs or says to go ahead
    without them; until then stop.
 4. Research: STG/EML chapter first (from /mnt/project-files/sources/stg-eml-2024/), then the uploaded guideline
-   PDFs, then the GRH protocol from Drive. Use WebSearch/WebFetch only for gaps (the shell cannot reach most
+   PDFs (European preferred over American), then the GRH protocol from Drive. Use WebSearch/WebFetch only for gaps (the shell cannot reach most
    websites). Add every source to sources.yaml.
 5. Write topics/<system>/<topic>/{topic.yaml, acute.html, reference.html, editor.html}, using the existing
    topics as models. Mark uncertain facts CHECK and choices DECISION; list open questions in editor.html.
