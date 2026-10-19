@@ -109,3 +109,7 @@ sats-copd-2019:
   label: SATS 2019
   citation: "Abdool-Gaffar MS, Calligaro G, Wong ML, et al. Management of chronic obstructive pulmonary disease: a position statement of the South African Thoracic Society, 2019 update. J Thorac Dis 2019;11(11):4408–4427."
   url: https://doi.org/10.21037/jtd.2019.10.65
+saasp-2026:
+  label: SAASP 2026
+  citation: "South African Antibiotic Stewardship Programme (SAASP). A guide to antibiotic prescribing for adults in South Africa, 2026. Chapter 7: Lower respiratory tract infection (AECOPD)."
+  url: https://www.fidssa.co.za/saasp
