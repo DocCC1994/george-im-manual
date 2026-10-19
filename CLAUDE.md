@@ -32,6 +32,13 @@ editors as DECISION markers, not silent choices.
 - Drugs and doses are handled carefully per topic; every dose box needs a CHECK until a pharmacist has checked it.
 - Abbreviations page, who-to-call block, phone/web version, indices and QR codes: later, not now.
 - Shared-decisions list is not pre-built; decisions are collected per topic in editor.html.
+- Length: 1–2 printed pages per topic in the Acute Handbook and 1–2 in the Reference Manual. Brevity and clarity
+  come first. If a topic cannot fit, propose splitting it into separate topics rather than running long.
+- Guideline PDFs: before writing a topic, ask the owner in that topic's thread for the PDF of each relevant guideline
+  other than the SA STG/EML, giving the full title, issuing body and year so he can fetch it with his university
+  access. He uploads it into that topic's thread, so it is read only for that topic. The SA STG/EML 2024 (updated
+  Dec 2025) is already in /mnt/project-files/sources/stg-eml-2024/ (index.md maps sections to part and page); never
+  request it. Do not draft from secondhand online summaries while waiting.
 
 ## Status (18 Oct 2026)
 - Built: cardiology/stemi, cardiology/nste-acs, cardiology/heart-failure, endocrine/dka-hhs. Build: 0 errors.
@@ -60,12 +67,19 @@ editors as DECISION markers, not silent choices.
 
 ## Scheduled topic runs (one topic per run, 1–2 per night)
 1. Pull the repo. Read this file and README.md.
-2. Pick the first topic in manifest.yaml with no folder under topics/ (follow manifest order and priority).
-3. Research: STG/EML chapter first, then the international guideline, then the GRH protocol from Drive. Use
-   WebSearch/WebFetch (the shell cannot reach most websites). Add every source to sources.yaml.
-4. Write topics/<system>/<topic>/{topic.yaml, acute.html, reference.html, editor.html}, using the existing
+2. Pick the first topic in manifest.yaml with no folder under topics/, no open PR and no thread already waiting
+   on guideline PDFs (follow manifest order and priority). If a waiting thread now has its PDFs or a go-ahead,
+   write that topic instead.
+3. Open the topic's thread and post the guideline request there (full title, issuing body and year of each
+   relevant guideline other than the STG/EML). Start writing once the owner uploads the PDFs or says to go ahead
+   without them; until then stop.
+4. Research: STG/EML chapter first (from /mnt/project-files/sources/stg-eml-2024/), then the uploaded guideline
+   PDFs, then the GRH protocol from Drive. Use WebSearch/WebFetch only for gaps (the shell cannot reach most
+   websites). Add every source to sources.yaml.
+5. Write topics/<system>/<topic>/{topic.yaml, acute.html, reference.html, editor.html}, using the existing
    topics as models. Mark uncertain facts CHECK and choices DECISION; list open questions in editor.html.
-5. `python3 build.py --topic <id>`, then render the pages (pymupdf) and look at them: each acute sheet must fit
-   its page; fix overflow (`data-cls="compact"` or split with `data-part`). Then `python3 build.py`: 0 errors.
-6. Commit and push with a short message; notify the owner with the topic name, page count and number of markers.
-7. Stop after the topic is done. Never mark a topic signed-off; never run `--release`.
+6. `python3 build.py --topic <id>`, then render the pages (pymupdf) and look at them: each acute sheet must fit
+   its page; fix overflow (`data-cls="compact"` or split with `data-part`, within the 1–2 page limit). Then
+   `python3 build.py`: 0 errors.
+7. Commit and push with a short message; notify the owner with the topic name, page count and number of markers.
+8. Stop after the topic is done. Never mark a topic signed-off; never run `--release`.

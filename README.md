@@ -53,6 +53,8 @@ Links:
 
 ## House rules
 - Acute Handbook pages have no subtitle and each sheet fits one page (use `data-part` for a second page).
+- Length: 1–2 pages per topic in the Acute Handbook and 1–2 in the Reference Manual. If a topic cannot fit,
+  propose splitting it into separate topics rather than running long.
 - Only CHECK and DECISION are in colour; everything else is black, white or grey.
 - Write K<sup>+</sup>, SpO<sub>2</sub> with `<sup>`/`<sub>`; avoid ▲ ▼ ′ (not in Carlito): use ↓ and '.
 - No Latin abbreviations: 12hrly, 8hrly, 4hrly (not bd/tds/12-hourly); "at night" (not nocte); "orally" (not PO);
@@ -63,6 +65,10 @@ Links:
   refuses while any is empty.
 - An abbreviations page is added at the end of the project.
 - Evidence order: SA STG/EML, then ESC (or the relevant international guideline), then the old GRH protocol.
+- Guideline PDFs: before writing a topic, ask the owner in that topic's thread for the PDF of each relevant
+  guideline other than the SA STG/EML (full title, issuing body and year). He uploads it into that thread so it is
+  read only for that topic. The STG/EML 2024 (updated Dec 2025) is already in
+  /mnt/project-files/sources/stg-eml-2024/ and is never requested.
 
 ## Workflow
 draft → review (section editor has the editor-report pages) → signed-off (all markers resolved).
