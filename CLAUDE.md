@@ -67,13 +67,13 @@ editors as DECISION markers, not silent choices.
 - Verify against primary sources: ESC 2026 HF figures (taken from the slide set) and ADA/EASD/JBDS 2024 DKA
   numbers (taken from the CCJM review).
 
-## Scheduled topic runs (one topic per run, 1–2 per night)
+## Writing a topic (one thread per topic)
+Each topic is written in its own project thread, opened from the project chat. The nightly scheduled run is paused.
 1. Pull the repo. Read this file and README.md.
-2. Pick the first topic in manifest.yaml with no folder under topics/, no open PR and no thread already waiting
-   on guideline PDFs (follow manifest order and priority). If a waiting thread now has its PDFs or a go-ahead,
-   write that topic instead.
-3. Open the topic's thread and post the guideline request there (full title, issuing body and year of each
-   relevant guideline other than the STG/EML; European before American). Start writing once the owner uploads the PDFs or says to go ahead
+2. The thread names its topic. If not, take the first topic in manifest.yaml with no folder under topics/, no open
+   PR and no thread already open for it (follow manifest order and priority).
+3. Post the guideline request in the thread (full title, issuing body and year of each relevant guideline other
+   than the STG/EML; European before American). Start writing once the owner uploads the PDFs or says to go ahead
    without them; until then stop.
 4. Research: STG/EML chapter first (from /mnt/project-files/sources/stg-eml-2024/), then the uploaded guideline
    PDFs (European preferred over American), then the GRH protocol from Drive. Use WebSearch/WebFetch only for gaps (the shell cannot reach most
@@ -83,5 +83,6 @@ editors as DECISION markers, not silent choices.
 6. `python3 build.py --topic <id>`, then render the pages (pymupdf) and look at them: each acute sheet must fit
    its page; fix overflow (`data-cls="compact"` or split with `data-part`, within the 1–2 page limit). Then
    `python3 build.py`: 0 errors.
-7. Commit and push with a short message; notify the owner with the topic name, page count and number of markers.
+7. Commit and push, open a PR "Topic: <title>"; reply in the thread with the topic name, page count and number of
+   markers.
 8. Stop after the topic is done. Never mark a topic signed-off; never run `--release`.
