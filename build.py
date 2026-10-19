@@ -288,6 +288,8 @@ def build_book(manifest, sources, topics, books, label, draft, with_cover=True):
     runhead = f"{manifest['hospital'].upper()}: {manifest['department'].upper()}"
     parts.append(front_page(manifest, label, contents_table(manifest, topics, books, draft), draft, runhead, 'contents'))
     parts.append(front_page(manifest, 'How to read this book', howto, draft, runhead))
+    acks = (ROOT / 'templates' / 'acknowledgements.html').read_text(encoding='utf-8')
+    parts.append(front_page(manifest, 'Acknowledgements and authorship', acks, draft, runhead))
     for book in books:
         base = 1
         if len(books) > 1:
@@ -399,6 +401,9 @@ def main():
             if t['markers']: LOG.error(f"{t['id']}: {len(t['markers'])} CHECK/DECISION markers still open")
             for f in ('approved_by', 'approved_rank', 'approved_date'):
                 if not t.get(f): LOG.error(f"{t['id']}: {f} is empty")
+        for f in sorted((ROOT / 'templates').glob('*.html')):
+            if re.search(r'class="(chk|dec)"', f.read_text(encoding='utf-8')):
+                LOG.error(f'templates/{f.name}: CHECK/DECISION markers still open')
         if 'example.com' in manifest['editor_email']: LOG.error('manifest.yaml: editor_email is still a placeholder')
         if LOG.errors:
             print('RELEASE REFUSED:'); [print('  -', e) for e in LOG.errors]; sys.exit(1)
