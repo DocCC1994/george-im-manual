@@ -27,9 +27,12 @@ editors as DECISION markers, not silent choices.
 ## House rules (also in README.md)
 - No Latin abbreviations: 12hrly, 8hrly, 4hrly; "at night", "orally", "as needed", "now". IV/IM/SC/SL are fine.
 - Doctors only. Nursing instructions only when they change the patient's outcome, never routine ward care.
+- Base: where a current GRH protocol exists for the topic, build the topic on it. Check and update it against the
+  evidence below; every difference becomes a DECISION.
 - Evidence order: SA STG/EML (2024/2025 chapters) or another official, current SA guideline → European guideline
   (ESC, ESH, EASL, ERS, etc.; preferred over American ones) where no SA guideline is official or up to date → other
-  international guideline → old GRH protocol.
+  international guideline. With no current GRH protocol, write from this evidence and use any old GRH protocol only
+  for local practice.
   Where they differ, show it and add a DECISION.
 - Drugs and doses are handled carefully per topic; every dose box needs a CHECK until a pharmacist has checked it.
 - Abbreviations page, who-to-call block, phone/web version, indices and QR codes: later, not now.
@@ -75,9 +78,10 @@ Each topic is written in its own project thread, opened from the project chat. T
 3. Post the guideline request in the thread (full title, issuing body and year of each relevant guideline other
    than the STG/EML; European before American). Start writing once the owner uploads the PDFs or says to go ahead
    without them; until then stop.
-4. Research: STG/EML chapter first (from /mnt/project-files/sources/stg-eml-2024/), then the uploaded guideline
-   PDFs (European preferred over American), then the GRH protocol from Drive. Use WebSearch/WebFetch only for gaps (the shell cannot reach most
-   websites). Add every source to sources.yaml.
+4. Research: the current GRH protocol from Drive first, if one exists, as the base. Then check it against the
+   STG/EML chapter (from /mnt/project-files/sources/stg-eml-2024/) and the uploaded guideline PDFs (European
+   preferred over American). Use WebSearch/WebFetch only for gaps (the shell cannot reach most websites). Add
+   every source to sources.yaml.
 5. Write topics/<system>/<topic>/{topic.yaml, acute.html, reference.html, editor.html}, using the existing
    topics as models. Mark uncertain facts CHECK and choices DECISION; list open questions in editor.html.
 6. `python3 build.py --topic <id>`, then render the pages (pymupdf) and look at them: each acute sheet must fit
