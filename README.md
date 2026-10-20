@@ -64,6 +64,9 @@ Links:
   list the alternatives by class only (e.g. "alternatives: FQ, carbapenem"), so the book transfers to other
   formularies. If the George first-choice agent is not clear from the STG or the old GRH protocol, name the most
   likely agent and add a CHECK.
+  Give the class once per topic (once in each of the acute and reference pages); after that, use the agent alone
+  (the EML name), e.g. "LMWH (enoxaparin)" first, then "enoxaparin". If an alternative is a different type of drug,
+  name it with its own class and agent, e.g. "ARB (losartan)" or "alteplase" vs "streptokinase".
 - Abbreviations: use standard ones from the start without spelling them out (3rd-gen, LMWH, UFH, DOAC, ACEi, ARB, BB,
   CCB, FQ, PPI, SGLT2i). Only use ones any SA registrar would recognise immediately.
 - The book is for doctors. Include a nursing instruction only when it changes the patient's outcome
