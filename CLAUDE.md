@@ -33,6 +33,8 @@ editors as DECISION markers, not silent choices.
   later "enoxaparin". A different type of drug as an alternative gets its own class and agent: "ARB (losartan)".
 - Abbreviations: standard ones from the start, never spelled out (3rd-gen, LMWH, UFH, DOAC, ACEi, ARB, BB, CCB, FQ,
   PPI, SGLT2i). Only ones any SA registrar would recognise immediately.
+- Cross-links: link each cause or related condition to its own topic where the manifest has one (`@acute:<id>`),
+  including planned topics. Recommendation classes print in brackets "(I A)" via the stylesheet; don't type them.
 - Doctors only. Nursing instructions only when they change the patient's outcome, never routine ward care.
 - Base: where a current GRH protocol exists for the topic, build the topic on it. Check and update it against the
   evidence below; every difference becomes a DECISION.
