@@ -41,6 +41,10 @@ mdcalc-timi:
   label: TIMI (MDCalc)
   citation: "MDCalc. TIMI risk score for UA/NSTEMI."
   url: https://www.mdcalc.com/timi-risk-score-ua-nstemi
+mdcalc-grace:
+  label: GRACE (MDCalc)
+  citation: "MDCalc. GRACE ACS risk and mortality calculator."
+  url: https://www.mdcalc.com/calc/1099/grace-acs-risk-mortality-calculator
 esc-hf-2026:
   label: ESC 2026
   citation: "ESC. 2026 ESC Guidelines for the management of heart failure. Eur Heart J 2026;47(38):5346."
