@@ -89,3 +89,47 @@ ccjm-crises-2025:
   label: CCJM 2025
   citation: "Rodriguez Alvarez P, San Martin VT, Morey-Vargas OL. Hyperglycemic crises in adults: a look at the 2024 consensus report. Cleve Clin J Med 2025;92(3):152–158."
   url: https://www.ccjm.org/content/92/3/152
+stg-haemoptysis:
+  label: STG 2024
+  citation: "National Department of Health. Hospital Level (Adults) STGs and EML, 6th ed. 2024 (updated December 2025): §16.3 Bronchiectasis, §16.5 Lung abscess, §16.9 Pulmonary TB, §19.19 Anticoagulant (warfarin) poisoning."
+  url: https://www.health.gov.za/wp-content/uploads/2025/07/Hospital-Level-Adults-Standard-Treatment-Guidelines-and-Essential-Medicines-List-6th-Edition-2024.pdf
+saasp-2026-lrti:
+  label: SAASP 2026
+  citation: "South African Antibiotic Stewardship Programme (SAASP). A guide to antibiotic prescribing for adults in South Africa, 2026. Chapter 7: Acute lower respiratory tract infection (infective bronchiectasis and lung abscess, p. 33)."
+  url: https://www.fidssa.co.za/saasp
+utd-lt-haemoptysis:
+  label: UpToDate
+  citation: "Ingbar DH, Dincer HE. Evaluation and management of life-threatening hemoptysis. UpToDate (topic last updated 18 Dec 2025; literature review current through Sep 2026)."
+  url: https://www.uptodate.com/contents/evaluation-and-management-of-life-threatening-hemoptysis
+utd-nlt-haemoptysis:
+  label: UpToDate
+  citation: "Evaluation of nonlife-threatening hemoptysis in adults; and Etiology of hemoptysis in adults. UpToDate (2026)."
+  url: https://www.uptodate.com/contents/evaluation-of-nonlife-threatening-hemoptysis-in-adults
+gross-2009:
+  label: Gross 2009
+  citation: "Gross AM, Diacon AH, van den Heuvel MM, et al. Management of life-threatening haemoptysis in an area of high tuberculosis incidence. Int J Tuberc Lung Dis 2009;13(7):875–880."
+  url: https://pubmed.ncbi.nlm.nih.gov/?term=Gross+Diacon+life-threatening+haemoptysis+tuberculosis+2009
+shaw-2023:
+  label: Shaw 2023
+  citation: "Shaw JA, John TJ, Koegelenberg CFN, et al. Transcatheter vascular plugs for the treatment of massive haemoptysis from Rasmussen aneurysms. S Afr Med J 2023;113(2):65–68."
+  url: https://doi.org/10.7196/SAMJ.2022.v113i2.16758
+alexander-2013:
+  label: Alexander 2013
+  citation: "Alexander GR. A retrospective review comparing the treatment outcomes of emergency lung resection for massive haemoptysis with and without preoperative bronchial artery embolization. Eur J Cardiothorac Surg 2013 (advance access). doi:10.1093/ejcts/ezt336."
+  url: https://doi.org/10.1093/ejcts/ezt336
+metro-west-2009:
+  label: Metro West 2009
+  citation: "Ainslie G, Moodley L. Management of major haemoptysis (>250 mL/24 hrs) and referral pathway, Metro West, Cape Town. Groote Schuur Hospital, March 2009 (owner's Drive, Unit protocols > Previous Protocols)."
+  url: https://drive.google.com/file/d/1PnCgy09S7w72guZhSPl_A-tHSrpdvn12/view
+shaw-2020:
+  label: Shaw 2020
+  citation: "Shaw JA. Approach to haemoptysis. Stellenbosch University teaching notes, June 2020 (owner's Drive)."
+  url: https://drive.google.com/file/d/1eYZe8vvpZev4b_p-divFXJaOXsnGXo9T/view
+paarl-2025:
+  label: Paarl 2025
+  citation: "Internal Medicine, Paarl Hospital. Guidelines to the management of medical emergencies, 2025: Haemoptysis (p. 17)."
+  url: https://drive.google.com/file/d/1GpkoGGIw89zFSRQOs9KErxAovivFlnkB/view
+calgary-haemoptysis:
+  label: Calgary 2022
+  citation: "University of Calgary. Blackbook: Approaches to Medical Presentations, 15th ed. 2022. Hemoptysis scheme, p. 32."
+  url: https://cumming.ucalgary.ca/
