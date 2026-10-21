@@ -105,6 +105,30 @@ ccjm-crises-2025:
   label: CCJM 2025
   citation: "Rodriguez Alvarez P, San Martin VT, Morey-Vargas OL. Hyperglycemic crises in adults: a look at the 2024 consensus report. Cleve Clin J Med 2025;92(3):152–158."
   url: https://www.ccjm.org/content/92/3/152
+stg-ch16:
+  label: STG 2024 §16.4
+  citation: "National Department of Health. Hospital Level (Adults) STGs and EML, 6th ed. 2024 (updated December 2025), Chapter 16 Respiratory disorders, §16.4 Chronic obstructive pulmonary disease."
+  url: https://www.health.gov.za/wp-content/uploads/2025/07/Hospital-Level-Adults-Standard-Treatment-Guidelines-and-Essential-Medicines-List-6th-Edition-2024.pdf
+gold-2026:
+  label: GOLD 2026
+  citation: "Global Initiative for Chronic Obstructive Lung Disease. Global Strategy for the Diagnosis, Management, and Prevention of COPD: 2026 Report (v1.3, 8 Dec 2025). Chapter 4: Management of exacerbations."
+  url: https://goldcopd.org/
+ers-ats-aecopd-2017:
+  label: ERS/ATS 2017
+  citation: "Wedzicha JA, Miravitlles M, Hurst JR, et al. Management of COPD exacerbations: a European Respiratory Society/American Thoracic Society guideline. Eur Respir J 2017;49:1600791."
+  url: https://doi.org/10.1183/13993003.00791-2016
+bts-ahrf-2016:
+  label: BTS/ICS 2016
+  citation: "Davidson AC, Banham S, Elliott M, et al. BTS/ICS guideline for the ventilatory management of acute hypercapnic respiratory failure in adults. Thorax 2016;71:ii1–ii35."
+  url: https://doi.org/10.1136/thoraxjnl-2015-208209
+sats-copd-2019:
+  label: SATS 2019
+  citation: "Abdool-Gaffar MS, Calligaro G, Wong ML, et al. Management of chronic obstructive pulmonary disease: a position statement of the South African Thoracic Society, 2019 update. J Thorac Dis 2019;11(11):4408–4427."
+  url: https://doi.org/10.21037/jtd.2019.10.65
+saasp-2026:
+  label: SAASP 2026
+  citation: "South African Antibiotic Stewardship Programme (SAASP). A guide to antibiotic prescribing for adults in South Africa, 2026. Chapter 7: Lower respiratory tract infection (AECOPD)."
+  url: https://www.fidssa.co.za/saasp
 stg-haemoptysis:
   label: STG 2024
   citation: "National Department of Health. Hospital Level (Adults) STGs and EML, 6th ed. 2024 (updated December 2025): §16.3 Bronchiectasis, §16.5 Lung abscess, §16.9 Pulmonary TB, §19.19 Anticoagulant (warfarin) poisoning."
