@@ -4,12 +4,14 @@ short: Pulmonary embolism
 status: draft
 start: New
 priority: P1
+acute: true              # Acute Handbook sheet (manifest books)
+reference: true          # Reference Manual chapter (manifest books)
+deferred: true           # Tier 2: reference chapter deferred (manifest)
 version: 2026 v1
 effective: "[MM/YYYY]"
 review: "[MM/YYYY]"
 reviewed: "[MM/YYYY]"
 author: "[Author, Registrar IM]"
-section_editor: "[Consultant physician / cardiologist]"
 editors: "[Editors]"
 based_on: "No GRH PE protocol (new topic); STG 2024 §2.8 and §20.12.4; ESC/ERS 2019; AHA/ACC 2026; GRH warfarin protocol 2012; Calgary Black Book 2022"
 approved_by: ""

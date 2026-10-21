@@ -3,7 +3,10 @@
 
     python3 build.py                 all draft outputs (both books, combined, editor report)
     python3 build.py --topic stemi   one-topic preview (both books + editor notes)
-    python3 build.py --release       final version: refuses while any CHECK/DECISION or unsigned topic remains
+    python3 build.py --release       final version: refuses while any CHECK/DECISION, empty approval line,
+                                     unsigned topic or --check problem remains
+    python3 build.py --check         house-rule checks (file:line per problem, count at the end); exit 1 on any
+    python3 build.py --status        one row per topic: acute/reference state, tier, priority, approved, markers
     python3 build.py --zip           also zip the source folder (to keep a copy outside this workspace)
 
 Topic files live in topics/<system>/<topic>/ (topic.yaml, acute.html, reference.html, editor.html).
@@ -19,7 +22,7 @@ ROOT = pathlib.Path(__file__).resolve().parent
 OUT = ROOT / 'out'
 PREFIX = {'acute': 'acute', 'reference': 'ref', 'editor': 'editor'}
 BOOK_OF_PREFIX = {'acute': 'acute', 'ref': 'reference', 'editor': 'editor'}
-DRAFT_WM = 'DRAFT FOR REVIEW · NOT FOR CLINICAL USE'
+DRAFT_WM = 'DRAFT – not for clinical use'
 STATUS_LABEL = {'planned': 'Planned', 'draft': 'Draft', 'review': 'Under review', 'signed-off': 'Signed off'}
 
 
@@ -33,22 +36,25 @@ class Log:
 
 LOG = Log()
 esc = html.escape
+BUILD_DATE = datetime.date.today().strftime('%d/%m/%Y')
 
 
 # ---------------------------------------------------------------- loading
 def load():
     manifest = yaml.safe_load((ROOT / 'manifest.yaml').read_text(encoding='utf-8'))
     sources = yaml.safe_load((ROOT / 'sources.yaml').read_text(encoding='utf-8'))
+    RECIPES.update(yaml.safe_load((ROOT / 'recipes.yaml').read_text(encoding='utf-8')) or {})
     topics = []
     for system in manifest['systems']:
         for entry in system['topics']:
             meta = {'id': entry} if isinstance(entry, str) else dict(entry)
+            meta['manifest'] = dict(meta)
             meta.update(system=system['id'], system_name=system['name'])
             folder = ROOT / 'topics' / system['id'] / meta['id']
             if (folder / 'topic.yaml').exists():
                 meta.update(yaml.safe_load((folder / 'topic.yaml').read_text(encoding='utf-8')) or {})
                 meta['folder'] = folder
-                for f in ('title', 'status', 'author', 'section_editor', 'version'):
+                for f in ('title', 'status', 'author', 'version'):
                     if not meta.get(f): LOG.error(f"{meta['id']}: topic.yaml is missing '{f}'")
                 if meta.get('status') not in ('draft', 'review', 'signed-off'):
                     LOG.error(f"{meta['id']}: status must be draft, review or signed-off")
@@ -95,6 +101,79 @@ def lint(topic_id, book, body):
 
 def book_title(topic, book):
     return topic.get(f'{book}_title') or topic['title']
+
+
+# ---------------------------------------------------------------- infusion recipes (recipes.yaml)
+RECIPES = {}
+RECIPE_RE = re.compile(r'\{\{recipe:([\w-]+)\}\}')
+TO_DOSE_UNIT = {('mg', 'mcg'): 1000, ('mg', 'mg'): 1, ('units', 'units'): 1, ('mmol', 'mmol'): 1}
+
+
+def num(x):
+    """1000 -> '1 000', 0.25 -> '0.25', 21.0 -> '21' (house style: thin thousands separator)."""
+    x = round(float(x), 2)
+    txt = f'{x:,.2f}'.rstrip('0').rstrip('.').replace(',', ' ')
+    return txt
+
+
+def vol(ml):
+    return f'{num(ml / 1000)} L' if ml >= 1000 and ml % 1000 == 0 else f'{num(ml)} mL'
+
+
+def conc(r, prep, dose_base):
+    """Concentration in dose units per mL."""
+    return prep['amount'] * TO_DOSE_UNIT[(r['unit'], dose_base)] / prep['volume']
+
+
+def rate(r, prep, dose, kg=None):
+    """mL/hr for one dose (and weight): dose × (kg) × (60 if per minute) / concentration."""
+    du = r['dose_unit'].split('/')
+    per_kg, per_min = 'kg' in du, du[-1] == 'min'
+    return dose * (kg if per_kg else 1) * (60 if per_min else 1) / conc(r, prep, du[0])
+
+
+def render_recipe(rid, where):
+    r = RECIPES.get(rid)
+    if not r:
+        LOG.error(f'{where}: unknown recipe "{rid}" (add it to recipes.yaml)'); return f'[recipe {rid}?]'
+    preps = r.get('preps') or [{'amount': r['amount'], 'volume': r['volume']}]
+    base = r.get('dose_unit', r['unit']).split('/')[0]
+    unit1 = base[:-1] if base.endswith('s') else base           # "units" -> "unit" in a concentration
+    def cstr(p): return f"{'about ' if r.get('approx') else ''}{num(conc(r, p, base))} {unit1}/mL"
+    if r.get('max_rate'):                                       # maximum rate per bag (potassium)
+        rows = '; '.join(f"{num(p['amount'])} {r['unit']} in {vol(p['volume'])} → maximum "
+                         f"{num(r['max_rate'] * p['volume'] / p['amount'])} mL/hr" for p in preps)
+        return f"{esc(r.get('note', ''))} via {esc(r.get('pump', 'pump'))}, maximum {num(r['max_rate'])} {r['unit']}/hr: {rows}"
+    du, doses, weights = r['dose_unit'], r['doses'], r.get('weights')
+    if r.get('layout') == 'table':
+        rate_unit = du.replace('/kg', '').split('/')[0]
+        head = (f"<tr><th>Weight</th><th>{esc(du.replace('/kg', ''))}</th>"
+                + ''.join(f"<th>mL/hr at {cstr(p)}<br>({num(p['amount'])} {r['unit']} in {vol(p['volume'])})</th>" for p in preps)
+                + '</tr>')
+        body = ''.join(f"<tr><td>{num(kg)} kg</td><td>{num(d * kg)}</td>"
+                       + ''.join(f'<td>{num(rate(r, p, d, kg))}</td>' for p in preps) + '</tr>'
+                       for kg in weights for d in doses)
+        return f'<table class="t sm recipe">{head}{body}</table>'
+    p = preps[0]
+    prep = (f"{num(p['amount'])} {r['unit']}{' ' + esc(r['note']) if r.get('note') else ''} in {vol(p['volume'])}"
+            f"{' ' + esc(r['diluent']) if r.get('diluent') else ''} = {cstr(p)}")
+    if weights:
+        rates = '; '.join(f"{num(kg)} kg: " + '; '.join(f'{num(d)} → {num(rate(r, p, d, kg))} mL/hr' for d in doses)
+                          for kg in weights)
+    else:
+        rates = '; '.join(f'{num(d)} {du} → {num(rate(r, p, d))} mL/hr' for d in doses)
+    lines = []
+    if r.get('start') is not None:
+        lines.append(f"Start {num(r['start'])} {du}" + (f"; {esc(r['titrate'])}" if r.get('titrate') else '') + '.')
+    if r.get('formula'):
+        lines.append(f"<b>mL/hr = {du} × kg × {num(rate(r, p, 1, 1))}</b>")
+    if not lines:
+        return f'{prep}: {rates}'
+    return '<br>'.join([prep + '.'] + lines + [rates + '.'])
+
+
+def expand_recipes(fragment, where):
+    return RECIPE_RE.sub(lambda m: render_recipe(m[1], where), fragment)
 
 
 # ---------------------------------------------------------------- links
@@ -168,14 +247,16 @@ def harvest(topic):
 
 # ---------------------------------------------------------------- page pieces
 def foot(manifest, topic, book_name, sheet_title):
-    parts = [f"Author: <b>{esc(topic['author'])}</b>", f"Section editor: <b>{esc(topic['section_editor'])}</b>"]
+    parts = [f"Author: <b>{esc(topic['author'])}</b>"]
     if topic.get('editors'): parts.append(f"Editors: <b>{esc(topic['editors'])}</b>")
     if topic.get('co_reviewer'): parts.append(f"Reviewed with: <b>{esc(topic['co_reviewer'])}</b>")
     if topic.get('based_on'): parts.append(f"Based on {esc(topic['based_on'])}")
-    parts.append(f"{esc(topic['version'])} · Reviewed {esc(topic.get('reviewed', '[MM/YYYY]'))}")
-    approval = (f"Approved by: <b>{esc(topic.get('approved_by') or '[Name]')}</b> · "
-                f"Level/rank: <b>{esc(topic.get('approved_rank') or '[Rank]')}</b> · "
-                f"Date: <b>{esc(topic.get('approved_date') or '[DD/MM/YYYY]')}</b>")
+    parts.append(f"{esc(topic['version'])} · Built {BUILD_DATE} · {esc(manifest['stg_edition'])} · "
+                 f"Reviewed {esc(topic.get('reviewed', '[MM/YYYY]'))}")
+    blank = '_______________'
+    approval = (f"Approved by: <b>{esc(topic.get('approved_by') or blank)}</b> · "
+                f"Rank: <b>{esc(topic.get('approved_rank') or blank)}</b> · "
+                f"Date: <b>{esc(topic.get('approved_date') or blank)}</b>")
     subject = f"Suggest an edit: {book_name} – {sheet_title}"
     from urllib.parse import quote
     mail = f"mailto:{manifest['editor_email']}?subject={quote(subject)}"
@@ -204,7 +285,7 @@ def render_sheet(manifest, sources, known_ids, topic, book, sh, bm_base, first_i
     if first_in_system and sh['index'] == 0: marks += bm(bm_base, topic['system_name'])
     if sh['index'] == 0: marks += bm(bm_base + 1, book_title(topic, book))
     elif a.get('toc'): marks += bm(bm_base + 2, a['toc'])
-    body = resolve_links(sh['html'], sources, known_ids, f"{topic['id']}/{book}")
+    body = resolve_links(expand_recipes(sh['html'], f"{topic['id']}/{book}"), sources, known_ids, f"{topic['id']}/{book}")
     classes = ' '.join(['sheet', book] + a.get('cls', '').split())
     band = esc(title) + (f'<small>{esc(subtitle)}</small>' if subtitle else '')
     return f'''
@@ -224,7 +305,7 @@ def cover(manifest, label, draft):
 <div class="frame"><div class="band"><div class="k">{esc(manifest['hospital'].upper())} · {esc(manifest['department'].upper())}</div>
 <div class="t">{esc(label.upper())}</div></div>
 <div class="meta"><span>{esc(manifest['edition'])}</span><span>Version {esc(manifest['version'])}</span></div></div>
-<img class="logo" src="assets/wcg_health_logo.png" alt="Western Cape Government Health">
+<img class="logo" src="assets/george_im_logo.jpg" alt="George Hospital Internal Medicine">
 {d}
 <div class="dept">{esc(manifest['hospital'])} · {esc(manifest['department'])}</div>
 </section>'''
@@ -288,6 +369,8 @@ def build_book(manifest, sources, topics, books, label, draft, with_cover=True):
     runhead = f"{manifest['hospital'].upper()}: {manifest['department'].upper()}"
     parts.append(front_page(manifest, label, contents_table(manifest, topics, books, draft), draft, runhead, 'contents'))
     parts.append(front_page(manifest, 'How to read this book', howto, draft, runhead))
+    acks = (ROOT / 'templates' / 'acknowledgements.html').read_text(encoding='utf-8')
+    parts.append(front_page(manifest, 'Acknowledgements and authorship', acks, draft, runhead))
     for book in books:
         base = 1
         if len(books) > 1:
@@ -313,13 +396,12 @@ def build_editor_report(manifest, sources, topics, draft=True):
         rows.append(f'<tr><td class="n">{i}</td><td>{esc(t["system_name"])}</td><td>{esc(t["title"])}</td>'
                     f'<td>{esc(str(t.get("start", "")))}</td><td>{esc(str(t.get("priority", "")))}</td>'
                     f'<td>{STATUS_LABEL[t["status"]]}</td><td>{c if t["status"] != "planned" else ""}</td>'
-                    f'<td>{d if t["status"] != "planned" else ""}</td><td>{esc(t.get("author", ""))}</td>'
-                    f'<td>{esc(t.get("section_editor", ""))}</td></tr>')
+                    f'<td>{d if t["status"] != "planned" else ""}</td><td>{esc(t.get("author", ""))}</td></tr>')
     signed = sum(t['status'] == 'signed-off' for t in topics)
     summary = (f'<p><b>{len(built)} of {len(topics)}</b> topics drafted · <b>{signed}</b> signed off · '
                f'<b>{total_c}</b> CHECK and <b>{total_d}</b> DECISION markers open.</p>')
     progress = (summary + '<h3>Progress</h3><table class="t sm mk"><tr><th>#</th><th>System</th><th>Topic</th><th>Starting point</th>'
-                '<th>Priority</th><th>Status</th><th>CHECK</th><th>DECISION</th><th>Author</th><th>Section editor</th></tr>'
+                '<th>Priority</th><th>Status</th><th>CHECK</th><th>DECISION</th><th>Author</th></tr>'
                 + ''.join(rows) + '</table>')
     runhead = f"{manifest['hospital'].upper()}: EDITOR REPORT"
     parts = [f'''
@@ -327,7 +409,7 @@ def build_editor_report(manifest, sources, topics, draft=True):
 <div class="runhead">{runhead}</div><div class="wm">EDITOR REPORT · NOT FOR CLINICAL USE</div>
 <table class="hdr"><tr><td class="h1">Editor report: open questions and progress<small>Acute Handbook and Reference Manual · generated {today}</small></td></tr>
 <tr><td class="meta"><span>{esc(manifest['edition'])} · Version {esc(manifest['version'])}</span></td></tr></table>
-<p><span class="chk">CHECK</span> = a fact to confirm locally · <span class="dec">DECISION</span> = a choice for the section owner and HOD.
+<p><span class="chk">CHECK</span> = a fact to confirm locally · <span class="dec">DECISION</span> = a choice for the topic owner and HOD.
 Send each consultant the pages for their topics; answers go back into the topic files.</p>
 {progress}
 </section>''']
@@ -346,7 +428,7 @@ Send each consultant the pages for their topics; answers go back into the topic 
         parts.append(f'''
 <section class="sheet ed-topic" id="editor-{t['id']}">
 <div class="runhead">{runhead} · {esc(t['system_name'].upper())}</div>{bm(1, t['title'])}
-<table class="hdr"><tr><td class="h1">{esc(t['title'])}<small>Status: {STATUS_LABEL[t['status']]} · Section editor: {esc(t['section_editor'])}</small></td></tr></table>
+<table class="hdr"><tr><td class="h1">{esc(t['title'])}<small>Status: {STATUS_LABEL[t['status']]} · Author: {esc(t['author'])}</small></td></tr></table>
 {f'<p class="note">{esc(t["note"])}</p>' if t.get('note') else ''}
 <h3>Markers on the pages ({c} CHECK · {len(mk) - c} DECISION)</h3>
 <table class="t mk"><tr><th>#</th><th>Book</th><th>Type</th><th>Question, and where it sits</th></tr>{trs}</table>
@@ -370,6 +452,115 @@ def render(html_text, out_pdf):
     return len(doc.pages)
 
 
+# ---------------------------------------------------------------- house-rule checks (--check, --status)
+REQUIRED = ('title', 'status', 'author', 'version', 'priority', 'acute', 'reference', 'deferred')
+APPROVAL = ('approved_by', 'approved_rank', 'approved_date')
+BANNED = [
+    (LATIN, 'Latin abbreviation "{}" (house style: 12hrly, at night, orally, as needed, now)'),
+    (re.compile(r'\b(noradrenaline|norepinephrine)\b', re.I), 'banned term "{}" (not available at George)'),
+    (re.compile(r'\bNT-?pro-?BNP\b', re.I), 'banned term "{}" (not available at George)'),
+    (re.compile(r'\bIABP\b'), 'banned term "{}" (not available at George)'),
+    (re.compile(r'\bacetazolamide\b', re.I), 'banned term "{}" (not available at George)'),
+    (re.compile(r'section[ _]editor', re.I), 'legacy footer text "{}" (there are no section editors)'),
+    (re.compile(r'\bpharmacist\b', re.I), 'legacy text "{}" (no pharmacist dose check; the approval line covers doses)'),
+    (re.compile(r'checked by the editorial team', re.I), 'legacy footer text "{}"'),
+]
+RATE = re.compile(r'\bmL\s*/\s*h(?:r|our)?\b|\b(?:mcg|µg|micrograms?)\s*/\s*kg\s*/\s*min\b', re.I)
+TAG = re.compile(r'<!--.*?-->|<[^>]+>', re.S)
+
+
+def book_scope(t):
+    books = t['manifest'].get('books') or ['acute', 'reference']
+    return 'acute' in books, 'reference' in books
+
+
+def source_lines(path):
+    for n, line in enumerate(path.read_text(encoding='utf-8').splitlines(), 1):
+        if '[ALLOW]' in line: continue
+        yield n, line, html.unescape(TAG.sub(' ', RECIPE_RE.sub(' ', line)))
+
+
+def acute_page_counts(manifest, sources, built):
+    """Render the Acute Handbook once and count the pages each topic's sheets take."""
+    doc = HTML(string=build_book(manifest, sources, built, ('acute',), 'check', True, with_cover=False),
+               base_url=str(ROOT)).render()
+    first = {}
+    for i, page in enumerate(doc.pages):
+        for a in page.anchors: first.setdefault(a, i)
+    starts = sorted((first[t['sheets']['acute'][0]['id']], t['id']) for t in built
+                    if t['sheets']['acute'] and t['sheets']['acute'][0]['id'] in first)
+    return {tid: (starts[k + 1][0] if k + 1 < len(starts) else len(doc.pages)) - p0 for k, (p0, tid) in enumerate(starts)}
+
+
+def check(manifest, sources, topics):
+    probs = []
+    add = lambda f, n, m: probs.append(f'{pathlib.Path(f).relative_to(ROOT)}:{n}: {m}')
+    match = {rid: re.compile(r'\b(' + '|'.join(map(re.escape, r['match'])) + r')\b', re.I) for rid, r in RECIPES.items()}
+    built = [t for t in topics if t['status'] != 'planned']
+    for t in built:
+        ty = t['folder'] / 'topic.yaml'
+        raw = yaml.safe_load(ty.read_text(encoding='utf-8')) or {}
+        keyline = {l.split(':')[0]: n for n, l in enumerate(ty.read_text(encoding='utf-8').splitlines(), 1) if ':' in l}
+        for f in REQUIRED + APPROVAL:
+            if f not in raw or (f not in APPROVAL and raw[f] in (None, '')):
+                add(ty, 1, f'missing field "{f}"')
+        want_a, want_r = book_scope(t)
+        expect = {'acute': want_a, 'reference': want_r, 'deferred': bool(t['manifest'].get('deferred', False))}
+        if t['manifest'].get('priority'): expect['priority'] = t['manifest']['priority']
+        for f, v in expect.items():
+            if f in raw and raw[f] != v:
+                add(ty, keyline.get(f, 1), f'"{f}: {raw[f]}" does not match manifest.yaml ({v})')
+        for book, want in (('acute', want_a), ('reference', want_r)):
+            exists = (t['folder'] / f'{book}.html').exists()
+            if exists and not want: add(t['folder'] / f'{book}.html', 1, f'{book} page for a topic without that book in manifest.yaml')
+            if want and not exists and (book == 'acute' or not want_a):   # acute sheet first; reference may follow
+                add(ty, 1, f'{book} page missing')
+        for f in ('topic.yaml', 'acute.html', 'reference.html'):
+            path = t['folder'] / f
+            if not path.exists(): continue
+            for n, line, text in source_lines(path):
+                for rx, msg in BANNED:
+                    if f == 'topic.yaml' and rx is LATIN: continue
+                    for m in sorted(set(x if isinstance(x, str) else x[0] for x in rx.findall(text if f != 'topic.yaml' else line))):
+                        add(path, n, msg.format(m))
+                if f != 'topic.yaml' and RATE.search(text):
+                    for rid, rx in match.items():
+                        if rx.search(text):
+                            add(path, n, f'"{rx.search(text)[0]}" with a rate outside {{{{recipe:{rid}}}}} (rates come from recipes.yaml)')
+            if f != 'topic.yaml':
+                for n, line in enumerate(path.read_text(encoding='utf-8').splitlines(), 1):
+                    for rid in RECIPE_RE.findall(line):
+                        if rid not in RECIPES: add(path, n, f'unknown recipe "{rid}"')
+    for path in sorted((ROOT / 'templates').glob('*.html')):
+        for n, line, text in source_lines(path):
+            for rx, msg in BANNED[5:]:
+                for m in sorted(set(rx.findall(text))): add(path, n, msg.format(m))
+    for tid, pages in acute_page_counts(manifest, sources, built).items():
+        if pages > 2:
+            t = next(x for x in built if x['id'] == tid)
+            add(t['folder'] / 'acute.html', 1, f'Acute sheet renders {pages} pages (limit 2)')
+    return probs
+
+
+def status_table(topics):
+    rows = [('topic', 'acute', 'reference', 'tier', 'priority', 'approved', 'CHECK', 'DECISION')]
+    for t in topics:
+        want_a, want_r = book_scope(t)
+        deferred = t['manifest'].get('deferred', False)
+        def state(book, want):
+            if not want: return '-'
+            if t['sheets'][book]: return t['status'] + (' (deferred)' if book == 'reference' and deferred else '')
+            return 'deferred' if book == 'reference' and deferred else 'planned'
+        mk = t.get('markers', [])
+        c = sum(m['kind'] == 'CHECK' for m in mk)
+        appr = 'yes' if all(t.get(f) for f in APPROVAL) else 'no'
+        rows.append((t['id'], state('acute', want_a), state('reference', want_r), str(t['manifest'].get('reference_tier', '-')),
+                     str(t.get('priority', '-')), appr if t['status'] != 'planned' else '-',
+                     str(c) if t['status'] != 'planned' else '', str(len(mk) - c) if t['status'] != 'planned' else ''))
+    w = [max(len(r[i]) for r in rows) for i in range(len(rows[0]))]
+    return '\n'.join('  '.join(c.ljust(w[i]) for i, c in enumerate(r)).rstrip() for r in rows)
+
+
 def make_zip():
     stamp = datetime.date.today().strftime('%Y-%m-%d')
     z = OUT / f'manual-source-{stamp}.zip'
@@ -383,6 +574,7 @@ def make_zip():
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--topic'); ap.add_argument('--release', action='store_true'); ap.add_argument('--zip', action='store_true')
+    ap.add_argument('--check', action='store_true'); ap.add_argument('--status', action='store_true')
     args = ap.parse_args()
     manifest, sources, topics = load()
     for t in topics:
@@ -393,12 +585,28 @@ def main():
     tag = f"{manifest['edition']} v{manifest['version']}"
     suffix = ' (draft)' if draft else ''
 
+    if args.status:
+        print(status_table(topics)); sys.exit(0)
+    if args.check or args.release:
+        probs = check(manifest, sources, topics) + [f'build: {e}' for e in LOG.errors]
+        if args.check:
+            print('\n'.join(probs) + ('\n' if probs else '') + f'{len(probs)} problem(s)')
+            sys.exit(1 if probs else 0)
+        for pr in probs: LOG.error(f'check: {pr}')
+
     if args.release:
+        for path in sorted((ROOT / 'templates').glob('*.html')):
+            if path.name == 'howto.html': continue          # its marker legend shows example markers
+            if re.search(r'class="(chk|dec)"', path.read_text(encoding='utf-8')):
+                LOG.error(f'templates/{path.name}: CHECK/DECISION markers still open')
         for t in built:
             if t['status'] != 'signed-off': LOG.error(f"{t['id']}: status is {t['status']}, not signed-off")
             if t['markers']: LOG.error(f"{t['id']}: {len(t['markers'])} CHECK/DECISION markers still open")
             for f in ('approved_by', 'approved_rank', 'approved_date'):
                 if not t.get(f): LOG.error(f"{t['id']}: {f} is empty")
+        for f in sorted((ROOT / 'templates').glob('*.html')):
+            if re.search(r'class="(chk|dec)"', f.read_text(encoding='utf-8')):
+                LOG.error(f'templates/{f.name}: CHECK/DECISION markers still open')
         if 'example.com' in manifest['editor_email']: LOG.error('manifest.yaml: editor_email is still a placeholder')
         if LOG.errors:
             print('RELEASE REFUSED:'); [print('  -', e) for e in LOG.errors]; sys.exit(1)

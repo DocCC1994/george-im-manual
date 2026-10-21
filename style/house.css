@@ -99,6 +99,7 @@ table.tl td.g { background: #fff; } table.tl td.a { background: var(--tint); } t
 .avail.s { background: var(--band); border: .6pt solid var(--rule); }
 .avail.n { border: .6pt dashed var(--rule); font-weight: 400; }
 .cls { font-size: 6.8pt; font-weight: 700; white-space: nowrap; }
+.cls::before { content: "("; } .cls::after { content: ")"; }
 
 /* editorial markers: colour kept on purpose (resolved before release) */
 .chk { background: #fef0c7; color: #93370d; font-weight: 700; font-size: 7.2pt; padding: 0 1.2pt; border-radius: 1pt; white-space: normal; }
@@ -134,7 +135,7 @@ table.tl td.g { background: #fff; } table.tl td.a { background: var(--tint); } t
 .cover .band .t { font-size: 26pt; font-weight: 700; margin-top: 3mm; line-height: 1.1; }
 .cover .meta { padding: 3mm; font-size: 12pt; font-weight: 700; }
 .cover .meta span { margin: 0 6mm; }
-.cover .logo { display: block; width: 70mm; margin: 22mm auto 0; }
+.cover .logo { display: block; width: 80mm; margin: 20mm auto 0; }
 .cover .draft { margin: 14mm auto 0; width: 120mm; border: .8pt solid var(--rule); padding: 2mm; font-size: 11pt; font-weight: 700; letter-spacing: .6pt; }
 .cover .dept { position: absolute; bottom: 22mm; left: 0; right: 0; text-align: center; font-size: 13pt; font-weight: 700; }
 
