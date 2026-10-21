@@ -99,6 +99,7 @@ table.tl td.g { background: #fff; } table.tl td.a { background: var(--tint); } t
 .avail.s { background: var(--band); border: .6pt solid var(--rule); }
 .avail.n { border: .6pt dashed var(--rule); font-weight: 400; }
 .cls { font-size: 6.8pt; font-weight: 700; white-space: nowrap; }
+.cls::before { content: "("; } .cls::after { content: ")"; }
 
 /* editorial markers: colour kept on purpose (resolved before release) */
 .chk { background: #fef0c7; color: #93370d; font-weight: 700; font-size: 7.2pt; padding: 0 1.2pt; border-radius: 1pt; white-space: normal; }

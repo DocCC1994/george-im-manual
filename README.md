@@ -69,6 +69,11 @@ Links:
   name it with its own class and agent, e.g. "ARB (losartan)" or "alteplase" vs "streptokinase".
 - Abbreviations: use standard ones from the start without spelling them out (3rd-gen, LMWH, UFH, DOAC, ACEi, ARB, BB,
   CCB, FQ, PPI, SGLT2i). Only use ones any SA registrar would recognise immediately.
+- Cross-links: link each cause, precipitant or related condition to its own topic where the manifest has one
+  (e.g. CHAMPIT causes in heart failure → `@acute:stemi`, `@acute:arrhythmias`, `@acute:pulmonary-embolism`).
+  Link planned topics too: the link is plain text until that topic is written.
+- Recommendation classes are printed in brackets, e.g. "(I A)"; the stylesheet adds the brackets to
+  `<span class="cls">`, so write the class alone and don't type brackets around it.
 - The book is for doctors. Include a nursing instruction only when it changes the patient's outcome
   (for example, hourly glucose during an insulin infusion), never routine ward care.
 - Every topic carries an approval line (approved_by, approved_rank, approved_date in topic.yaml); the release build
