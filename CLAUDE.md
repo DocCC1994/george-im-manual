@@ -93,8 +93,8 @@ approving consultant) as DECISION markers, not silent choices.
   pathophysiology pearls, chronic disease staging and the "Where the guidelines differ" tables.
 
 manifest.yaml is the master syllabus and table of contents. A topic has both books unless its entry says
-`books: [acute]` or `books: [reference]`; write only the file(s) for its book(s). build.py does not read `books:`
-yet; a one-book topic simply has no file for the other book.
+`books: [acute]` or `books: [reference]`; write only the file(s) for its book(s). `build.py --check` and `--status`
+read `books:`; a one-book topic simply has no file for the other book.
 - **Acute Handbook only** (one page, no reference.html unless the owner asks later):
   - The 13 specific poisons: paracetamol, salicylates, TCAs, carbamazepine and phenytoin, CCBs (full HIET mixing
     recipe), BBs, digoxin, theophylline, isoniazid, organophosphates, methanol and ethylene glycol,
@@ -134,7 +134,7 @@ yet; a one-book topic simply has no file for the other book.
   no tier and are never deferred. Reference-only topics are scheduled by priority: Valvular heart disease (PR #19)
   ships now; ECG/ABG is P2.
 - Priorities (owner, 21 Oct 2026): every topic is P1 except ECG/ABG and sympathomimetics (P2).
-- build.py ignores `reference_tier` and `deferred` (like `books:`).
+- `build.py --status` shows `reference_tier`; `--check` compares `deferred`, `priority` and `books:` with topic.yaml.
 
 ### Reference Manual architecture (owner, 21 Oct 2026)
 Every reference.html follows MGH *Pocket Medicine* style: high-density, scannable bullet hierarchies, pearls and

@@ -4,12 +4,14 @@ short: Sepsis
 status: draft
 start: New (pilot)
 priority: P1
+acute: true              # Acute Handbook sheet (manifest books)
+reference: true          # Reference Manual chapter (manifest books)
+deferred: false          # Tier 2: reference chapter deferred (manifest)
 version: 2026 v1
 effective: "[MM/YYYY]"
 review: "[MM/YYYY]"
 reviewed: "[MM/YYYY]"
 author: "[Author, Registrar IM]"
-section_editor: "[Consultant physician]"
 editors: "[Editors]"
 co_reviewer: "[Infectious diseases, microbiology or critical care]"
 based_on: "New topic (no GRH protocol): STG 2024 §20.12.2.2 and §23.10; SAASP 2026; Surviving Sepsis Campaign 2026"

@@ -1,0 +1,75 @@
+# Infusion recipes: the only place infusion concentrations and mL/hr rates live (CLAUDE.md "Build rules").
+# A topic file inserts one with {{recipe:<id>}}; build.py calculates every mL/hr from amount, volume, dose and
+# weight. Never type a rate here or in a topic file. Fill only from merged sheets; `from` names the sheet.
+#
+# Fields
+#   match       words that name the drug; `build.py --check` flags a topic line naming one with a rate
+#               (mL/hr, mL/h, mcg/kg/min) outside the macro
+#   unit        unit of `amount` (mg, units, mmol); doses in mcg are converted from mg
+#   amount, volume (mL), note (printed after the amount), diluent, approx (prints "about" before the concentration)
+#   preps       several bags or syringes: list of {amount, volume}; rendered as table columns
+#   dose_unit   units/kg/hr, mcg/kg/min, mg/min, mcg/min ...; doses: list; weights: list of kg (per-kg doses)
+#   start, titrate   optional text line; formula: true adds "mL/hr = dose × kg × factor"
+#   max_rate, pump   maximum rate in `unit`/hr (potassium); renders the maximum mL/hr for each prep
+#   layout      inline (text inside the author's paragraph) or table
+
+insulin:
+  match: [insulin]
+  from: dka-hhs acute (STG 2025; GRH 2024 syringe driver)
+  unit: units
+  preps:
+    - {amount: 50, volume: 50}
+    - {amount: 50, volume: 200}
+  dose_unit: units/kg/hr
+  doses: [0.1]
+  weights: [50, 60, 70, 80, 90, 100]
+  layout: table
+
+adrenaline:
+  match: [adrenaline, epinephrine]
+  from: sepsis acute (STG ch 20, EML)
+  unit: mg
+  amount: 10
+  note: "(10 ampoules of 1:1 000)"
+  volume: 1000
+  diluent: sodium chloride 0.9%
+  dose_unit: mcg/kg/min
+  start: 0.05
+  titrate: "titrate to MAP ≥ 65 every 10–30 min; usual range 0.01–1 mcg/kg/min"
+  formula: true
+  doses: [0.05, 0.1, 0.25]
+  weights: [70]
+  layout: inline
+
+labetalol:
+  match: [labetalol]
+  from: hypertensive-emergency acute (STG 2024)
+  unit: mg
+  amount: 200
+  volume: 200
+  dose_unit: mg/min
+  doses: [2]
+  layout: inline
+
+gtn:
+  match: [GTN, glyceryl trinitrate, nitroglycerin]
+  from: hypertensive-emergency acute (STG Table 3.3)
+  unit: mg
+  amount: 25
+  volume: 250
+  approx: true
+  dose_unit: mcg/min
+  doses: [5, 20, 100]
+  layout: inline
+
+potassium:
+  match: [potassium, KCl]
+  from: dka-hhs acute (GRH 2024 limit; KCl 1 ampoule = 20 mmol = 10 mL); IVAC and 20 mmol/hr maximum per Craig, 21 Oct 2026
+  unit: mmol
+  note: "KCl (1 ampoule = 20 mmol = 10 mL)"
+  preps:
+    - {amount: 20, volume: 1000}
+    - {amount: 40, volume: 1000}
+  max_rate: 20
+  pump: IVAC
+  layout: inline
