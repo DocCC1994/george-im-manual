@@ -1,0 +1,20 @@
+title: "Meningitis: bacterial, TB, cryptococcal"
+reference_title: "Meningitis: background and where the guidelines differ"
+short: Meningitis
+status: draft
+start: Rewrite + new (crypto 2021)
+priority: P1
+acute: true              # Acute Handbook sheet (manifest books)
+reference: true          # Reference Manual chapter (manifest books)
+deferred: false          # Tier 1: reference chapter written with the topic
+version: 2026 v1
+effective: "[MM/YYYY]"
+review: "[MM/YYYY]"
+reviewed: "[MM/YYYY]"
+author: "[Author, Registrar IM]"
+editors: "[Editors]"
+co_reviewer: "[Infectious diseases or neurology]"
+based_on: "GRH Cryptococcal meningitis guideline rev 3 (2021, Dr T Gould); STG 2024 §14.8, §10.2.4, §16.9; SAASP 2026 Ch 12. No GRH bacterial or TB meningitis protocol"
+approved_by: ""
+approved_rank: ""
+approved_date: ""
