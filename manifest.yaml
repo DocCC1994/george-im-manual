@@ -7,8 +7,8 @@
 # `books:` limits a topic to one book (default: both). See CLAUDE.md "Syllabus architecture".
 # Phased Reference Manual (21 Oct 2026): `reference_tier: 1` = Active, write the reference page with the topic;
 # `reference_tier: 2, deferred: true` = Deferred backlog, write the Acute sheet only unless Craig asks for the
-# reference page. One-book topics carry no tier and are never deferred: Reference-only topics are scheduled by
-# priority. Priorities (21 Oct 2026): all P1 except ecg-abg and sympathomimetics (P2). See CLAUDE.md.
+# reference page. One-book topics are never deferred; acute-only topics carry no tier, and the two Reference-only
+# topics (valvular-heart-disease, ecg-abg) are Tier 1 (Craig, 21 Oct 2026), scheduled by priority. Priorities (21 Oct 2026): all P1 except ecg-abg and sympathomimetics (P2). See CLAUDE.md.
 
 hospital: George Hospital
 department: Department of Internal Medicine
@@ -25,7 +25,7 @@ systems:
   - id: foundations
     name: Foundations
     topics:
-      - {id: ecg-abg, title: Approach to ECG interpretation and ABG / acid-base analysis, start: New (added), priority: P2, books: [reference]}
+      - {id: ecg-abg, title: Approach to ECG interpretation and ABG / acid-base analysis, start: New (added), priority: P2, books: [reference], reference_tier: 1}
   - id: cardiology
     name: Cardiology
     topics:
@@ -36,7 +36,7 @@ systems:
       - {id: hypertensive-emergency, reference_tier: 1}
       - {id: pulmonary-embolism, title: Pulmonary embolism, start: New, priority: P1, reference_tier: 2, deferred: true}
       - {id: infective-endocarditis, title: Infective endocarditis, start: New (added), priority: P1, reference_tier: 2, deferred: true}
-      - {id: valvular-heart-disease, title: Valvular heart disease (including rheumatic heart disease), start: New (added), priority: P1, books: [reference]}
+      - {id: valvular-heart-disease, title: Valvular heart disease (including rheumatic heart disease), start: New (added), priority: P1, books: [reference], reference_tier: 1}
       - {id: pericardial-tamponade, title: Pericardial effusion and cardiac tamponade, start: New (added), priority: P1, reference_tier: 1}
   - id: respiratory
     name: Respiratory
