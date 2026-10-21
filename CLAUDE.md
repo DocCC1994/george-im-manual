@@ -26,6 +26,14 @@ editors as DECISION markers, not silent choices.
 
 ## House rules (also in README.md)
 - No Latin abbreviations: 12hrly, 8hrly, 4hrly; "at night", "orally", "as needed", "now". IV/IM/SC/SL are fine.
+- Drug naming: class first, agent in brackets, e.g. "3rd-gen cephalosporin (ceftriaxone)". Alternatives: George
+  first-choice agent in full as the first option, others by class only ("alternatives: FQ, carbapenem"). If the George
+  first-choice agent is unclear, name the most likely one and add a CHECK.
+  Class once per topic (acute and reference pages each), then the agent alone as named on the EML: "LMWH (enoxaparin)",
+  later "enoxaparin". A different type of drug as an alternative gets its own class and agent: "ARB (losartan)".
+  Omit the class where the agent is alone in its class or the class adds nothing: "thiamine", not "vitamin (thiamine)".
+- Abbreviations: standard ones from the start, never spelled out (3rd-gen, LMWH, UFH, DOAC, ACEi, ARB, BB, CCB, FQ,
+  PPI, SGLT2i). Only ones any SA registrar would recognise immediately.
 - Doctors only. Nursing instructions only when they change the patient's outcome, never routine ward care.
 - Base: where a current GRH protocol exists for the topic, build the topic on it. Check and update it against the
   evidence below; every difference becomes a DECISION.
