@@ -289,3 +289,19 @@ calgary-blackbook:
   label: Calgary Black Book
   citation: "University of Calgary. Blackbook: Approaches to Medical Presentations, 15th ed. 2022."
   url: https://cumming.ucalgary.ca/
+stg-asthma:
+  label: STG 2024 §16.1
+  citation: "National Department of Health. Hospital Level (Adults) STGs and EML, 6th ed. 2024 (updated December 2025), Chapter 16 Respiratory disorders, §16.1 Asthma, acute and §16.2 Asthma, chronic persistent."
+  url: https://www.health.gov.za/wp-content/uploads/2025/07/Hospital-Level-Adults-Standard-Treatment-Guidelines-and-Essential-Medicines-List-6th-Edition-2024.pdf
+gina-2026:
+  label: GINA 2026
+  citation: "Global Initiative for Asthma. Summary Guide for Asthma Management and Prevention, 2026 (from the GINA 2026 report): asthma exacerbations, Figure 9 and follow-up, pp. 33–37."
+  url: https://ginasthma.org/reports/
+sats-asthma-2013:
+  label: SATS 2013
+  citation: "Lalloo UG, Ainslie GM, Abdool-Gaffar MS, et al. Guideline for the management of acute asthma in adults: 2013 update. S Afr Med J 2013;103(3):189–198."
+  url: https://scielo.org.za/pdf/samj/v103n3/31.pdf
+grh-sop-icu-2024:
+  label: George SOP 2024
+  citation: "George Hospital. SOP: Adult and paediatric patients prioritising invasive ventilation, ICU care, theatre procedures or other invasive treatment (Prof L Jenkins; authorised 8 May 2024), including HFNO/NIV practice points v4 (Drs Vermeulen and Van Zyl Smit)."
+  url: https://drive.google.com/file/d/1TLBFIjIexoGDv1MC7h6ufFZ4G5uPZoiO/view
