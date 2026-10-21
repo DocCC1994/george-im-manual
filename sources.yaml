@@ -305,3 +305,75 @@ grh-sop-icu-2024:
   label: George SOP 2024
   citation: "George Hospital. SOP: Adult and paediatric patients prioritising invasive ventilation, ICU care, theatre procedures or other invasive treatment (Prof L Jenkins; authorised 8 May 2024), including HFNO/NIV practice points v4 (Drs Vermeulen and Van Zyl Smit)."
   url: https://drive.google.com/file/d/1TLBFIjIexoGDv1MC7h6ufFZ4G5uPZoiO/view
+stg-ch14-mening:
+  label: STG 2024 §14.8
+  citation: "National Department of Health. Hospital Level (Adults) STGs and EML, 6th ed. 2024 (updated December 2025), Chapter 14 Neurological disorders, §14.8.1 Meningitis, §14.8.1.1 Tuberculous meningitis, §14.8.1.2 Cryptococcal meningitis, §14.8.2 Viral meningoencephalitis, pp 14.36–14.41."
+  url: https://www.health.gov.za/nhi-edp-stgs-eml/
+stg-ch10-crypto:
+  label: STG 2024 §10.2.4
+  citation: "National Department of Health. Hospital Level (Adults) STGs and EML, 6th ed. 2024 (updated December 2025), Chapter 10 HIV and AIDS, §10.2.4 Cryptococcosis (adapted from the Southern African HIV Clinicians Society guideline 2019), pp 10.22–10.25."
+  url: https://www.health.gov.za/nhi-edp-stgs-eml/
+stg-ch10-art:
+  label: STG 2024 §10.1
+  citation: "National Department of Health. Hospital Level (Adults) STGs and EML, 6th ed. 2024 (updated December 2025), Chapter 10 HIV and AIDS, §10.1 Antiretroviral therapy: timing of ART initiation in TB and cryptococcal meningitis."
+  url: https://www.health.gov.za/nhi-edp-stgs-eml/
+stg-tb:
+  label: STG 2024 §16.9
+  citation: "National Department of Health. Hospital Level (Adults) STGs and EML, 6th ed. 2024 (updated December 2025), Chapter 16 Respiratory disorders, §16.9 Tuberculosis, pulmonary (fixed-dose combinations and weight bands), pp 16.19–16.21."
+  url: https://www.health.gov.za/nhi-edp-stgs-eml/
+stg-app:
+  label: STG 2024 Appendix I–II
+  citation: "National Department of Health. Hospital Level (Adults) STGs and EML, 6th ed. 2024 (updated December 2025), Appendix I Antimicrobial medicines and Appendix II Prescribing information (amphotericin B deoxycholate, liposomal amphotericin B), pp AI.2–AI.13, AII.2–AII.3."
+  url: https://www.health.gov.za/nhi-edp-stgs-eml/
+saasp-2026-mening:
+  label: SAASP 2026
+  citation: "South African Antibiotic Stewardship Programme (SAASP). A guide to antibiotic prescribing for adults in South Africa, 2026. Chapter 12: Acute meningitis (text and algorithm), pp 49–50."
+  url: https://www.fidssa.co.za/saasp
+grh-crypto-2021:
+  label: GRH Crypto 2021
+  citation: "George Hospital, Internal Medicine Unit. Guideline: management of cryptococcal meningitis in HIV positive patients. Revision 3, effective 1 May 2021, review June 2022 (Dr T Gould). Drive: GEORGE IM Handbook."
+  url: https://drive.google.com/file/d/1srpde1g0oYdPxdG7XBULiL2HsDHEEA-9/view
+sahcs-crypto-2019:
+  label: SAHCS 2019
+  citation: "Govender NP, Meintjes G, Mangena P, et al. Southern African HIV Clinicians Society guideline for the prevention, diagnosis and management of cryptococcal disease among HIV-infected persons: 2019 update. S Afr J HIV Med 2019;20(1):a1030."
+  url: https://doi.org/10.4102/sajhivmed.v20i1.1030
+escmid-abm-2016:
+  label: ESCMID 2016
+  citation: "van de Beek D, Cabellos C, Dzupova O, et al. ESCMID guideline: diagnosis and treatment of acute bacterial meningitis. Clin Microbiol Infect 2016;22 Suppl 3:S37–S62. (Not read for this draft: cited from background knowledge, see editor page.)"
+  url: https://doi.org/10.1016/j.cmi.2016.01.007
+who-crypto-2022:
+  label: WHO 2022
+  citation: "World Health Organization. Guidelines for diagnosing, preventing and managing cryptococcal disease among adults, adolescents and children living with HIV. Geneva: WHO; 2022. (Not read for this draft.)"
+  url: https://www.who.int/publications/i/item/9789240052178
+degans-2002:
+  label: de Gans 2002
+  citation: "de Gans J, van de Beek D. Dexamethasone in adults with bacterial meningitis. N Engl J Med 2002;347:1549–1556."
+  url: https://doi.org/10.1056/NEJMoa021334
+scarborough-2007:
+  label: Scarborough 2007
+  citation: "Scarborough M, Gordon SB, Whitty CJM, et al. Corticosteroids for bacterial meningitis in adults in sub-Saharan Africa. N Engl J Med 2007;357:2441–2450."
+  url: https://doi.org/10.1056/NEJMoa065711
+thwaites-2004:
+  label: Thwaites 2004
+  citation: "Thwaites GE, Nguyen DB, Nguyen HD, et al. Dexamethasone for the treatment of tuberculous meningitis in adolescents and adults. N Engl J Med 2004;351:1741–1751."
+  url: https://doi.org/10.1056/NEJMoa040573
+act-hiv-2023:
+  label: ACT HIV
+  citation: "Donovan J, Bang ND, Imran D, et al. Adjunctive dexamethasone for tuberculous meningitis in HIV-positive adults (ACT HIV). N Engl J Med 2023;389:1357–1367."
+  url: https://doi.org/10.1056/NEJMoa2216218
+ambition-2022:
+  label: AMBITION-cm
+  citation: "Jarvis JN, Lawrence DS, Meya DB, et al. Single-dose liposomal amphotericin B treatment for cryptococcal meningitis (AMBITION-cm). N Engl J Med 2022;386:1109–1120."
+  url: https://doi.org/10.1056/NEJMoa2111904
+acta-2018:
+  label: ACTA
+  citation: "Molloy SF, Kanyama C, Heyderman RS, et al. Antifungal combinations for treatment of cryptococcal meningitis in Africa (ACTA). N Engl J Med 2018;378:1004–1017."
+  url: https://doi.org/10.1056/NEJMoa1710922
+coat-2014:
+  label: COAT
+  citation: "Boulware DR, Meya DB, Muzoora C, et al. Timing of antiretroviral therapy after diagnosis of cryptococcal meningitis (COAT). N Engl J Med 2014;370:2487–2498."
+  url: https://doi.org/10.1056/NEJMoa1312884
+cryptodex-2016:
+  label: CryptoDex
+  citation: "Beardsley J, Wolbers M, Kibengo FM, et al. Adjunctive dexamethasone in HIV-associated cryptococcal meningitis (CryptoDex). N Engl J Med 2016;374:542–554."
+  url: https://doi.org/10.1056/NEJMoa1509024
