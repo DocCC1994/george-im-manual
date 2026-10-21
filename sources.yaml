@@ -305,3 +305,23 @@ grh-sop-icu-2024:
   label: George SOP 2024
   citation: "George Hospital. SOP: Adult and paediatric patients prioritising invasive ventilation, ICU care, theatre procedures or other invasive treatment (Prof L Jenkins; authorised 8 May 2024), including HFNO/NIV practice points v4 (Drs Vermeulen and Van Zyl Smit)."
   url: https://drive.google.com/file/d/1TLBFIjIexoGDv1MC7h6ufFZ4G5uPZoiO/view
+grh-cap-2024:
+  label: GRH 2024
+  citation: "George Hospital, Internal Medicine Unit. Assessment and management of community acquired pneumonia at a hospital setting. Revision 3, effective 05/2024 (Dr A Vermeulen, Dr J P Spanos). Drive: GEORGE IM Handbook."
+  url: https://drive.google.com/file/d/1rXpya0uCkCMdD4ePuBbHQKj9Iva7mFSa/view
+stg-cap:
+  label: STG 2024 §16.6
+  citation: "National Department of Health. Hospital Level (Adults) STGs and EML, 6th ed. 2024 (updated December 2025), Chapter 16 Respiratory disorders, §16.6 Pneumonia, community acquired and §16.7 Pneumonia, aspiration."
+  url: https://www.health.gov.za/wp-content/uploads/2025/07/Hospital-Level-Adults-Standard-Treatment-Guidelines-and-Essential-Medicines-List-6th-Edition-2024.pdf
+stg-pjp:
+  label: STG 2024 §10.2.9
+  citation: "National Department of Health. Hospital Level (Adults) STGs and EML, 6th ed. 2024 (updated December 2025), Chapter 10 HIV and AIDS, §10.2.9 Pneumocystis pneumonia."
+  url: https://www.health.gov.za/wp-content/uploads/2025/07/Hospital-Level-Adults-Standard-Treatment-Guidelines-and-Essential-Medicines-List-6th-Edition-2024.pdf
+saasp-2026-cap:
+  label: SAASP 2026
+  citation: "South African Antibiotic Stewardship Programme (SAASP). A guide to antibiotic prescribing for adults in South Africa, 2026. Chapter 7: Community acquired pneumonia, pp. 36–37."
+  url: https://www.fidssa.co.za/saasp
+ers-scap-2023:
+  label: ERS/ESICM 2023
+  citation: "Martin-Loeches I, Torres A, Nagavci B, et al. ERS/ESICM/ESCMID/ALAT guidelines for the management of severe community-acquired pneumonia. Intensive Care Med 2023 (published online 4 April 2023); published concurrently in Eur Respir J (doi:10.1183/13993003.00735-2022)."
+  url: https://doi.org/10.1007/s00134-023-07033-8
