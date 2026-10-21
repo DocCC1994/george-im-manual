@@ -95,10 +95,24 @@ yet; a one-book topic simply has no file for the other book.
   admission).
 - **STEMI**: streptokinase stays first-line from available stock at George and first choice in the dose box.
 
+### Phased Reference Manual (owner, 21 Oct 2026)
+- **Acute sheet first.** Every topic generates its Acute Handbook sheet before any Reference Manual page.
+- **Tier 1, Active Reference** (`reference_tier: 1` in manifest.yaml): the topic thread writes the reference page
+  too, after the acute sheet. Topics: STEMI and NSTE-ACS (ACS), heart failure, hypertensive emergencies,
+  pericardial effusion and cardiac tamponade, sepsis, meningitis, DKA/HHS, hyponatraemia, AKI, decompensated
+  cirrhosis, stroke, status epilepticus (with the first-seizure block), severe cytopenias (`cytopenias`: the
+  severe haematology workup).
+- **Tier 2, Deferred backlog** (`reference_tier: 2, deferred: true`): every other topic that has both books. The
+  topic thread writes topic.yaml, acute.html and editor.html only, no reference.html, unless the owner explicitly
+  asks for that topic's Reference section. Reference pages already written for Tier 2 topics stay as they are.
+- One-book topics carry no tier: acute-only topics are unaffected; the Reference-only topics (valvular heart
+  disease, ECG/ABG) are unmarked until the owner says whether they are Tier 1 or deferred.
+- build.py ignores `reference_tier` and `deferred` (like `books:`).
+
 ### Reference Manual architecture (owner, 21 Oct 2026)
 Every reference.html follows MGH *Pocket Medicine* style: high-density, scannable bullet hierarchies, pearls and
 embedded tables; no narrative paragraphs. House rules still apply (SA evidence order, drug naming, no Latin
-abbreviations, local box, CHECK on every dose, 1–2 pages). New topics only; existing reference pages are not
+abbreviations, local box, CHECK on every dose, 1–2 pages). New Tier 1 topics only (see above); existing reference pages are not
 retrofitted unless the owner names one. Seven parts, in this order:
 1. **Header and metadata band**: formal title (italic subtitle allowed); sub-headings by syndrome or cause.
 2. **Overview and definitions**: formal criteria/staging (e.g. KDIGO, Sepsis-3, Wells/Geneva) with inline
@@ -150,7 +164,7 @@ Each topic is written in its own project thread, opened from the project chat. T
 1. Pull the repo. Read this file and README.md.
 2. The thread names its topic. If not, take the first topic in manifest.yaml with no folder under topics/, no open
    PR and no thread already open for it (follow manifest order and priority).
-3. Post the guideline request in the thread (full title, issuing body and year of each relevant guideline other
+3. Post the guideline request (for a Tier 2 topic, only the guidelines the acute sheet needs) in the thread (full title, issuing body and year of each relevant guideline other
    than the STG/EML; European before American). Start writing once the owner uploads the PDFs or says to go ahead
    without them; until then stop.
 4. Research: the current GRH protocol from Drive first, if one exists, as the base. Then check it against the
@@ -158,10 +172,18 @@ Each topic is written in its own project thread, opened from the project chat. T
    preferred over American). Use WebSearch/WebFetch only for gaps (the shell cannot reach most websites). Add
    every source to sources.yaml.
 5. Write topics/<system>/<topic>/{topic.yaml, acute.html, reference.html, editor.html}, using the existing
-   topics as models. Mark uncertain facts CHECK and choices DECISION; list open questions in editor.html.
+   topics as models: acute.html first; reference.html only for Tier 1 topics (or when the owner asks; see
+   "Phased Reference Manual"). Mark uncertain facts CHECK and choices DECISION; list open questions in editor.html.
 6. `python3 build.py --topic <id>`, then render the pages (pymupdf) and look at them: each acute sheet must fit
    its page; fix overflow (`data-cls="compact"` or split with `data-part`, within the 1–2 page limit). Then
    `python3 build.py`: 0 errors.
 7. Commit and push, open a PR "Topic: <title>"; reply in the thread with the topic name, page count and number of
    markers.
 8. Stop after the topic is done. Never mark a topic signed-off; never run `--release`.
+
+## Thread coordination (owner, 21 Oct 2026)
+- At most one topic thread runs at a time unless the owner allows more.
+- A new global rule is recorded here (or in the style guide) in one commit; it is never broadcast to open threads
+  or PRs, and nothing is retrofitted until the owner names a thread to update.
+- Threads do not watch main or merge/rebase main into their branches when other PRs merge. Sync with main once,
+  right before merging, and only if GitHub reports a conflict.
