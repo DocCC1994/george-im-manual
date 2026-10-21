@@ -1,0 +1,20 @@
+title: Infective endocarditis
+reference_title: "Infective endocarditis: diagnosis, treatment and where the guidelines differ"
+short: Infective endocarditis
+status: draft
+start: New (added)
+priority: P1
+acute: true              # Acute Handbook sheet (manifest books)
+reference: true          # Reference Manual chapter (manifest books)
+deferred: true           # Tier 2: reference chapter deferred (manifest)
+version: 2026 v1
+effective: "[MM/YYYY]"
+review: "[MM/YYYY]"
+reviewed: "[MM/YYYY]"
+author: "[Author, Registrar IM]"
+editors: "[Editors]"
+co_reviewer: "[Infectious diseases or microbiology]"
+based_on: "New topic (no GRH protocol): STG 2024 §3.5; ESC 2023 endocarditis guidelines; SAASP 2026 ch 16 and 21"
+approved_by: ""
+approved_rank: ""
+approved_date: ""

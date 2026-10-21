@@ -17,6 +17,22 @@ ndoh-morphine-2024:
   label: NDoH 2024
   citation: "National Department of Health. Circular: Morphine for pulmonary oedema (March 2023, published July 2024)."
   url: https://health.gov.za/wp-content/uploads/2024/07/Morphine-Circular_March-2023-published-July-2024.pdf
+esc-htn-2024:
+  label: ESC 2024
+  citation: "McEvoy JW, McCarthy CP, Bruno RM, et al. 2024 ESC Guidelines for the management of elevated blood pressure and hypertension. Eur Heart J 2024;45(38):3912–4018."
+  url: https://doi.org/10.1093/eurheartj/ehae178
+esc-he-2019:
+  label: ESC Council 2019
+  citation: "van den Born BJH, Lip GYH, Brguljan-Hitij J, et al. ESC Council on hypertension position document on the management of hypertensive emergencies. Eur Heart J Cardiovasc Pharmacother 2019;5(1):37–46 (corrigendum doi:10.1093/ehjcvp/pvy040)."
+  url: https://doi.org/10.1093/ehjcvp/pvy032
+aha-htn-2025:
+  label: AHA/ACC 2025
+  citation: "Jones DW, Ferdinand KC, Taler SJ, et al. 2025 AHA/ACC/multisociety guideline for the prevention, detection, evaluation and management of high blood pressure in adults. Hypertension 2025."
+  url: https://doi.org/10.1161/HYP.0000000000000249
+esc-aorta-2024:
+  label: ESC 2024 aorta
+  citation: "Mazzolai L, Teixido-Tura G, Lanzi S, et al. 2024 ESC Guidelines for the management of peripheral arterial and aortic diseases. Eur Heart J 2024;45(36):3538–3700."
+  url: https://doi.org/10.1093/eurheartj/ehae179
 esc-acs-2023:
   label: ESC 2023
   citation: "Byrne RA et al. 2023 ESC Guidelines for the management of acute coronary syndromes. Eur Heart J 2023;44:3720–3826."
@@ -129,3 +145,107 @@ race7:
   label: RACE 7 ACWAS
   citation: "Pluymaekers NAHA, Dudink EAMP, Luermans JGLM, et al. Early or delayed cardioversion in recent-onset atrial fibrillation (RACE 7 ACWAS). N Engl J Med 2019;380:1499–1508."
   url: https://doi.org/10.1056/NEJMoa1900353
+stg-ch16:
+  label: STG 2024 §16.4
+  citation: "National Department of Health. Hospital Level (Adults) STGs and EML, 6th ed. 2024 (updated December 2025), Chapter 16 Respiratory disorders, §16.4 Chronic obstructive pulmonary disease."
+  url: https://www.health.gov.za/wp-content/uploads/2025/07/Hospital-Level-Adults-Standard-Treatment-Guidelines-and-Essential-Medicines-List-6th-Edition-2024.pdf
+gold-2026:
+  label: GOLD 2026
+  citation: "Global Initiative for Chronic Obstructive Lung Disease. Global Strategy for the Diagnosis, Management, and Prevention of COPD: 2026 Report (v1.3, 8 Dec 2025). Chapter 4: Management of exacerbations."
+  url: https://goldcopd.org/
+ers-ats-aecopd-2017:
+  label: ERS/ATS 2017
+  citation: "Wedzicha JA, Miravitlles M, Hurst JR, et al. Management of COPD exacerbations: a European Respiratory Society/American Thoracic Society guideline. Eur Respir J 2017;49:1600791."
+  url: https://doi.org/10.1183/13993003.00791-2016
+bts-ahrf-2016:
+  label: BTS/ICS 2016
+  citation: "Davidson AC, Banham S, Elliott M, et al. BTS/ICS guideline for the ventilatory management of acute hypercapnic respiratory failure in adults. Thorax 2016;71:ii1–ii35."
+  url: https://doi.org/10.1136/thoraxjnl-2015-208209
+sats-copd-2019:
+  label: SATS 2019
+  citation: "Abdool-Gaffar MS, Calligaro G, Wong ML, et al. Management of chronic obstructive pulmonary disease: a position statement of the South African Thoracic Society, 2019 update. J Thorac Dis 2019;11(11):4408–4427."
+  url: https://doi.org/10.21037/jtd.2019.10.65
+saasp-2026:
+  label: SAASP 2026
+  citation: "South African Antibiotic Stewardship Programme (SAASP). A guide to antibiotic prescribing for adults in South Africa, 2026. Chapter 7: Lower respiratory tract infection (AECOPD)."
+  url: https://www.fidssa.co.za/saasp
+stg-haemoptysis:
+  label: STG 2024
+  citation: "National Department of Health. Hospital Level (Adults) STGs and EML, 6th ed. 2024 (updated December 2025): §16.3 Bronchiectasis, §16.5 Lung abscess, §16.9 Pulmonary TB, §19.19 Anticoagulant (warfarin) poisoning."
+  url: https://www.health.gov.za/wp-content/uploads/2025/07/Hospital-Level-Adults-Standard-Treatment-Guidelines-and-Essential-Medicines-List-6th-Edition-2024.pdf
+saasp-2026-lrti:
+  label: SAASP 2026
+  citation: "South African Antibiotic Stewardship Programme (SAASP). A guide to antibiotic prescribing for adults in South Africa, 2026. Chapter 7: Acute lower respiratory tract infection (infective bronchiectasis and lung abscess, p. 33)."
+  url: https://www.fidssa.co.za/saasp
+utd-lt-haemoptysis:
+  label: UpToDate
+  citation: "Ingbar DH, Dincer HE. Evaluation and management of life-threatening hemoptysis. UpToDate (topic last updated 18 Dec 2025; literature review current through Sep 2026)."
+  url: https://www.uptodate.com/contents/evaluation-and-management-of-life-threatening-hemoptysis
+utd-nlt-haemoptysis:
+  label: UpToDate
+  citation: "Evaluation of nonlife-threatening hemoptysis in adults; and Etiology of hemoptysis in adults. UpToDate (2026)."
+  url: https://www.uptodate.com/contents/evaluation-of-nonlife-threatening-hemoptysis-in-adults
+gross-2009:
+  label: Gross 2009
+  citation: "Gross AM, Diacon AH, van den Heuvel MM, et al. Management of life-threatening haemoptysis in an area of high tuberculosis incidence. Int J Tuberc Lung Dis 2009;13(7):875–880."
+  url: https://pubmed.ncbi.nlm.nih.gov/?term=Gross+Diacon+life-threatening+haemoptysis+tuberculosis+2009
+shaw-2023:
+  label: Shaw 2023
+  citation: "Shaw JA, John TJ, Koegelenberg CFN, et al. Transcatheter vascular plugs for the treatment of massive haemoptysis from Rasmussen aneurysms. S Afr Med J 2023;113(2):65–68."
+  url: https://doi.org/10.7196/SAMJ.2022.v113i2.16758
+alexander-2013:
+  label: Alexander 2013
+  citation: "Alexander GR. A retrospective review comparing the treatment outcomes of emergency lung resection for massive haemoptysis with and without preoperative bronchial artery embolization. Eur J Cardiothorac Surg 2013 (advance access). doi:10.1093/ejcts/ezt336."
+  url: https://doi.org/10.1093/ejcts/ezt336
+metro-west-2009:
+  label: Metro West 2009
+  citation: "Ainslie G, Moodley L. Management of major haemoptysis (>250 mL/24 hrs) and referral pathway, Metro West, Cape Town. Groote Schuur Hospital, March 2009 (owner's Drive, Unit protocols > Previous Protocols)."
+  url: https://drive.google.com/file/d/1PnCgy09S7w72guZhSPl_A-tHSrpdvn12/view
+shaw-2020:
+  label: Shaw 2020
+  citation: "Shaw JA. Approach to haemoptysis. Stellenbosch University teaching notes, June 2020 (owner's Drive)."
+  url: https://drive.google.com/file/d/1eYZe8vvpZev4b_p-divFXJaOXsnGXo9T/view
+paarl-2025:
+  label: Paarl 2025
+  citation: "Internal Medicine, Paarl Hospital. Guidelines to the management of medical emergencies, 2025: Haemoptysis (p. 17)."
+  url: https://drive.google.com/file/d/1GpkoGGIw89zFSRQOs9KErxAovivFlnkB/view
+calgary-haemoptysis:
+  label: Calgary 2022
+  citation: "University of Calgary. Blackbook: Approaches to Medical Presentations, 15th ed. 2022. Hemoptysis scheme, p. 32."
+  url: https://cumming.ucalgary.ca/
+stg-ch20-shock:
+  label: STG 2024, 20.12
+  citation: "National Department of Health. Hospital Level (Adults) STGs and EML, 6th ed. 2024 (updated Dec 2025), Chapter 20: Emergencies and injuries, 20.12.2 Distributive shock and 20.12.2.2 Septic shock, pp 20.23–20.24."
+  url: https://www.health.gov.za/nhi-edp-stgs-eml/
+stg-ch23-sepsis:
+  label: STG 2024, 23.10
+  citation: "National Department of Health. Hospital Level (Adults) STGs and EML, 6th ed. 2024 (updated Dec 2025), Chapter 23: Adult critical care, 23.10 Sepsis in ICU, pp 23.34–23.41."
+  url: https://www.health.gov.za/nhi-edp-stgs-eml/
+ssc-2026:
+  label: SSC 2026
+  citation: "Prescott HC, Antonelli M, Alhazzani W, et al. Surviving Sepsis Campaign: international guidelines for management of sepsis and septic shock 2026. Intensive Care Med 2026 (ESICM and SCCM)."
+  url: https://doi.org/10.1007/s00134-026-08361-1
+saasp-2026-sepsis:
+  label: SAASP 2026
+  citation: "South African Antibiotic Stewardship Programme (SAASP). A guide to antibiotic prescribing for adults in South Africa, 2026. Ch 1 (principles), 3 (blood cultures), 5 (48–72 h review), 8, 10, 14, 15 and 19 (hospital-acquired infection)."
+  url: https://www.fidssa.co.za/saasp
+utd-sepsis-2026:
+  label: UpToDate
+  citation: "Schmidt GA, Mandel J, Bell TD. Evaluation and management of suspected sepsis and septic shock in adults. UpToDate, last updated 7 May 2026 (accessed October 2026)."
+  url: https://www.uptodate.com/contents/evaluation-and-management-of-suspected-sepsis-and-septic-shock-in-adults
+esc-ie-2023:
+  label: ESC 2023
+  citation: "Delgado V, Ajmone Marsan N, de Waha S, et al. 2023 ESC Guidelines for the management of endocarditis. Eur Heart J 2023;44(39):3948–4042."
+  url: https://doi.org/10.1093/eurheartj/ehad193
+saasp-2026-ie:
+  label: SAASP 2026
+  citation: "South African Antibiotic Stewardship Programme (SAASP). A guide to antibiotic prescribing for adults in South Africa, 2026. Chapter 16: Infective endocarditis; Chapter 21: Prophylaxis."
+  url: https://www.fidssa.co.za/saasp
+sa-ie-2026:
+  label: Engelbrecht 2026
+  citation: "Engelbrecht A, Doubell AF, Pecoraro AJK. Challenges of infective endocarditis in South Africa, a low- to middle-income country. Can J Cardiol 2026;42:591–599."
+  url: https://doi.org/10.1016/j.cjca.2025.10.017
+poet-2019:
+  label: POET
+  citation: "Iversen K, Ihlemann N, Gill SU, et al. Partial oral versus intravenous antibiotic treatment of endocarditis (POET). N Engl J Med 2019;380:415–424."
+  url: https://doi.org/10.1056/NEJMoa1808312
