@@ -164,8 +164,8 @@ retrofitted unless the owner names one. Seven parts, in this order:
 - Built: cardiology/stemi, cardiology/nste-acs, cardiology/heart-failure, endocrine/dka-hhs. Build: 0 errors.
 - 54 topics in manifest.yaml after the 21 Oct 2026 restructure (see "Syllabus architecture"). ~123 open
   CHECK/DECISION markers (18 Oct count).
-- Next topics (owner, 21 Oct 2026), after the open PRs are cleared: CAP, acute asthma, meningitis, cryptococcal
-  meningitis, severe malaria. Severe malaria takes the expanded title (rickettsiosis, VHF red flags) when its
+- Next topics (owner, 21 Oct 2026), after the open PRs are cleared: CAP, acute asthma, meningitis, severe malaria.
+  Meningitis keeps bacterial, TB and cryptococcal meningitis in one topic (owner, 21 Oct 2026); no separate crypto topic. Severe malaria takes the expanded title (rickettsiosis, VHF red flags) when its
   thread is next opened. Then manifest order by priority.
 - ACS aspirin (owner, 21 Oct 2026): GRH practice for STEMI and NSTE-ACS is a 300 mg loading dose, then 75 mg
   daily lifelong. This differs from the STG (150 mg load and 150 mg daily: STG Hospital Level Adults 2024, 3.2.1
