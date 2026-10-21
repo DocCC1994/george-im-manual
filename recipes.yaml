@@ -6,7 +6,9 @@
 #   match       words that name the drug; `build.py --check` flags a topic line naming one with a rate
 #               (mL/hr, mL/h, mcg/kg/min) outside the macro
 #   unit        unit of `amount` (mg, units, mmol); doses in mcg are converted from mg
-#   amount, volume (mL), note (printed after the amount), diluent, approx (prints "about" before the concentration)
+#   amount, volume (mL), note (printed after the amount), ampoule (strength per 1 mL ampoule: prints the number of
+#               ampoules), diluent, approx (prints "about" before the concentration), check (prints a CHECK marker)
+#   variants    other bag strengths: list of {label, amount}; printed with their own concentration and formula
 #   preps       several bags or syringes: list of {amount, volume}; rendered as table columns
 #   dose_unit   units/kg/hr, mcg/kg/min, mg/min, mcg/min ...; doses: list; weights: list of kg (per-kg doses)
 #   start, titrate   optional text line; formula: true adds "mL/hr = dose × kg × factor"
@@ -27,18 +29,31 @@ insulin:
 
 adrenaline:
   match: [adrenaline, epinephrine]
-  from: sepsis acute (STG ch 20, EML)
+  from: George standard bag (Craig, 21 Oct 2026); used on sepsis acute
   unit: mg
-  amount: 10
-  note: "(10 ampoules of 1:1 000)"
-  volume: 1000
-  diluent: sodium chloride 0.9%
+  ampoule: 1                      # 1 mg/mL ampoule
+  amount: 12
+  volume: 200
   dose_unit: mcg/kg/min
   start: 0.05
-  titrate: "titrate to MAP ≥ 65 every 10–30 min; usual range 0.01–1 mcg/kg/min"
+  titrate: "titrate to MAP ≥ 65 every 10–30 min; ceiling usually 0.5 mcg/kg/min, up to 1 in some cases"
   formula: true
   doses: [0.05, 0.1, 0.25]
   weights: [70]
+  variants:
+    - {label: Low-dose, amount: 6}
+    - {label: Fluid-restricted, amount: 24}
+  layout: inline
+
+adrenaline-brady:
+  match: [adrenaline, epinephrine]
+  from: George standard bag (Craig, 21 Oct 2026); arrhythmias acute, bradycardia (PR #2)
+  unit: mg
+  ampoule: 1
+  amount: 12
+  volume: 200
+  dose_unit: mcg/min
+  doses: [2, 10]
   layout: inline
 
 labetalol:
