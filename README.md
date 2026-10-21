@@ -54,16 +54,42 @@ Links:
 
 ## House rules
 - Acute Handbook pages have no subtitle and each sheet fits one page (use `data-part` for a second page).
+- Length: 1–2 pages per topic in the Acute Handbook and 1–2 in the Reference Manual. If a topic cannot fit,
+  propose splitting it into separate topics rather than running long.
 - Only CHECK and DECISION are in colour; everything else is black, white or grey.
 - Write K<sup>+</sup>, SpO<sub>2</sub> with `<sup>`/`<sub>`; avoid ▲ ▼ ′ (not in Carlito): use ↓ and '.
 - No Latin abbreviations: 12hrly, 8hrly, 4hrly (not bd/tds/12-hourly); "at night" (not nocte); "orally" (not PO);
   "as needed" (not prn); "now" or "immediately" (not stat). IV, IM, SC and SL are fine. The build warns on any it finds.
+- Drug naming: lead with the drug class, then the agent in brackets, e.g. "3rd-gen cephalosporin (ceftriaxone)", never
+  the agent alone. Where there are alternatives, give the George first-choice agent in full as the first option and
+  list the alternatives by class only (e.g. "alternatives: FQ, carbapenem"), so the book transfers to other
+  formularies. If the George first-choice agent is not clear from the STG or the old GRH protocol, name the most
+  likely agent and add a CHECK.
+  Give the class once per topic (once in each of the acute and reference pages); after that, use the agent alone
+  (the EML name), e.g. "LMWH (enoxaparin)" first, then "enoxaparin". If an alternative is a different type of drug,
+  name it with its own class and agent, e.g. "ARB (losartan)" or "alteplase" vs "streptokinase".
+- Abbreviations: use standard ones from the start without spelling them out (3rd-gen, LMWH, UFH, DOAC, ACEi, ARB, BB,
+  CCB, FQ, PPI, SGLT2i). Only use ones any SA registrar would recognise immediately.
+- Cross-links: link each cause, precipitant or related condition to its own topic where the manifest has one
+  (e.g. CHAMPIT causes in heart failure → `@acute:stemi`, `@acute:arrhythmias`, `@acute:pulmonary-embolism`).
+  Link planned topics too: the link is plain text until that topic is written.
+- Recommendation classes are printed in brackets, e.g. "(I A)"; the stylesheet adds the brackets to
+  `<span class="cls">`, so write the class alone and don't type brackets around it.
 - The book is for doctors. Include a nursing instruction only when it changes the patient's outcome
   (for example, hourly glucose during an insulin infusion), never routine ward care.
 - Every topic carries an approval line (approved_by, approved_rank, approved_date in topic.yaml); the release build
   refuses while any is empty.
 - An abbreviations page is added at the end of the project.
-- Evidence order: SA STG/EML, then ESC (or the relevant international guideline), then the old GRH protocol.
+- Base: where a current GRH protocol exists for the topic, build on it, then check and update it against the
+  evidence order below; flag every difference as a DECISION.
+- Evidence order: SA STG/EML or another official, current SA guideline; then European guidelines (ESC, ESH, EASL,
+  ERS, etc.), preferred over American ones where no SA guideline is official or up to date; then other international
+  guidelines. Without a current GRH protocol, an old one informs local practice only.
+- Guideline PDFs: before writing a topic, ask the owner in that topic's thread for the PDF of each relevant
+  guideline other than the SA STG/EML, European first (full title, issuing body and year). He uploads it into that
+  thread so it is
+  read only for that topic. The STG/EML 2024 (updated Dec 2025) is already in
+  /mnt/project-files/sources/stg-eml-2024/ and is never requested.
 
 ## Workflow
 draft → review (section editor has the editor-report pages) → signed-off (all markers resolved).

@@ -224,7 +224,7 @@ def cover(manifest, label, draft):
 <div class="frame"><div class="band"><div class="k">{esc(manifest['hospital'].upper())} · {esc(manifest['department'].upper())}</div>
 <div class="t">{esc(label.upper())}</div></div>
 <div class="meta"><span>{esc(manifest['edition'])}</span><span>Version {esc(manifest['version'])}</span></div></div>
-<img class="logo" src="assets/wcg_health_logo.png" alt="Western Cape Government Health">
+<img class="logo" src="assets/george_im_logo.jpg" alt="George Hospital Internal Medicine">
 {d}
 <div class="dept">{esc(manifest['hospital'])} · {esc(manifest['department'])}</div>
 </section>'''
