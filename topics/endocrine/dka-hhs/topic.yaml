@@ -3,12 +3,14 @@ short: DKA and HHS
 status: draft
 start: Rewrite (pilot; 2024 draft)
 priority: P1
+acute: true              # Acute Handbook sheet (manifest books)
+reference: true          # Reference Manual chapter (manifest books)
+deferred: false          # Tier 2: reference chapter deferred (manifest)
 version: 2026 v1
 effective: "[MM/YYYY]"
 review: "[MM/YYYY]"
 reviewed: "[MM/YYYY]"
 author: "[Author, Registrar IM]"
-section_editor: "[Consultant physician / endocrinologist]"
 editors: "[Editors]"
 based_on: "GRH DKA/HHS protocol 2024 draft, Rev 3 (Dr J de Blocq, Dr A Vermeulen)"
 approved_by: ""

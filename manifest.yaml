@@ -1,11 +1,20 @@
 # Order of the books. Each topic id matches a folder in topics/<system>/<id>/.
 # A topic without a folder yet is "planned": it appears in the editor report's progress table only.
 # Topic list = the 47 topics in the project plan, plus infective endocarditis and valvular heart disease (added Oct 2026).
+# Syllabus restructure (21 Oct 2026): Suspected TB in the EC removed; First seizure merged into Status epilepticus;
+# topics added (ECG/ABG approach, tamponade, pneumothorax/pleural, calcium, cord compression/GBS, cytopenias,
+# sympathomimetics); Severe malaria expanded; carbamazepine widened to phenytoin; toxicology reordered.
+# `books:` limits a topic to one book (default: both). See CLAUDE.md "Syllabus architecture".
+# Phased Reference Manual (21 Oct 2026): `reference_tier: 1` = Active, write the reference page with the topic;
+# `reference_tier: 2, deferred: true` = Deferred backlog, write the Acute sheet only unless Craig asks for the
+# reference page. One-book topics carry no tier and are never deferred: Reference-only topics are scheduled by
+# priority. Priorities (21 Oct 2026): all P1 except ecg-abg and sympathomimetics (P2). See CLAUDE.md.
 
 hospital: George Hospital
 department: Department of Internal Medicine
 edition: "2026"
 version: "1"
+stg_edition: "STG/EML Hospital Level Adults 2024 (updated Dec 2025)"   # printed in every footer
 editor_email: editor@example.com     # CHECK: replace with the real editorial mailbox
 
 books:
@@ -13,82 +22,92 @@ books:
   reference: {name: Reference Manual, runhead: "GEORGE HOSPITAL: REFERENCE MANUAL"}
 
 systems:
+  - id: foundations
+    name: Foundations
+    topics:
+      - {id: ecg-abg, title: Approach to ECG interpretation and ABG / acid-base analysis, start: New (added), priority: P2, books: [reference]}
   - id: cardiology
     name: Cardiology
     topics:
-      - stemi
-      - nste-acs
-      - heart-failure
-      - {id: arrhythmias, title: "Arrhythmias: AF, SVT, VT, bradycardia and heart block", start: New, priority: P1}
-      - {id: hypertensive-emergency, title: Hypertensive emergencies, start: Rewrite (2021), priority: P1}
-      - {id: pulmonary-embolism, title: Pulmonary embolism, start: New, priority: P1}
-      - {id: infective-endocarditis, title: Infective endocarditis, start: New (added), priority: P1}
-      - {id: valvular-heart-disease, title: Valvular heart disease (including rheumatic heart disease), start: New (added), priority: P1}
+      - {id: stemi, reference_tier: 1}
+      - {id: nste-acs, reference_tier: 1}
+      - {id: heart-failure, reference_tier: 1}
+      - {id: arrhythmias, title: "Arrhythmias: AF, SVT, VT, bradycardia and heart block", start: New, priority: P1, reference_tier: 2, deferred: true}
+      - {id: hypertensive-emergency, reference_tier: 1}
+      - {id: pulmonary-embolism, title: Pulmonary embolism, start: New, priority: P1, reference_tier: 2, deferred: true}
+      - {id: infective-endocarditis, title: Infective endocarditis, start: New (added), priority: P1, reference_tier: 2, deferred: true}
+      - {id: valvular-heart-disease, title: Valvular heart disease (including rheumatic heart disease), start: New (added), priority: P1, books: [reference]}
+      - {id: pericardial-tamponade, title: Pericardial effusion and cardiac tamponade, start: New (added), priority: P1, reference_tier: 1}
   - id: respiratory
     name: Respiratory
     topics:
-      - {id: asthma-acute, title: Acute asthma, start: Rewrite (2016), priority: P1}
-      - {id: copd-acute, title: Acute COPD exacerbation, start: Rewrite (2016), priority: P1}
-      - {id: cap, title: Community-acquired pneumonia, start: Rewrite (2024), priority: P1}
-      - {id: haemoptysis, title: Haemoptysis, start: New, priority: P2}
+      - {id: asthma-acute, title: Acute asthma, start: Rewrite (2016), priority: P1, reference_tier: 2, deferred: true}
+      - {id: copd-acute, title: Acute COPD exacerbation, start: Rewrite (2016), priority: P1, reference_tier: 2, deferred: true}
+      - {id: cap, title: Community-acquired pneumonia, start: Rewrite (2024), priority: P1, reference_tier: 2, deferred: true}
+      - {id: haemoptysis, title: Haemoptysis, start: New, priority: P1, reference_tier: 2, deferred: true}
+      - {id: pneumothorax-pleural, title: Pneumothorax and acute pleural emergencies, start: New (added), priority: P1, reference_tier: 2, deferred: true}
   - id: infection
     name: Infection
     topics:
-      - {id: sepsis, title: Sepsis and septic shock, start: New (pilot), priority: P1}
-      - {id: meningitis, title: "Meningitis: bacterial, TB, cryptococcal", start: Rewrite + new (crypto 2021), priority: P1}
-      - {id: malaria, title: Severe malaria, start: Rewrite (2019), priority: P1}
-      - {id: neutropenic-sepsis, title: Neutropenic sepsis, start: New, priority: P2}
-      - {id: tb-ec, title: Suspected TB in the EC, start: Rewrite (TB SOPs), priority: P2}
+      - {id: sepsis, title: Sepsis and septic shock, start: New (pilot), priority: P1, reference_tier: 1}
+      - {id: meningitis, title: "Meningitis: bacterial, TB, cryptococcal", start: Rewrite + new (crypto 2021), priority: P1, reference_tier: 1}
+      - {id: malaria, title: "Severe malaria, severe rickettsiosis (tick bite fever) and VHF red flags", start: Rewrite (2019) + new, priority: P1, reference_tier: 2, deferred: true}
+      - {id: neutropenic-sepsis, title: Neutropenic sepsis, start: New, priority: P1, reference_tier: 2, deferred: true}
   - id: endocrine
     name: Endocrine and metabolic
     topics:
-      - {id: dka-hhs, title: DKA and HHS, start: Rewrite (pilot; 2024 draft), priority: P1}
-      - {id: hypoglycaemia, title: Hypoglycaemia, start: New, priority: P1}
-      - {id: hyponatraemia, title: Hyponatraemia, start: Rewrite (2016), priority: P1}
-      - {id: hyperkalaemia, title: Hyperkalaemia, start: New, priority: P1}
-      - {id: adrenal-crisis, title: Adrenal crisis, start: New, priority: P2}
-      - {id: thyroid-emergencies, title: Thyroid storm and myxoedema coma, start: New, priority: P2}
+      - {id: dka-hhs, title: DKA and HHS, start: Rewrite (pilot; 2024 draft), priority: P1, reference_tier: 1}
+      - {id: hypoglycaemia, title: Hypoglycaemia, start: New, priority: P1, books: [acute]}
+      - {id: hyponatraemia, title: Hyponatraemia, start: Rewrite (2016), priority: P1, reference_tier: 1}
+      - {id: hyperkalaemia, title: Hyperkalaemia, start: New, priority: P1, reference_tier: 2, deferred: true}
+      - {id: adrenal-crisis, title: Adrenal crisis, start: New, priority: P1, reference_tier: 2, deferred: true}
+      - {id: thyroid-emergencies, title: Thyroid storm and myxoedema coma, start: New, priority: P1, reference_tier: 2, deferred: true}
+      - {id: calcium-emergencies, title: Hypercalcaemic crisis and severe hypocalcaemia, start: New (added), priority: P1, reference_tier: 2, deferred: true}
   - id: renal
     name: Renal
     topics:
-      - {id: aki, title: AKI and indications for urgent dialysis, start: New, priority: P1}
+      - {id: aki, title: AKI and indications for urgent dialysis, start: New, priority: P1, reference_tier: 1}
   - id: gi
     name: GI and liver
     topics:
-      - {id: ugib, title: Upper GI bleeding, start: New, priority: P1}
-      - {id: cirrhosis, title: "Decompensated cirrhosis: encephalopathy, SBP", start: New, priority: P1}
-      - {id: acute-liver-failure, title: Acute liver failure, start: New, priority: P2}
+      - {id: ugib, title: Upper GI bleeding, start: New, priority: P1, reference_tier: 2, deferred: true}
+      - {id: cirrhosis, title: "Decompensated cirrhosis: encephalopathy, SBP", start: New, priority: P1, reference_tier: 1}
+      - {id: acute-liver-failure, title: Acute liver failure, start: New, priority: P1, reference_tier: 2, deferred: true}
   - id: neurology
     name: Neurology
     topics:
-      - {id: stroke, title: Acute stroke and thrombolysis, start: Merge (2020 + 2012), priority: P1}
-      - {id: status-epilepticus, title: Status epilepticus, start: Rewrite (2022), priority: P1}
-      - {id: first-seizure, title: First seizure, start: Rewrite (2022), priority: P2}
-      - {id: delirium-withdrawal, title: Delirium and alcohol withdrawal, start: New, priority: P1}
+      - {id: stroke, title: Acute stroke and thrombolysis, start: Merge (2020 + 2012), priority: P1, reference_tier: 1}
+      - {id: status-epilepticus, title: Status epilepticus, start: Rewrite (2022) + first seizure block, priority: P1, reference_tier: 1}
+      - {id: delirium-withdrawal, title: Delirium and alcohol withdrawal, start: New, priority: P1, reference_tier: 2, deferred: true}
+      - {id: cord-compression-gbs, title: "Acute spinal cord compression, cauda equina and Guillain-Barré syndrome", start: New (added), priority: P1, reference_tier: 2, deferred: true}
   - id: haematology
     name: Haematology and oncology
     topics:
-      - {id: anticoagulant-bleeding, title: Bleeding on anticoagulants and reversal, start: New (from warfarin 2012), priority: P1}
-      - {id: transfusion, title: Red cell transfusion, start: Rewrite (2015), priority: P2}
-      - {id: tls, title: Tumour lysis syndrome, start: Rewrite (GSH 2018), priority: P2}
+      - {id: anticoagulant-bleeding, title: Bleeding on anticoagulants and reversal, start: New (from warfarin 2012), priority: P1, reference_tier: 2, deferred: true}
+      - {id: transfusion, title: Red cell transfusion, start: Rewrite (2015), priority: P1, reference_tier: 2, deferred: true}
+      - {id: tls, title: Tumour lysis syndrome, start: Rewrite (GSH 2018), priority: P1, reference_tier: 2, deferred: true}
+      - {id: cytopenias, title: "Severe anaemia, severe thrombocytopenia (including TTP/MAHA) and pancytopenia: acute emergencies and initial workup", short: Severe cytopenias, start: New (added), priority: P1, reference_tier: 1}
   - id: critical-care
     name: Allergy and critical care
     topics:
-      - {id: anaphylaxis, title: Anaphylaxis and angio-oedema, start: New, priority: P1}
-      - {id: icu-referral, title: "Intubation, ICU referral and ceiling-of-care decisions", start: New, priority: P1}
+      - {id: anaphylaxis, title: Anaphylaxis and angio-oedema, start: New, priority: P1, books: [acute]}
+      - {id: icu-referral, title: "Intubation, ICU referral and ceiling-of-care decisions", start: New, priority: P1, books: [acute]}
   - id: toxicology
     name: Toxicology
+    # Only the general approach has both books. The 13 specific poisons are 1-page Acute Handbook pages only,
+    # written in 3 batched threads of 4-5 (one PR each), in this order, not one thread per poison. See CLAUDE.md.
     topics:
-      - {id: poisoning-general, title: General approach to poisoning, start: New, priority: P1}
-      - {id: paracetamol, title: Paracetamol, start: Rewrite (pilot; 2021), priority: P1}
-      - {id: tca, title: Tricyclic antidepressants, start: Rewrite (2021), priority: P1}
-      - {id: carbamazepine, title: Carbamazepine, start: Rewrite (undated), priority: P2}
-      - {id: ccb, title: Calcium channel blockers, start: Rewrite (2024 draft), priority: P1}
-      - {id: beta-blockers, title: Beta-blockers, start: New, priority: P1}
-      - {id: theophylline, title: Theophylline, start: Rewrite (2021), priority: P2}
-      - {id: isoniazid, title: Isoniazid, start: Rewrite (2021), priority: P1}
-      - {id: organophosphates, title: Organophosphates, start: Rewrite (2016), priority: P1}
-      - {id: toxic-alcohols, title: Methanol and ethylene glycol, start: Rewrite (2021), priority: P2}
-      - {id: salicylates, title: Salicylates, start: New, priority: P2}
-      - {id: digoxin, title: Digoxin, start: New, priority: P2}
-      - {id: other-poisons, title: "Iron, paraquat, paraffin, carbon monoxide, corrosives", start: New, priority: P2}
+      - {id: poisoning-general, title: General approach to poisoning and toxidromes, start: New, priority: P1, reference_tier: 2, deferred: true}
+      - {id: paracetamol, title: Paracetamol, start: Rewrite (pilot; 2021), priority: P1, books: [acute]}
+      - {id: salicylates, title: Salicylates, start: New, priority: P1, books: [acute]}
+      - {id: tca, title: Tricyclic antidepressants, start: Rewrite (2021), priority: P1, books: [acute]}
+      - {id: carbamazepine, title: Carbamazepine and phenytoin, start: Rewrite (undated) + phenytoin, priority: P1, books: [acute]}
+      - {id: ccb, title: Calcium channel blockers, start: Rewrite (2024 draft), priority: P1, books: [acute]}
+      - {id: beta-blockers, title: Beta-blockers, start: New, priority: P1, books: [acute]}
+      - {id: digoxin, title: Digoxin, start: New, priority: P1, books: [acute]}
+      - {id: theophylline, title: Theophylline, start: Rewrite (2021), priority: P1, books: [acute]}
+      - {id: isoniazid, title: Isoniazid, start: Rewrite (2021), priority: P1, books: [acute]}
+      - {id: organophosphates, title: Organophosphates, start: Rewrite (2016), priority: P1, books: [acute]}
+      - {id: toxic-alcohols, title: Methanol and ethylene glycol, start: Rewrite (2021), priority: P1, books: [acute]}
+      - {id: sympathomimetics, title: "Sympathomimetics and amphetamine derivatives (tik, ecstasy, cocaine)", start: New (added), priority: P2, books: [acute]}
+      - {id: other-poisons, title: "Iron, paraquat, paraffin, carbon monoxide, corrosives", start: New, priority: P1, books: [acute]}

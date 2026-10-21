@@ -1,0 +1,19 @@
+title: Acute exacerbation of COPD
+reference_title: "Acute exacerbation of COPD: background, ventilation and discharge"
+short: Acute COPD exacerbation
+status: draft
+start: Rewrite (2016)
+priority: P1
+acute: true              # Acute Handbook sheet (manifest books)
+reference: true          # Reference Manual chapter (manifest books)
+deferred: true           # Tier 2: reference chapter deferred (manifest)
+version: 2026 v1
+effective: "[MM/YYYY]"
+review: "[MM/YYYY]"
+reviewed: "[MM/YYYY]"
+author: "[Author, Registrar IM]"
+editors: "[Editors]"
+based_on: "GRH acute COPD exacerbation protocol 2016, Rev 1 (Dr R Smith, Dr T Gould); GRH chronic COPD protocol 2024, Rev 2; STG 2024 §16.4; GOLD 2026; ERS/ATS 2017; BTS/ICS 2016"
+approved_by: ""
+approved_rank: ""
+approved_date: ""
