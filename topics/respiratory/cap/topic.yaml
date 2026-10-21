@@ -1,0 +1,18 @@
+title: Community-acquired pneumonia
+short: CAP
+status: draft
+start: Rewrite (2024)
+priority: P1
+acute: true              # Acute Handbook sheet (manifest books)
+reference: true          # Reference Manual chapter (manifest books)
+deferred: true           # Tier 2: reference chapter deferred (manifest)
+version: 2026 v1
+effective: "[MM/YYYY]"
+review: "[MM/YYYY]"
+reviewed: "[MM/YYYY]"
+author: "[Author, Registrar IM]"
+editors: "[Editors]"
+based_on: "GRH community-acquired pneumonia guideline 2024, Rev 3 (Dr A Vermeulen, Dr J P Spanos); STG 2024 §16.6–16.7 and §10.2.9; SAASP 2026 Ch 7; ERS/ESICM/ESCMID/ALAT severe CAP 2023; George SOP 2024"
+approved_by: ""
+approved_rank: ""
+approved_date: ""

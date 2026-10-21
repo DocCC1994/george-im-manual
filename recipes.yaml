@@ -101,3 +101,15 @@ magnesium:
   over: 20
   pump: IVAC
   layout: inline
+
+azithromycin:
+  match: [azithromycin]
+  from: "cap acute (STG 2024 §16.6, slow IV over at least 60 min; dilution from the package insert, to verify)"
+  unit: mg
+  note: "(1 vial, reconstituted with 4.8 mL water for injection)"
+  amount: 500
+  volume: 250
+  diluent: sodium chloride 0.9%
+  over: 60
+  pump: IVAC
+  layout: inline
