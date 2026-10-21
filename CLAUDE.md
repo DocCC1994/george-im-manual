@@ -208,6 +208,10 @@ Each topic is written in its own project thread, opened from the project chat. T
 6. `python3 build.py --topic <id>`, then render the pages (pymupdf) and look at them: each acute sheet must fit
    its page; fix overflow (`data-cls="compact"` or split with `data-part`, within the 1–2 page limit). Then
    `python3 build.py`: 0 errors, and `python3 build.py --check`: passes.
+   **Topic-only preview (owner, 21 Oct 2026):** the draft PDF a topic thread shares for review is
+   `out/preview-topic.pdf` from `--topic <id>` (a batch: `--topic a,b,c`): only that topic's Acute page(s) and
+   Reference section, with no cover, contents, "How to read", acknowledgements or section dividers. Front matter
+   and dividers appear only in the full master build of merged main (`python3 build.py` with no `--topic`).
 7. Commit and push, open a PR "Topic: <title>"; reply in the thread with the topic name, page count and number of
    markers.
 8. Stop after the topic is done. Never mark a topic signed-off; never run `--release`.
