@@ -95,6 +95,30 @@ yet; a one-book topic simply has no file for the other book.
   admission).
 - **STEMI**: streptokinase stays first-line from available stock at George and first choice in the dose box.
 
+### Reference Manual architecture (owner, 21 Oct 2026)
+Every reference.html follows MGH *Pocket Medicine* style: high-density, scannable bullet hierarchies, pearls and
+embedded tables; no narrative paragraphs. House rules still apply (SA evidence order, drug naming, no Latin
+abbreviations, local box, CHECK on every dose, 1–2 pages). New topics only; existing reference pages are not
+retrofitted unless the owner names one. Seven parts, in this order:
+1. **Header and metadata band**: formal title (italic subtitle allowed); sub-headings by syndrome or cause.
+2. **Overview and definitions**: formal criteria/staging (e.g. KDIGO, Sepsis-3, Wells/Geneva) with inline
+   bracketed guideline/trial citations, e.g. [STG 2024], [ESC 2023], [NEJM 2018] (`class="cite"`, each in
+   sources.yaml). Epidemiology/risk factors: high-yield, SA ward and ICU relevant (HIV, TB, RHD where they apply).
+3. **Pathophysiology and manifestations**: mechanism as bullets; organ-system sub-bullets (cardiorespiratory,
+   renal, neurological, haematological).
+4. **Stepwise workup**: Step 1 initial labs (exact tests, timing, interpretation); Step 2 ECG/CXR/CT/POCUS
+   indications (what George has, from local facts); Step 3 pitfalls (false positives/negatives, lab artefacts).
+5. **Mandatory comparison table** (at least one per chapter, `class="t"`): a clinical grid such as
+   differential diagnosis (cause / features / tests), subtype comparison or staging. This is in addition to the
+   "Where the guidelines differ" table, which stays wherever sources differ.
+6. **Management and trial evidence**: management by cause/subtype as stepwise algorithms; dosing pearls (renal and
+   hepatic adjustment, titration targets such as MAP ≥65 mmHg, infusion recipes matching the acute dose box);
+   bracketed landmark-trial tags beside major recommendations, e.g. [CRASH-2], [COMPLETE]. Trial tags are typed;
+   recommendation classes "(I A)" still come from the stylesheet.
+7. **Escalation and ward red flags** (callout box): when to call GRH IM / discuss with the internal medicine
+   consultant, when to refer to ICU (per the GRH ICU SOP), absolute contraindications (e.g. no platelet
+   transfusion in TTP). Use George terms, never generic "page the fellow".
+
 ## Status (18 Oct 2026)
 - Built: cardiology/stemi, cardiology/nste-acs, cardiology/heart-failure, endocrine/dka-hhs. Build: 0 errors.
 - 54 topics in manifest.yaml after the 21 Oct 2026 restructure (see "Syllabus architecture"). ~123 open
