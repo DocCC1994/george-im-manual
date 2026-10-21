@@ -109,3 +109,19 @@ utd-sepsis-2026:
   label: UpToDate
   citation: "Schmidt GA, Mandel J, Bell TD. Evaluation and management of suspected sepsis and septic shock in adults. UpToDate, last updated 7 May 2026 (accessed October 2026)."
   url: https://www.uptodate.com/contents/evaluation-and-management-of-suspected-sepsis-and-septic-shock-in-adults
+esc-ie-2023:
+  label: ESC 2023
+  citation: "Delgado V, Ajmone Marsan N, de Waha S, et al. 2023 ESC Guidelines for the management of endocarditis. Eur Heart J 2023;44(39):3948–4042."
+  url: https://doi.org/10.1093/eurheartj/ehad193
+saasp-2026-ie:
+  label: SAASP 2026
+  citation: "South African Antibiotic Stewardship Programme (SAASP). A guide to antibiotic prescribing for adults in South Africa, 2026. Chapter 16: Infective endocarditis; Chapter 21: Prophylaxis."
+  url: https://www.fidssa.co.za/saasp
+sa-ie-2026:
+  label: Engelbrecht 2026
+  citation: "Engelbrecht A, Doubell AF, Pecoraro AJK. Challenges of infective endocarditis in South Africa, a low- to middle-income country. Can J Cardiol 2026;42:591–599."
+  url: https://doi.org/10.1016/j.cjca.2025.10.017
+poet-2019:
+  label: POET
+  citation: "Iversen K, Ihlemann N, Gill SU, et al. Partial oral versus intravenous antibiotic treatment of endocarditis (POET). N Engl J Med 2019;380:415–424."
+  url: https://doi.org/10.1056/NEJMoa1808312
