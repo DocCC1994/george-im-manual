@@ -109,6 +109,58 @@ ccjm-crises-2025:
   label: CCJM 2025
   citation: "Rodriguez Alvarez P, San Martin VT, Morey-Vargas OL. Hyperglycemic crises in adults: a look at the 2024 consensus report. Cleve Clin J Med 2025;92(3):152–158."
   url: https://www.ccjm.org/content/92/3/152
+stg-ch2:
+  label: STG 2024 §2.8
+  citation: "National Department of Health. Hospital Level (Adults) STGs and EML, 6th ed. 2024 (updated December 2025), Chapter 2 Blood and blood forming organs, §2.8 Venous thrombo-embolism (2.8.1 prophylaxis, 2.8.2 acute treatment, 2.8.3 pregnancy)."
+  url: https://www.health.gov.za/wp-content/uploads/2025/07/Hospital-Level-Adults-Standard-Treatment-Guidelines-and-Essential-Medicines-List-6th-Edition-2024.pdf
+esc-pe-2019:
+  label: ESC 2019 PE
+  citation: "Konstantinides SV, Meyer G, Becattini C, et al. 2019 ESC Guidelines for the diagnosis and management of acute pulmonary embolism developed in collaboration with the European Respiratory Society (ERS). Eur Heart J 2020;41:543–603."
+  url: https://doi.org/10.1093/eurheartj/ehz405
+aha-pe-2026:
+  label: AHA/ACC 2026 PE
+  citation: "Creager MA, Barnes GD, Giri J, et al. 2026 AHA/ACC/ACCP/ACEP/CHEST/SCAI/SHM/SIR/SVM/SVN Guideline for the Evaluation and Management of Acute Pulmonary Embolism in Adults. Circulation 2026;153:e977–e1051."
+  url: https://doi.org/10.1161/CIR.0000000000001415
+esc-af-2024:
+  label: ESC 2024 AF
+  citation: "Van Gelder IC, Rienstra M, Bunting KV, et al. 2024 ESC Guidelines for the management of atrial fibrillation, developed in collaboration with EACTS. Eur Heart J 2024;45(36):3314–3414."
+  url: https://doi.org/10.1093/eurheartj/ehae176
+esc-svt-2019:
+  label: ESC 2019 SVT
+  citation: "Brugada J, Katritsis DG, Arbelo E, et al. 2019 ESC Guidelines for the management of patients with supraventricular tachycardia. Eur Heart J 2020;41(5):655–720."
+  url: https://doi.org/10.1093/eurheartj/ehz467
+esc-va-2022:
+  label: ESC 2022 VA
+  citation: "Zeppenfeld K, Tfelt-Hansen J, de Riva M, et al. 2022 ESC Guidelines for the management of patients with ventricular arrhythmias and the prevention of sudden cardiac death. Eur Heart J 2022;43(40):3997–4126."
+  url: https://doi.org/10.1093/eurheartj/ehac262
+esc-pacing-2021:
+  label: ESC 2021 pacing
+  citation: "Glikson M, Nielsen JC, Kronborg MB, et al. 2021 ESC Guidelines on cardiac pacing and cardiac resynchronization therapy. Eur Heart J 2021;42(35):3427–3520."
+  url: https://doi.org/10.1093/eurheartj/ehab364
+rcuk-tachy-2025:
+  label: RCUK 2025
+  citation: "Resuscitation Council UK. Adult tachyarrhythmia algorithm, 2025 (aligned with the ERC 2025 guidelines)."
+  url: https://www.resus.org.uk/sites/default/files/2025-10/Adult%20tachyarrhythmia%20algorithm%202025.pdf
+rcuk-brady-2025:
+  label: RCUK 2025
+  citation: "Resuscitation Council UK. Adult bradyarrhythmia algorithm, 2025 (aligned with the ERC 2025 guidelines)."
+  url: https://www.resus.org.uk/sites/default/files/2025-10/Adult%20bradyarrhythmia%202025.pdf
+nemlc-doac-2022:
+  label: NEMLC 2022
+  citation: "National Department of Health, NEMLC. Direct oral anticoagulants for chronic non-valvular atrial fibrillation: medicine review and costing, ratified 8 December 2022."
+  url: https://health.gov.za/wp-content/uploads/2024/12/Direct-Oral-Anticoagulants-for-chronic-non-valvular-atrial-fibrillation-8-December-2022-final-1.pdf
+invictus:
+  label: INVICTUS
+  citation: "Connolly SJ, Karthikeyan G, Ntsekhe M, et al. Rivaroxaban in rheumatic heart disease-associated atrial fibrillation (INVICTUS). N Engl J Med 2022;387:978–988."
+  url: https://doi.org/10.1056/NEJMoa2209051
+revert:
+  label: REVERT
+  citation: "Appelboam A, Reuben A, Mann C, et al. Postural modification to the standard Valsalva manoeuvre for emergency treatment of supraventricular tachycardias (REVERT). Lancet 2015;386:1747–1753."
+  url: https://doi.org/10.1016/S0140-6736(15)61485-4
+race7:
+  label: RACE 7 ACWAS
+  citation: "Pluymaekers NAHA, Dudink EAMP, Luermans JGLM, et al. Early or delayed cardioversion in recent-onset atrial fibrillation (RACE 7 ACWAS). N Engl J Med 2019;380:1499–1508."
+  url: https://doi.org/10.1056/NEJMoa1900353
 stg-ch16:
   label: STG 2024 §16.4
   citation: "National Department of Health. Hospital Level (Adults) STGs and EML, 6th ed. 2024 (updated December 2025), Chapter 16 Respiratory disorders, §16.4 Chronic obstructive pulmonary disease."
@@ -213,3 +265,27 @@ poet-2019:
   label: POET
   citation: "Iversen K, Ihlemann N, Gill SU, et al. Partial oral versus intravenous antibiotic treatment of endocarditis (POET). N Engl J Med 2019;380:415–424."
   url: https://doi.org/10.1056/NEJMoa1808312
+esc-vhd-2025:
+  label: ESC/EACTS 2025
+  citation: "Praz F, Borger MA, Lanz J, et al. 2025 ESC/EACTS Guidelines for the management of valvular heart disease. Eur Heart J 2025."
+  url: https://doi.org/10.1093/eurheartj/ehaf194
+who-rf-2024:
+  label: WHO 2024
+  citation: "World Health Organization. WHO guideline on the prevention and diagnosis of rheumatic fever and rheumatic heart disease. Geneva: WHO; 2024."
+  url: https://www.who.int/publications/i/item/9789240100077
+aha-jones-2015:
+  label: AHA 2015
+  citation: "Gewitz MH, Baltimore RS, Tani LY, et al. Revision of the Jones criteria for the diagnosis of acute rheumatic fever in the era of Doppler echocardiography. Circulation 2015;131:1806–1818."
+  url: https://doi.org/10.1161/CIR.0000000000000205
+invictus-2022:
+  label: INVICTUS
+  citation: "Connolly SJ, Karthikeyan G, Ntsekhe M, et al. Rivaroxaban in rheumatic heart disease-associated atrial fibrillation. N Engl J Med 2022;387:978–988."
+  url: https://doi.org/10.1056/NEJMoa2209051
+grh-warfarin-2012:
+  label: GRH Warfarin Protocol
+  citation: "George Hospital, Department of Internal Medicine. Warfarin therapy guideline (Dr M Smit). Compiled November 2012, implemented 10 December 2012. Drive: GEORGE IM Handbook."
+  url: https://drive.google.com/file/d/15XqSBB8W4n5huWS5ab0Idt7n0gyHelw1/view
+calgary-blackbook:
+  label: Calgary Black Book
+  citation: "University of Calgary. Blackbook: Approaches to Medical Presentations, 15th ed. 2022."
+  url: https://cumming.ucalgary.ca/
