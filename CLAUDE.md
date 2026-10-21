@@ -8,8 +8,8 @@ MGH Housestaff Manual ("White Book"), adapted to South African public-sector res
 Both are built from one source (see README.md for commands, layout and building blocks).
 
 Owner: an internal medicine registrar at George (Tygerberg post). **The owner wants to remain the thinker and
-learn from the process.** Claude drafts and speeds things up; clinical decisions go to the owner and section
-editors as DECISION markers, not silent choices.
+learn from the process.** Claude drafts and speeds things up; clinical decisions go to the owner (and the
+approving consultant) as DECISION markers, not silent choices.
 
 ## Approved house style (do not change without asking)
 - GRH protocol look: Carlito font (Calibri twin), thin black grid borders, grey header bands, black/white/grey only.
@@ -18,8 +18,11 @@ editors as DECISION markers, not silent choices.
   title band with a version / effective / review row. "Back to contents" top right.
 - **Acute Handbook pages have no subtitle.** Reference pages may have an italic subtitle.
 - No "first hours at George and when to call" line on acute pages.
-- Footer: author, section editor, editors, based on, version, reviewed; "Approved by · Level/rank · Date";
-  "Suggest an edit".
+- Footer (owner, 21 Oct 2026): author, editors, based on; version, build date and STG/EML edition; the approval
+  line "Approved by · Rank · Date" (topic.yaml `approved_by`, `approved_rank`, `approved_date`, left blank until
+  approved); "Suggest an edit". There are no section editors, no pharmacist line and no "checked by the editorial
+  team" line.
+- Non-release builds carry a "DRAFT – not for clinical use" watermark.
 - South African context: tertiary options in a side box (`box tert`); a mitigation box (`box mit`) for when
   transfer is delayed or declined; George-specific facts in a "local" box (`box local`) so other hospitals can
   adapt the book.
@@ -39,12 +42,19 @@ editors as DECISION markers, not silent choices.
 - Doctors only. Nursing instructions only when they change the patient's outcome, never routine ward care.
 - Base: where a current GRH protocol exists for the topic, build the topic on it. Check and update it against the
   evidence below; every difference becomes a DECISION.
-- Evidence order: SA STG/EML (2024/2025 chapters) or another official, current SA guideline → European guideline
-  (ESC, ESH, EASL, ERS, etc.; preferred over American ones) where no SA guideline is official or up to date → other
-  international guideline. With no current GRH protocol, write from this evidence and use any old GRH protocol only
-  for local practice.
-  Where they differ, show it and add a DECISION.
-- Drugs and doses are handled carefully per topic; every dose box needs a CHECK until a pharmacist has checked it.
+- Source precedence (owner, 21 Oct 2026): **George local facts decide availability** (what George stocks and can
+  do: /mnt/project-files/sources/local-facts/local-facts.md); **the SA STG/EML decides doses**; **SAASP covers
+  antimicrobials** (/mnt/project-files/sources/saasp-2026/). International guidelines (ESC, ESH, EASL, ERS, etc.;
+  European before American) are used only where these are silent, and every point taken from them is marked
+  DECISION.
+- Evidence order within that: SA STG/EML (2024/2025 chapters) or another official, current SA guideline → European
+  guideline → other international guideline. With no current GRH protocol, write from this evidence and use any old
+  GRH protocol only for local practice. Where they differ, show it and add a DECISION.
+- Drugs and doses are handled carefully per topic; every dose box keeps a CHECK until its doses have been verified
+  against the source and the topic is approved (approval line). If a source is not accessible, never fill a dose or
+  fact from memory: mark it CHECK and tell the owner.
+- Markers: `[CHECK: …]` and `[DECISION: …]` in instructions mean the `<span class="chk">` / `<span class="dec">`
+  markers in the topic files.
 - Abbreviations page, who-to-call block, phone/web version, indices and QR codes: later, not now.
 - Shared-decisions list is not pre-built; decisions are collected per topic in editor.html.
 - Length: 1–2 printed pages per topic in the Acute Handbook and 1–2 in the Reference Manual. Brevity and clarity
@@ -55,6 +65,21 @@ editors as DECISION markers, not silent choices.
   access. He uploads it into that topic's thread, so it is read only for that topic. The SA STG/EML 2024 (updated
   Dec 2025) is already in /mnt/project-files/sources/stg-eml-2024/ (index.md maps sections to part and page); never
   request it. Do not draft from secondhand online summaries while waiting.
+
+## Build rules (owner, 21 Oct 2026)
+- **Infusion recipes**: every infusion recipe and mL/hr table comes from `recipes.yaml` through a
+  `{{recipe:<drug>}}` macro in the topic file. build.py calculates the rates from concentration, dose and weight
+  bands; rates are never typed by hand. No hand-written rates for a recipes.yaml drug in topic files (other rate
+  lines, such as maintenance fluids, are fine). Potassium: via IVAC (volumetric pump), maximum 20 mmol/hr.
+- **[ALLOW]**: a source line that must name a banned term (e.g. "noradrenaline not available") or is a genuine
+  exception carries `<!-- [ALLOW] reason -->` on the same line. The checker skips that line; nothing prints.
+- `python3 build.py --check`: one line per problem (file:line) and a count; fails on missing topic.yaml fields,
+  banned terms or legacy footer text without [ALLOW], an Acute sheet longer than 2 pages, and hand-written rates for
+  recipe drugs. `--release` also fails on any open CHECK/DECISION marker or empty approval line. `--status` prints
+  one row per topic (acute/reference state, tier, priority, approved, open markers); use it instead of long
+  handover summaries.
+- topic.yaml carries `acute`, `reference`, `deferred`, `priority`, `version` and the approval fields; they must
+  agree with manifest.yaml.
 
 ## Syllabus architecture (owner, 21 Oct 2026)
 **Dual-book philosophy: the two books do NOT need a rigid 1:1 pairing.**
@@ -105,8 +130,10 @@ yet; a one-book topic simply has no file for the other book.
 - **Tier 2, Deferred backlog** (`reference_tier: 2, deferred: true`): every other topic that has both books. The
   topic thread writes topic.yaml, acute.html and editor.html only, no reference.html, unless the owner explicitly
   asks for that topic's Reference section. Reference pages already written for Tier 2 topics stay as they are.
-- One-book topics carry no tier: acute-only topics are unaffected; the Reference-only topics (valvular heart
-  disease, ECG/ABG) are unmarked until the owner says whether they are Tier 1 or deferred.
+- `deferred: true` applies only to the Reference chapter of a topic that has an Acute sheet. One-book topics carry
+  no tier and are never deferred. Reference-only topics are scheduled by priority: Valvular heart disease (PR #19)
+  ships now; ECG/ABG is P2.
+- Priorities (owner, 21 Oct 2026): every topic is P1 except ECG/ABG and sympathomimetics (P2).
 - build.py ignores `reference_tier` and `deferred` (like `books:`).
 
 ### Reference Manual architecture (owner, 21 Oct 2026)
@@ -137,8 +164,12 @@ retrofitted unless the owner names one. Seven parts, in this order:
 - Built: cardiology/stemi, cardiology/nste-acs, cardiology/heart-failure, endocrine/dka-hhs. Build: 0 errors.
 - 54 topics in manifest.yaml after the 21 Oct 2026 restructure (see "Syllabus architecture"). ~123 open
   CHECK/DECISION markers (18 Oct count).
-- Next topics: cardiology (arrhythmias as a two-page acute topic, hypertensive emergency, pulmonary embolism,
-  infective endocarditis, valvular heart disease (Reference only)), then other systems in manifest order.
+- Next topics (owner, 21 Oct 2026), after the open PRs are cleared: CAP, acute asthma, meningitis, cryptococcal
+  meningitis, severe malaria. Severe malaria takes the expanded title (rickettsiosis, VHF red flags) when its
+  thread is next opened. Then manifest order by priority.
+- ACS aspirin (owner, 21 Oct 2026): GRH practice for STEMI and NSTE-ACS is a 300 mg loading dose, then 75 mg
+  daily lifelong. This differs from the STG (150 mg load and 150 mg daily: STG Hospital Level Adults 2024, 3.2.1
+  p 3.4; 3.2.2 p 3.10; 3.2.3 p 3.13); show the difference in the "Where the guidelines differ" table.
 
 ## Resources
 - Owner's Google Drive (Google Drive connector): **George → Unit protocols** (subfolders Cardiac, Metabolic,
@@ -151,11 +182,11 @@ retrofitted unless the owner names one. Seven parts, in this order:
   and fill the local boxes from it.
 
 ## Open items for the owner
-- Answer the local-facts questionnaire; give author / section editor / approver names.
+- Answer the local-facts questionnaire; give author and approver names.
 - Create the "Suggest an edit" Google Form (fields: book, topic, page, section, current text, suggested change,
   reason/reference link, name/role optional, tick "contains no patient details") and send the pre-filled link;
   then replace the mailto in build.py and set the URL in manifest.yaml (`editor_email` is still a placeholder).
-- Governance: approval line, pharmacist dose check, P&T committee sign-off for any deviation from the STG.
+- Governance: approval line, P&T committee sign-off for any deviation from the STG.
 - Verify against primary sources: ESC 2026 HF figures (taken from the slide set) and ADA/EASD/JBDS 2024 DKA
   numbers (taken from the CCJM review).
 
@@ -176,14 +207,16 @@ Each topic is written in its own project thread, opened from the project chat. T
    "Phased Reference Manual"). Mark uncertain facts CHECK and choices DECISION; list open questions in editor.html.
 6. `python3 build.py --topic <id>`, then render the pages (pymupdf) and look at them: each acute sheet must fit
    its page; fix overflow (`data-cls="compact"` or split with `data-part`, within the 1–2 page limit). Then
-   `python3 build.py`: 0 errors.
+   `python3 build.py`: 0 errors, and `python3 build.py --check`: passes.
 7. Commit and push, open a PR "Topic: <title>"; reply in the thread with the topic name, page count and number of
    markers.
 8. Stop after the topic is done. Never mark a topic signed-off; never run `--release`.
 
 ## Thread coordination (owner, 21 Oct 2026)
-- At most one topic thread runs at a time unless the owner allows more.
+- Work-in-progress cap: one active topic thread and no more than 2 open topic PRs. Don't open a new topic while
+  2 topic PRs are open.
 - A new global rule is recorded here (or in the style guide) in one commit; it is never broadcast to open threads
   or PRs, and nothing is retrofitted until the owner names a thread to update.
-- Threads do not watch main or merge/rebase main into their branches when other PRs merge. Sync with main once,
-  right before merging, and only if GitHub reports a conflict.
+- Threads do not watch main or merge/rebase main into their branches when other PRs merge.
+- Merge rule (replaces "sync only if conflict"): right before merging a PR, merge main into its branch, run
+  `python3 build.py --check`, and merge only if it passes.
