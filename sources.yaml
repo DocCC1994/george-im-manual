@@ -249,3 +249,27 @@ poet-2019:
   label: POET
   citation: "Iversen K, Ihlemann N, Gill SU, et al. Partial oral versus intravenous antibiotic treatment of endocarditis (POET). N Engl J Med 2019;380:415–424."
   url: https://doi.org/10.1056/NEJMoa1808312
+esc-vhd-2025:
+  label: ESC/EACTS 2025
+  citation: "Praz F, Borger MA, Lanz J, et al. 2025 ESC/EACTS Guidelines for the management of valvular heart disease. Eur Heart J 2025."
+  url: https://doi.org/10.1093/eurheartj/ehaf194
+who-rf-2024:
+  label: WHO 2024
+  citation: "World Health Organization. WHO guideline on the prevention and diagnosis of rheumatic fever and rheumatic heart disease. Geneva: WHO; 2024."
+  url: https://www.who.int/publications/i/item/9789240100077
+aha-jones-2015:
+  label: AHA 2015
+  citation: "Gewitz MH, Baltimore RS, Tani LY, et al. Revision of the Jones criteria for the diagnosis of acute rheumatic fever in the era of Doppler echocardiography. Circulation 2015;131:1806–1818."
+  url: https://doi.org/10.1161/CIR.0000000000000205
+invictus-2022:
+  label: INVICTUS
+  citation: "Connolly SJ, Karthikeyan G, Ntsekhe M, et al. Rivaroxaban in rheumatic heart disease-associated atrial fibrillation. N Engl J Med 2022;387:978–988."
+  url: https://doi.org/10.1056/NEJMoa2209051
+grh-warfarin-2012:
+  label: GRH Warfarin Protocol
+  citation: "George Hospital, Department of Internal Medicine. Warfarin therapy guideline (Dr M Smit). Compiled November 2012, implemented 10 December 2012. Drive: GEORGE IM Handbook."
+  url: https://drive.google.com/file/d/15XqSBB8W4n5huWS5ab0Idt7n0gyHelw1/view
+calgary-blackbook:
+  label: Calgary Black Book
+  citation: "University of Calgary. Blackbook: Approaches to Medical Presentations, 15th ed. 2022."
+  url: https://cumming.ucalgary.ca/
