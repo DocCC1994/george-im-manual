@@ -34,7 +34,6 @@ adrenaline:
   ampoule: 1                      # 1 mg/mL ampoule
   amount: 12
   volume: 200
-  check: diluent
   dose_unit: mcg/kg/min
   start: 0.05
   titrate: "titrate to MAP ≥ 65 every 10–30 min; ceiling usually 0.5 mcg/kg/min, up to 1 in some cases"
@@ -53,7 +52,6 @@ adrenaline-brady:
   ampoule: 1
   amount: 12
   volume: 200
-  check: diluent
   dose_unit: mcg/min
   doses: [2, 10]
   layout: inline

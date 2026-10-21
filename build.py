@@ -178,8 +178,10 @@ def render_recipe(rid, where):
     tail = []
     for v in r.get('variants', []):
         q = {'amount': v['amount'], 'volume': v.get('volume', p['volume'])}
-        tail.append(f"{esc(v['label'])}: {amt(q['amount'])} in {vol(q['volume'])} = {cstr(q)}"
-                     + (f"; {formula(q)}" if r.get('formula') else ''))
+        ratio = conc(r, p, base) / conc(r, q, base)              # rate on this bag vs the standard bag
+        same = {2: 'double', 0.5: 'half'}.get(ratio, f'{num(ratio)} ×')
+        n = f"{num(q['amount'] / r['ampoule'])} ampoules" if r.get('ampoule') else f"{num(q['amount'])} {r['unit']}"
+        tail.append(f"{esc(v['label'])}: {n} in {vol(q['volume'])} = {cstr(q)} ({same} the standard rate for the same dose)")
     if not lines and not tail:
         return f'{prep}: {rates}'
     return '<br>'.join([prep + '.'] + lines + [rates + '.'] + tail)
