@@ -167,8 +167,9 @@ retrofitted unless the owner names one. Seven parts, in this order:
 - Next topics (owner, 21 Oct 2026), after the open PRs are cleared: CAP, acute asthma, meningitis, cryptococcal
   meningitis, severe malaria. Severe malaria takes the expanded title (rickettsiosis, VHF red flags) when its
   thread is next opened. Then manifest order by priority.
-- ACS: aspirin maintenance is the STG dose, 150 mg daily lifelong, for STEMI and NSTE-ACS (STG Hospital Level
-  Adults 2024: 3.2.1 p 3.4; 3.2.2 p 3.10; 3.2.3 p 3.13).
+- ACS aspirin (owner, 21 Oct 2026): GRH practice for STEMI and NSTE-ACS is a 300 mg loading dose, then 75 mg
+  daily lifelong. This differs from the STG (150 mg load and 150 mg daily: STG Hospital Level Adults 2024, 3.2.1
+  p 3.4; 3.2.2 p 3.10; 3.2.3 p 3.13); show the difference in the "Where the guidelines differ" table.
 
 ## Resources
 - Owner's Google Drive (Google Drive connector): **George → Unit protocols** (subfolders Cardiac, Metabolic,
