@@ -73,14 +73,3 @@ potassium:
   max_rate: 20
   pump: IVAC
   layout: inline
-
-adrenaline-brady:
-  match: [adrenaline, epinephrine]
-  from: arrhythmias acute, bradycardia (PR #2)
-  unit: mg
-  amount: 1
-  volume: 100
-  diluent: 0.9% saline
-  dose_unit: mcg/min
-  doses: [2, 10]
-  layout: inline
