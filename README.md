@@ -16,6 +16,7 @@ manifest.yaml        order of systems and topics; planned topics (no folder yet)
 sources.yaml         every external link, defined once; cite with href="src:<key>"
 style/house.css      the house style (GRH protocol look)
 templates/howto.html the "How to read this book" page
+templates/acknowledgements.html  acknowledgements and authorship page (front matter; its markers also block --release)
 assets/              logo and images (reference as assets/<file>)
 topics/<system>/<topic>/
     topic.yaml       title, status, author, section editor, version, dates, based_on
