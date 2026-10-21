@@ -105,6 +105,26 @@ ccjm-crises-2025:
   label: CCJM 2025
   citation: "Rodriguez Alvarez P, San Martin VT, Morey-Vargas OL. Hyperglycemic crises in adults: a look at the 2024 consensus report. Cleve Clin J Med 2025;92(3):152–158."
   url: https://www.ccjm.org/content/92/3/152
+stg-ch20-shock:
+  label: STG 2024, 20.12
+  citation: "National Department of Health. Hospital Level (Adults) STGs and EML, 6th ed. 2024 (updated Dec 2025), Chapter 20: Emergencies and injuries, 20.12.2 Distributive shock and 20.12.2.2 Septic shock, pp 20.23–20.24."
+  url: https://www.health.gov.za/nhi-edp-stgs-eml/
+stg-ch23-sepsis:
+  label: STG 2024, 23.10
+  citation: "National Department of Health. Hospital Level (Adults) STGs and EML, 6th ed. 2024 (updated Dec 2025), Chapter 23: Adult critical care, 23.10 Sepsis in ICU, pp 23.34–23.41."
+  url: https://www.health.gov.za/nhi-edp-stgs-eml/
+ssc-2026:
+  label: SSC 2026
+  citation: "Prescott HC, Antonelli M, Alhazzani W, et al. Surviving Sepsis Campaign: international guidelines for management of sepsis and septic shock 2026. Intensive Care Med 2026 (ESICM and SCCM)."
+  url: https://doi.org/10.1007/s00134-026-08361-1
+saasp-2026-sepsis:
+  label: SAASP 2026
+  citation: "South African Antibiotic Stewardship Programme (SAASP). A guide to antibiotic prescribing for adults in South Africa, 2026. Ch 1 (principles), 3 (blood cultures), 5 (48–72 h review), 8, 10, 14, 15 and 19 (hospital-acquired infection)."
+  url: https://www.fidssa.co.za/saasp
+utd-sepsis-2026:
+  label: UpToDate
+  citation: "Schmidt GA, Mandel J, Bell TD. Evaluation and management of suspected sepsis and septic shock in adults. UpToDate, last updated 7 May 2026 (accessed October 2026)."
+  url: https://www.uptodate.com/contents/evaluation-and-management-of-suspected-sepsis-and-septic-shock-in-adults
 esc-ie-2023:
   label: ESC 2023
   citation: "Delgado V, Ajmone Marsan N, de Waha S, et al. 2023 ESC Guidelines for the management of endocarditis. Eur Heart J 2023;44(39):3948–4042."
