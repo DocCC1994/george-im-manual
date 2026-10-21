@@ -2,7 +2,9 @@
 """Build the George Hospital IM Acute Handbook and Reference Manual.
 
     python3 build.py                 all draft outputs (both books, combined, editor report)
-    python3 build.py --topic stemi   one-topic preview (both books + editor notes)
+    python3 build.py --topic stemi   topic-only draft preview -> out/preview-topic.pdf: that topic's Acute page(s)
+                                     and Reference section only (no cover, contents, How to read, acknowledgements
+                                     or dividers); --topic a,b,c previews several topics (e.g. a poison batch)
     python3 build.py --release       final version: refuses while any CHECK/DECISION, empty approval line,
                                      unsigned topic or --check problem remains
     python3 build.py --check         house-rule checks (file:line per problem, count at the end); exit 1 on any
@@ -381,19 +383,22 @@ def document(body, title):
 ALL_IDS = set()
 
 
-def build_book(manifest, sources, topics, books, label, draft, with_cover=True):
+def build_book(manifest, sources, topics, books, label, draft, with_cover=True, front_matter=True):
+    """front_matter=False (topic-only preview): topic sheets only, no cover, contents, How to read,
+    acknowledgements or book dividers. Those belong to the full book builds only."""
     known = {sh['id'] for t in topics for b in books for sh in t['sheets'][b]}
     parts = []
-    if with_cover: parts.append(cover(manifest, label, draft))
-    howto = (ROOT / 'templates' / 'howto.html').read_text(encoding='utf-8')
-    runhead = f"{manifest['hospital'].upper()}: {manifest['department'].upper()}"
-    parts.append(front_page(manifest, label, contents_table(manifest, topics, books, draft), draft, runhead, 'contents'))
-    parts.append(front_page(manifest, 'How to read this book', howto, draft, runhead))
-    acks = (ROOT / 'templates' / 'acknowledgements.html').read_text(encoding='utf-8')
-    parts.append(front_page(manifest, 'Acknowledgements and authorship', acks, draft, runhead))
+    if with_cover and front_matter: parts.append(cover(manifest, label, draft))
+    if front_matter:
+        howto = (ROOT / 'templates' / 'howto.html').read_text(encoding='utf-8')
+        runhead = f"{manifest['hospital'].upper()}: {manifest['department'].upper()}"
+        parts.append(front_page(manifest, label, contents_table(manifest, topics, books, draft), draft, runhead, 'contents'))
+        parts.append(front_page(manifest, 'How to read this book', howto, draft, runhead))
+        acks = (ROOT / 'templates' / 'acknowledgements.html').read_text(encoding='utf-8')
+        parts.append(front_page(manifest, 'Acknowledgements and authorship', acks, draft, runhead))
     for book in books:
         base = 1
-        if len(books) > 1:
+        if len(books) > 1 and front_matter:
             parts.append(divider(manifest['books'][book]['name'], f"{manifest['hospital']} · {manifest['edition']} · Version {manifest['version']}", 1))
             base = 2
         seen = set()
@@ -402,7 +407,10 @@ def build_book(manifest, sources, topics, books, label, draft, with_cover=True):
                 first_sys = t['system'] not in seen
                 seen.add(t['system'])
                 parts.append(render_sheet(manifest, sources, known, t, book, sh, base, first_sys))
-    return document(''.join(parts), label)
+    body = ''.join(parts)
+    if not front_matter:                     # no contents page to go back to (the link is absolutely placed)
+        body = body.replace('<div class="toc-link"><a href="#contents">Back to contents</a></div>', '')
+    return document(body, label)
 
 
 def build_editor_report(manifest, sources, topics, draft=True):
@@ -633,12 +641,13 @@ def main():
 
     results = []
     if args.topic:
-        sel = [t for t in built if t['id'] == args.topic]
-        if not sel: sys.exit(f'No built topic called {args.topic}')
-        t = sel[0]
-        out = OUT / 'preview' / f"{t['id']}.pdf"
-        n = render(build_book(manifest, sources, sel, ('acute', 'reference'), t['short'] if t.get('short') else t['title'],
-                              draft, with_cover=False), out)
+        ids = [i.strip() for i in args.topic.split(',') if i.strip()]
+        missing = [i for i in ids if i not in {t['id'] for t in built}]
+        if missing: sys.exit(f"No built topic called {', '.join(missing)}")
+        sel = [t for t in built if t['id'] in ids]                     # manifest order
+        label = ' · '.join(t.get('short') or t['title'] for t in sel)
+        out = OUT / 'preview-topic.pdf'
+        n = render(build_book(manifest, sources, sel, ('acute', 'reference'), label, draft, front_matter=False), out)
         results.append((out, n))
     else:
         jobs = [
