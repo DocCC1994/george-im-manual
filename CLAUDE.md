@@ -126,12 +126,12 @@ read `books:`; a one-book topic simply has no file for the other book.
   too, after the acute sheet. Topics: STEMI and NSTE-ACS (ACS), heart failure, hypertensive emergencies,
   pericardial effusion and cardiac tamponade, sepsis, meningitis, DKA/HHS, hyponatraemia, AKI, decompensated
   cirrhosis, stroke, status epilepticus (with the first-seizure block), severe cytopenias (`cytopenias`: the
-  severe haematology workup).
+  severe haematology workup); and the two Reference-only topics, valvular heart disease and ECG/ABG.
 - **Tier 2, Deferred backlog** (`reference_tier: 2, deferred: true`): every other topic that has both books. The
   topic thread writes topic.yaml, acute.html and editor.html only, no reference.html, unless the owner explicitly
   asks for that topic's Reference section. Reference pages already written for Tier 2 topics stay as they are.
-- `deferred: true` applies only to the Reference chapter of a topic that has an Acute sheet. One-book topics carry
-  no tier and are never deferred. Reference-only topics are scheduled by priority: Valvular heart disease (PR #19)
+- `deferred: true` applies only to the Reference chapter of a topic that has an Acute sheet. One-book topics are
+  never deferred: acute-only topics carry no tier; the two Reference-only topics are Tier 1, scheduled by priority: Valvular heart disease (PR #19)
   ships now; ECG/ABG is P2.
 - Priorities (owner, 21 Oct 2026): every topic is P1 except ECG/ABG and sympathomimetics (P2).
 - `build.py --status` shows `reference_tier`; `--check` compares `deferred`, `priority` and `books:` with topic.yaml.
