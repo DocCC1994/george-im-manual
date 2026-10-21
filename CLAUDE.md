@@ -100,3 +100,6 @@ Each topic is written in its own project thread, opened from the project chat. T
 7. Commit and push, open a PR "Topic: <title>"; reply in the thread with the topic name, page count and number of
    markers.
 8. Stop after the topic is done. Never mark a topic signed-off; never run `--release`.
+
+Syncing with `main` (all threads): do not watch `main` or merge/rebase it into an open branch when another PR
+merges. Sync once, at the very end, only if GitHub reports a merge conflict when the PR is about to be merged.
