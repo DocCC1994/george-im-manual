@@ -13,6 +13,7 @@
 #   dose_unit   units/kg/hr, mcg/kg/min, mg/min, mcg/min ...; doses: list; weights: list of kg (per-kg doses)
 #   start, titrate   optional text line; formula: true adds "mL/hr = dose × kg × factor"
 #   max_rate, pump   maximum rate in `unit`/hr (potassium); renders the maximum mL/hr for each prep
+#   over        minutes for a single dose given over a set time (magnesium); renders the bag and its mL/hr
 #   layout      inline (text inside the author's paragraph) or table
 
 insulin:
@@ -86,5 +87,17 @@ potassium:
     - {amount: 20, volume: 1000}
     - {amount: 40, volume: 1000}
   max_rate: 20
+  pump: IVAC
+  layout: inline
+
+magnesium:
+  match: [magnesium]
+  from: asthma-acute (STG 2024 §16.1; George chart per Craig, 21 Oct 2026)
+  unit: g
+  note: "(4 mL of 50%)"
+  amount: 2
+  volume: 100
+  diluent: sodium chloride 0.9%
+  over: 20
   pump: IVAC
   layout: inline
