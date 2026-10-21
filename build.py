@@ -155,8 +155,13 @@ def render_recipe(rid, where):
                        for kg in weights for d in doses)
         return f'<table class="t sm recipe">{head}{body}</table>'
     p = preps[0]
-    prep = (f"{num(p['amount'])} {r['unit']}{' ' + esc(r['note']) if r.get('note') else ''} in {vol(p['volume'])}"
-            f"{' ' + esc(r['diluent']) if r.get('diluent') else ''} = {cstr(p)}")
+    def amt(a):
+        if r.get('ampoule'):                                    # ampoule strength in `unit` per 1 mL ampoule
+            return f"{num(a)} {r['unit']} ({num(a / r['ampoule'])} ampoules of {num(r['ampoule'])} {r['unit']}/mL)"
+        return f"{num(a)} {r['unit']}{' ' + esc(r['note']) if r.get('note') else ''}"
+    prep = (f"{amt(p['amount'])} in {vol(p['volume'])}"
+            f"{' ' + esc(r['diluent']) if r.get('diluent') else ''} = {cstr(p)}"
+            + (f" <span class=\"chk\">CHECK {esc(r['check'])}</span>" if r.get('check') else ''))
     if weights:
         rates = '; '.join(f"{num(kg)} kg: " + '; '.join(f'{num(d)} → {num(rate(r, p, d, kg))} mL/hr' for d in doses)
                           for kg in weights)
@@ -165,11 +170,21 @@ def render_recipe(rid, where):
     lines = []
     if r.get('start') is not None:
         lines.append(f"Start {num(r['start'])} {du}" + (f"; {esc(r['titrate'])}" if r.get('titrate') else '') + '.')
+    def formula(q):
+        f = rate(r, q, 1, 1)
+        return f"mL/hr = {du} × kg" + (f" × {num(f)}" if f != 1 else f"; {du} = mL/hr ÷ kg")
     if r.get('formula'):
-        lines.append(f"<b>mL/hr = {du} × kg × {num(rate(r, p, 1, 1))}</b>")
-    if not lines:
+        lines.append(f"<b>{formula(p)}</b>")
+    tail = []
+    for v in r.get('variants', []):
+        q = {'amount': v['amount'], 'volume': v.get('volume', p['volume'])}
+        ratio = conc(r, p, base) / conc(r, q, base)              # rate on this bag vs the standard bag
+        same = {2: 'double', 0.5: 'half'}.get(ratio, f'{num(ratio)} ×')
+        n = f"{num(q['amount'] / r['ampoule'])} ampoules" if r.get('ampoule') else f"{num(q['amount'])} {r['unit']}"
+        tail.append(f"{esc(v['label'])}: {n} in {vol(q['volume'])} = {cstr(q)} ({same} the standard rate for the same dose)")
+    if not lines and not tail:
         return f'{prep}: {rates}'
-    return '<br>'.join([prep + '.'] + lines + [rates + '.'])
+    return '<br>'.join([prep + '.'] + lines + [rates + '.'] + tail)
 
 
 def expand_recipes(fragment, where):

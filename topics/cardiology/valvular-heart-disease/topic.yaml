@@ -1,0 +1,20 @@
+title: Valvular heart disease (including rheumatic heart disease)
+reference_title: "Valvular and rheumatic heart disease"
+short: Valvular heart disease
+status: draft
+start: New (added)
+priority: P1
+acute: false             # Acute Handbook sheet (manifest books)
+reference: true          # Reference Manual chapter (manifest books)
+deferred: false          # Tier 2: reference chapter deferred (manifest)
+version: 2026 v1
+effective: "[MM/YYYY]"
+review: "[MM/YYYY]"
+reviewed: "[MM/YYYY]"
+author: "[Author, Registrar IM]"
+editors: "[Editors]"
+based_on: "New topic (no GRH valve protocol), Reference Manual only: STG 2024 §3.7, §3.3.1.1 and §6.3; ESC/EACTS 2025 valvular heart disease; WHO 2024 rheumatic fever; GRH Warfarin Protocol 2012"
+note: "Reference Manual only (syllabus restructure, 21 Oct 2026): no Acute Handbook page."
+approved_by: ""
+approved_rank: ""
+approved_date: ""

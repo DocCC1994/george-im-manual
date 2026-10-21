@@ -1,0 +1,20 @@
+title: "Arrhythmias: AF, SVT, VT, bradycardia and heart block"
+acute_title: "Arrhythmias: tachycardia, fast AF, bradycardia and heart block"
+reference_title: "Arrhythmias: ECG diagnosis, atrial fibrillation and pacing"
+short: Arrhythmias
+status: draft
+start: New
+priority: P1
+acute: true              # Acute Handbook sheet (manifest books)
+reference: true          # Reference Manual chapter (manifest books)
+deferred: true           # Tier 2: reference chapter deferred (manifest)
+version: 2026 v1
+effective: "[MM/YYYY]"
+review: "[MM/YYYY]"
+reviewed: "[MM/YYYY]"
+author: "[Author, Registrar IM]"
+editors: "[Editors]"
+based_on: "New topic (no GRH arrhythmia protocol): STG 2024 §3.3, ESC 2024 AF, ESC 2019 SVT, ESC 2022 VA, ESC 2021 pacing, RCUK/ERC 2025 peri-arrest algorithms"
+approved_by: ""
+approved_rank: ""
+approved_date: ""
