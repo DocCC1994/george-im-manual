@@ -49,17 +49,58 @@ editors as DECISION markers, not silent choices.
 - Shared-decisions list is not pre-built; decisions are collected per topic in editor.html.
 - Length: 1–2 printed pages per topic in the Acute Handbook and 1–2 in the Reference Manual. Brevity and clarity
   come first. If a topic cannot fit, propose splitting it into separate topics rather than running long.
+  Exceptions in "Syllabus architecture" below (one-book topics, one-page poison pages).
 - Guideline PDFs: before writing a topic, ask the owner in that topic's thread for the PDF of each relevant guideline
   other than the SA STG/EML (European first), giving the full title, issuing body and year so he can fetch it with his university
   access. He uploads it into that topic's thread, so it is read only for that topic. The SA STG/EML 2024 (updated
   Dec 2025) is already in /mnt/project-files/sources/stg-eml-2024/ (index.md maps sections to part and page); never
   request it. Do not draft from secondhand online summaries while waiting.
 
+## Syllabus architecture (owner, 21 Oct 2026)
+**Dual-book philosophy: the two books do NOT need a rigid 1:1 pairing.**
+- **Part 1, Acute Handbook** (Paarl emergency guideline style): 1–2 page bedside action sheets for 2 AM
+  presentations. Blocks: RECOGNISE / INVESTIGATE / IMMEDIATE / ONGOING / REFER, plus DOSE BOX / TERTIARY / LOCAL
+  NOTES. **Every DOSE BOX gives exact ward reconstitution recipes and starting rates in mL/hr** that nurses can
+  follow (e.g. number of ampoules in 200 mL sodium chloride 0.9% or dextrose 5%: HIET insulin/dextrose bags,
+  inotropes, labetalol, GTN).
+- **Part 2, Reference Manual** (MGH Pocket Medicine / White Book style): high-density ward reference for
+  post-admission review: structured diagnostic workup (e.g. hyponatraemia, anaemia/thrombocytopenia),
+  pathophysiology pearls, chronic disease staging and the "Where the guidelines differ" tables.
+
+manifest.yaml is the master syllabus and table of contents. A topic has both books unless its entry says
+`books: [acute]` or `books: [reference]`; write only the file(s) for its book(s). build.py does not read `books:`
+yet; a one-book topic simply has no file for the other book.
+- **Acute Handbook only** (one page, no reference.html unless the owner asks later):
+  - The 13 specific poisons: paracetamol, salicylates, TCAs, carbamazepine and phenytoin, CCBs (full HIET mixing
+    recipe), BBs, digoxin, theophylline, isoniazid, organophosphates, methanol and ethylene glycol,
+    sympathomimetics/amphetamine derivatives (tik, ecstasy, cocaine), iron/paraquat/paraffin/CO/corrosives.
+    `poisoning-general` (General approach to poisoning and toxidromes) keeps both books. Each poison stays its own
+    contents entry. **Batching: write the poisons in 3 batched threads of 4–5 pages each (one PR per batch,
+    manifest order), never one thread per poison.**
+  - Anaphylaxis and angio-oedema; Hypoglycaemia; Intubation, ICU referral and ceiling-of-care decisions.
+- **Reference Manual only** (no acute.html): Valvular heart disease (including rheumatic heart disease), for
+  post-admission review, ward workup and learning; Approach to ECG interpretation and ABG / acid-base analysis
+  (new "Foundations" section at the front).
+- **First seizure** is no longer a topic: it is a dedicated sub-block inside Status epilepticus covering the
+  first-seizure workup, CT and LP indications (including HIV), and admission vs discharge criteria.
+- **Suspected TB in the EC** is removed.
+- **Severe malaria** is expanded to "Severe malaria, severe rickettsiosis (tick bite fever) and VHF red flags"
+  (id `malaria` unchanged).
+- **Added, not started, both books**: Pericardial effusion and cardiac tamponade (TB, uraemic and malignant
+  causes; emergency pericardiocentesis); Pneumothorax and acute pleural emergencies (tension and secondary
+  pneumothorax, complicated parapneumonic effusion/empyema, ICD and thoracentesis rules); Hypercalcaemic crisis
+  and severe hypocalcaemia; Acute spinal cord compression, cauda equina and Guillain-Barré syndrome; Severe
+  anaemia, severe thrombocytopenia (including TTP/MAHA) and pancytopenia: acute emergencies and initial workup
+  (red flags such as TTP/DIC where platelet transfusion is contraindicated; pre-transfusion bloods to draw on
+  admission).
+- **STEMI**: streptokinase stays first-line from available stock at George and first choice in the dose box.
+
 ## Status (18 Oct 2026)
 - Built: cardiology/stemi, cardiology/nste-acs, cardiology/heart-failure, endocrine/dka-hhs. Build: 0 errors.
-- 49 topics planned in manifest.yaml (valvular heart disease added). ~123 open CHECK/DECISION markers.
+- 54 topics in manifest.yaml after the 21 Oct 2026 restructure (see "Syllabus architecture"). ~123 open
+  CHECK/DECISION markers (18 Oct count).
 - Next topics: cardiology (arrhythmias as a two-page acute topic, hypertensive emergency, pulmonary embolism,
-  infective endocarditis, valvular heart disease), then other systems in manifest order.
+  infective endocarditis, valvular heart disease (Reference only)), then other systems in manifest order.
 
 ## Resources
 - Owner's Google Drive (Google Drive connector): **George → Unit protocols** (subfolders Cardiac, Metabolic,
