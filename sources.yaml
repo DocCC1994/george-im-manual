@@ -325,3 +325,35 @@ ers-scap-2023:
   label: ERS/ESICM 2023
   citation: "Martin-Loeches I, Torres A, Nagavci B, et al. ERS/ESICM/ESCMID/ALAT guidelines for the management of severe community-acquired pneumonia. Intensive Care Med 2023 (published online 4 April 2023); published concurrently in Eur Respir J (doi:10.1183/13993003.00735-2022)."
   url: https://doi.org/10.1007/s00134-023-07033-8
+grh-malaria-2019:
+  label: GRH Malaria 2019
+  citation: "George Hospital, Department of Internal Medicine. Guideline on the management of malaria, Revision 2, review date 11/09/2019 (Dr WFvC Reyneke, Dr T Gould). Drive: Unit protocols."
+  url: https://drive.google.com/file/d/1w3O93jAVGKbqO3p0XDzhaSyyzJ4sdLfs/view
+stg-ch9-malaria:
+  label: STG 2024 §9.7.2
+  citation: "National Department of Health. Hospital Level (Adults) STGs and EML, 6th ed. 2024 (updated December 2025), Chapter 9 Systemic and healthcare-associated infections, §9.7.2 Malaria, severe, pp 9.15–9.16."
+  url: https://www.health.gov.za/nhi-edp-stgs-eml/
+stg-ch9-tbf:
+  label: STG 2024 §9.10
+  citation: "National Department of Health. Hospital Level (Adults) STGs and EML, 6th ed. 2024 (updated December 2025), Chapter 9, §9.10 Tick bite fever, pp 9.19–9.20."
+  url: https://www.health.gov.za/nhi-edp-stgs-eml/
+stg-ch9-vhf:
+  label: STG 2024 §9.5
+  citation: "National Department of Health. Hospital Level (Adults) STGs and EML, 6th ed. 2024 (updated December 2025), Chapter 9, §9.5 Haemorrhagic fever syndrome, pp 9.13–9.14."
+  url: https://www.health.gov.za/nhi-edp-stgs-eml/
+ndoh-malaria-2019:
+  label: NDoH 2019
+  citation: "National Department of Health. National guidelines for the treatment of malaria, South Africa, 2019. Sections 5–8 (diagnosis, severe malaria, complications, pregnancy, HIV)."
+  url: https://drive.google.com/file/d/1r1M-7YBiOihax76E1TTfpUQMdLu83IWf/view
+ndoh-vhf-2014:
+  label: NDoH 2014
+  citation: "National Department of Health. National guidelines for recognition and management of viral haemorrhagic fevers, 2014 (draft). Sections 4–7 (diagnosis, Table 4.1 CCHF criteria, immediate action, ribavirin Table 6.1, isolation precautions, transfer)."
+  url: https://drive.google.com/file/d/1Ev7d0RiG96cLuOvB-NtrMuOLEs2osyDm/view
+taljaard-tbf:
+  label: Taljaard
+  citation: "Taljaard J (Division of Infectious Diseases, Tygerberg Hospital and Stellenbosch University). Tick bite fever. CPD review, undated (Drive copy 2019)."
+  url: https://drive.google.com/file/d/1JR_1VI3lzrWnkg2K9dhZvWOWn4ErOnqP/view
+mcc-artesunate-2017:
+  label: MCC Section 21, 2017
+  citation: "Medicines Control Council. Section 21 approval for artesunate (Artesun), emergency stock 20 vials, George Hospital (applicant Dr TJ Gould), 19 May 2017, ref S170517/51; new authorisation every six months."
+  url: https://drive.google.com/file/d/1H-JwncQ01Mru6hPb2rcFzA5X-tBLthu-/view

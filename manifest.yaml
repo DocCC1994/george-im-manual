@@ -51,7 +51,7 @@ systems:
     topics:
       - {id: sepsis, title: Sepsis and septic shock, start: New (pilot), priority: P1, reference_tier: 1}
       - {id: meningitis, title: "Meningitis: bacterial, TB, cryptococcal", start: Rewrite + new (crypto 2021), priority: P1, reference_tier: 1}
-      - {id: malaria, title: "Severe malaria, severe rickettsiosis (tick bite fever) and VHF red flags", start: Rewrite (2019) + new, priority: P1, reference_tier: 2, deferred: true}
+      - {id: malaria, title: "Severe malaria, severe rickettsiosis (tick bite fever) and VHF red flags", start: Rewrite (2019) + new, priority: P1, reference_tier: 2, deferred: false}   # reference written at Craig's request, 21 Oct 2026
       - {id: neutropenic-sepsis, title: Neutropenic sepsis, start: New, priority: P1, reference_tier: 2, deferred: true}
   - id: endocrine
     name: Endocrine and metabolic
