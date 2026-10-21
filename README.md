@@ -4,7 +4,10 @@
 ```
 python3 build.py                 # all draft PDFs: Acute Handbook, Reference Manual, combined, editor report
 python3 build.py --topic stemi   # one-topic preview -> out/preview/stemi.pdf
-python3 build.py --release       # final version; refused while any CHECK/DECISION or unsigned topic remains
+python3 build.py --check         # house-rule checks: one line per problem (file:line) and a count; exit 1 on any
+python3 build.py --status        # one row per topic: acute/reference state, tier, priority, approved, open markers
+python3 build.py --release       # final version; refused while any CHECK/DECISION, empty approval line,
+                                 # unsigned topic or --check problem remains
 python3 build.py --zip           # also zip the source folder (keep a copy outside the workspace)
 ```
 Needs Python 3 with weasyprint, beautifulsoup4, pyyaml (and the Carlito font). Output goes to `out/`;
@@ -14,20 +17,26 @@ Needs Python 3 with weasyprint, beautifulsoup4, pyyaml (and the Carlito font). O
 ```
 manifest.yaml        order of systems and topics; planned topics (no folder yet) feed the progress table
 sources.yaml         every external link, defined once; cite with href="src:<key>"
+recipes.yaml         every infusion recipe; insert with {{recipe:<id>}}; build.py calculates the mL/hr rates
 style/house.css      the house style (GRH protocol look)
 templates/howto.html the "How to read this book" page
 templates/acknowledgements.html  acknowledgements and authorship page (front matter; its markers also block --release)
 assets/              logo and images (reference as assets/<file>)
 topics/<system>/<topic>/
-    topic.yaml       title, status, author, section editor, version, dates, based_on
+    topic.yaml       title, status, author, version, priority, books, approval, dates, based_on
     acute.html       Acute Handbook page(s)
     reference.html   Reference Manual page(s)
     editor.html      change log and open questions (editor report only)
 ```
 
 ## topic.yaml
-`title`, optional `acute_title` / `reference_title`, `short`, `status` (draft | review | signed-off), `version`,
-`effective`, `review`, `reviewed`, `author`, `section_editor`, optional `editors`, `co_reviewer`, `based_on`, `note`.
+`title`, optional `acute_title` / `reference_title`, `short`, `status` (draft | review | signed-off), `priority`,
+`acute` / `reference` (true/false: the topic's books, as in manifest.yaml), `deferred` (true for a Tier 2 reference
+chapter), `version`, `effective`, `review`, `reviewed`, `author`, optional `editors`, `co_reviewer`, `based_on`, `note`,
+and the approval line `approved_by`, `approved_rank`, `approved_date` (left blank until approved). `--check` requires
+these fields and checks `priority`, `acute`, `reference` and `deferred` against manifest.yaml. There are no section
+editors. The footer prints the author, editors, based on, version, build date, STG/EML edition (`stg_edition` in
+manifest.yaml) and the approval line.
 
 ## Writing a topic file
 Content only: the build adds the running header, title band, version and dates row, footer, page numbers,
@@ -45,6 +54,11 @@ Building blocks (see the cardiology topics for examples):
   2x2 `table.prof`; traffic lights `table.tl` (`g`/`a`/`r` cells)
 - Labels: `<span class="cls">I A</span>`, `<span class="avail y|s|n">EML</span>`, `<span class="cite">[…]</span>`
 - Draft markers: `<span class="chk">CHECK …</span>`, `<span class="dec">DECISION …</span>` (harvested into the editor report)
+- Infusions: `{{recipe:insulin}}` inserts the recipe from recipes.yaml (a table, or inline text inside your paragraph).
+  Never type an infusion rate (mL/hr, mcg/kg/min) next to a recipe drug: `--check` flags it.
+- `<!-- [ALLOW] reason -->` at the end of a source line exempts that line from `--check` (e.g. "noradrenaline not
+  available at George"). Banned terms: Latin abbreviations, noradrenaline/norepinephrine, NT-proBNP, IABP,
+  acetazolamide, and legacy footer text (section editor, pharmacist, "checked by the editorial team").
 
 Links:
 - `href="src:stg-ch3"` → the URL in sources.yaml
@@ -92,5 +106,7 @@ Links:
   /mnt/project-files/sources/stg-eml-2024/ and is never requested.
 
 ## Workflow
-draft → review (section editor has the editor-report pages) → signed-off (all markers resolved).
-`--release` builds only when every included topic is signed off and no markers remain; it drops the watermark.
+draft → review (the approver has the editor-report pages) → signed-off (all markers resolved, approval line filled).
+`--release` builds only when every included topic is signed off, no markers or empty approval lines remain and
+`--check` passes; it drops the "DRAFT – not for clinical use" watermark. Before merging any PR: merge main into the
+branch, run `python3 build.py --check`, and merge only if it passes.

@@ -3,12 +3,14 @@ short: STEMI
 status: draft            # draft | review | signed-off
 start: Rewrite (2023)
 priority: P1
+acute: true              # Acute Handbook sheet (manifest books)
+reference: true          # Reference Manual chapter (manifest books)
+deferred: false          # Tier 2: reference chapter deferred (manifest)
 version: 2026 v1
 effective: "[MM/YYYY]"
 review: "[MM/YYYY]"
 reviewed: "[MM/YYYY]"
 author: "[Author, Registrar IM]"
-section_editor: "[Consultant cardiologist / physician]"
 editors: "[Editors]"
 based_on: "GRH STEMI protocol 2023, Rev 5 (Dr M Tulleken, Dr A Vermeulen)"
 approved_by: ""
