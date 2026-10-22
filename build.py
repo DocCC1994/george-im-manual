@@ -5,6 +5,9 @@
     python3 build.py --topic stemi   topic-only draft preview -> out/preview-topic.pdf: that topic's Acute page(s)
                                      and Reference section only (no cover, contents, How to read, acknowledgements
                                      or dividers); --topic a,b,c previews several topics (e.g. a poison batch)
+    python3 build.py --acute         Acute Handbook only, marked "Draft for comment", with cover, contents, How to
+                                     read, acknowledgements and a page of open CHECK/DECISION counts per topic, for
+                                     stakeholders to reply by topic; no Reference chapters
     python3 build.py --release       final version: refuses while any CHECK/DECISION, empty approval line,
                                      unsigned topic or --check problem remains
     python3 build.py --check         house-rule checks (file:line per problem, count at the end); exit 1 on any
@@ -25,6 +28,7 @@ OUT = ROOT / 'out'
 PREFIX = {'acute': 'acute', 'reference': 'ref', 'editor': 'editor'}
 BOOK_OF_PREFIX = {'acute': 'acute', 'ref': 'reference', 'editor': 'editor'}
 DRAFT_WM = 'DRAFT – not for clinical use'
+COMMENT_WM = 'DRAFT FOR COMMENT – not for clinical use'
 STATUS_LABEL = {'planned': 'Planned', 'draft': 'Draft', 'review': 'Under review', 'signed-off': 'Signed off'}
 
 
@@ -320,8 +324,9 @@ def render_sheet(manifest, sources, known_ids, topic, book, sh, bm_base, first_i
 </section>'''
 
 
-def cover(manifest, label, draft):
+def cover(manifest, label, draft, comment=False):
     d = f'<div class="draft">{DRAFT_WM}</div>' if draft else ''
+    if comment: d = f'<div class="draft">{COMMENT_WM}<br>Circulated {BUILD_DATE}</div>'
     return f'''
 <section class="cover">
 <div class="frame"><div class="band"><div class="k">{esc(manifest['hospital'].upper())} · {esc(manifest['department'].upper())}</div>
@@ -333,14 +338,15 @@ def cover(manifest, label, draft):
 </section>'''
 
 
-def front_page(manifest, title, inner, draft, runhead, page_id=None):
-    wm = f'<div class="wm">{DRAFT_WM}</div>' if draft else '<div class="wm"> </div>'
+def front_page(manifest, title, inner, draft, runhead, page_id=None, comment=False):
+    wm = f'<div class="wm">{COMMENT_WM if comment else DRAFT_WM}</div>' if draft else '<div class="wm"> </div>'
+    flag = f'<span>Draft for comment · {BUILD_DATE}</span>' if comment else '<span>Draft for review</span>' if draft else ''
     pid = f' id="{page_id}"' if page_id else ''
     return f'''
 <section class="sheet front"{pid}>
 <div class="runhead">{esc(runhead)}</div>{wm}
 <table class="hdr"><tr><td class="h1">{esc(title)}</td></tr>
-<tr><td class="meta"><span>{esc(manifest['edition'])} · Version {esc(manifest['version'])}</span>{'<span>Draft for review</span>' if draft else ''}</td></tr></table>
+<tr><td class="meta"><span>{esc(manifest['edition'])} · Version {esc(manifest['version'])}</span>{flag}</td></tr></table>
 {inner}
 </section>'''
 
@@ -368,6 +374,33 @@ def contents_table(manifest, topics, books, draft):
     return f'<h3>Contents</h3><table class="toc">{head}{"".join(rows)}</table>'
 
 
+def comment_summary(manifest, topics, book):
+    """Draft-for-comment page: open CHECK/DECISION markers per topic on this book's pages, so readers can reply by topic."""
+    rows, tc, td = [], 0, 0
+    for sysid in dict.fromkeys(t['system'] for t in topics):
+        ts = [t for t in topics if t['system'] == sysid and t['sheets'][book]]
+        if not ts: continue
+        rows.append(f'<tr class="sys"><td colspan="4">{esc(ts[0]["system_name"])}</td></tr>')
+        for t in ts:
+            mk = [m for m in t['markers'] if m['book'] == ('Acute' if book == 'acute' else 'Reference')]
+            c = sum(m['kind'] == 'CHECK' for m in mk); d = len(mk) - c
+            tc += c; td += d
+            first = t['sheets'][book][0]
+            rows.append(f'<tr><td class="name"><a href="#{first["id"]}">{esc(book_title(t, book))}</a></td>'
+                        f'<td class="pg"><a class="pg" href="#{first["id"]}"></a></td><td class="n">{c or ""}</td><td class="n">{d or ""}</td></tr>')
+    n = sum(1 for t in topics if t['sheets'][book])
+    intro = (f'<p>This is a draft of the {esc(manifest["books"][book]["name"])} ({n} topics, built {BUILD_DATE}), sent for comment. '
+             'It is not for clinical use. Please reply <b>by topic</b>: give the topic name, the section (for example DOSE BOX or REFER) '
+             'and your suggested change, with a reference where you have one. The <b>Suggest an edit</b> button at the foot of every page '
+             'opens a message already labelled with the topic.</p>'
+             '<p><span class="chk">CHECK</span> marks a fact still to be confirmed locally or against the source; '
+             '<span class="dec">DECISION</span> marks a choice still to be made by the topic owner and approving consultant. '
+             'Answers to these are especially welcome. The table counts the markers still open on each topic\'s pages.</p>')
+    head = '<tr><td><b>Topic</b></td><td class="pg"><b>Page</b></td><td class="n"><b>CHECK</b></td><td class="n"><b>DECISION</b></td></tr>'
+    total = f'<tr class="sys"><td>Total</td><td></td><td class="n">{tc}</td><td class="n">{td}</td></tr>'
+    return f'{intro}<h3>Open questions by topic</h3><table class="toc cmt">{head}{"".join(rows)}{total}</table>'
+
+
 def divider(label, sub, level):
     return f'''
 <section class="divider">{bm(level, label)}<div class="frame"><div class="band">{esc(label)}</div>
@@ -383,19 +416,23 @@ def document(body, title):
 ALL_IDS = set()
 
 
-def build_book(manifest, sources, topics, books, label, draft, with_cover=True, front_matter=True):
+def build_book(manifest, sources, topics, books, label, draft, with_cover=True, front_matter=True, comment=False):
     """front_matter=False (topic-only preview): topic sheets only, no cover, contents, How to read,
-    acknowledgements or book dividers. Those belong to the full book builds only."""
+    acknowledgements or book dividers. Those belong to the full book builds only.
+    comment=True (--acute): marked "Draft for comment", with the open-questions page after the contents."""
     known = {sh['id'] for t in topics for b in books for sh in t['sheets'][b]}
     parts = []
-    if with_cover and front_matter: parts.append(cover(manifest, label, draft))
+    if with_cover and front_matter: parts.append(cover(manifest, label, draft, comment))
     if front_matter:
         howto = (ROOT / 'templates' / 'howto.html').read_text(encoding='utf-8')
         runhead = f"{manifest['hospital'].upper()}: {manifest['department'].upper()}"
-        parts.append(front_page(manifest, label, contents_table(manifest, topics, books, draft), draft, runhead, 'contents'))
-        parts.append(front_page(manifest, 'How to read this book', howto, draft, runhead))
+        parts.append(front_page(manifest, label, contents_table(manifest, topics, books, draft), draft, runhead, 'contents', comment))
+        if comment:
+            parts.append(front_page(manifest, 'Draft for comment: how to reply', comment_summary(manifest, topics, books[0]),
+                                    draft, runhead, 'comment', comment))
+        parts.append(front_page(manifest, 'How to read this book', howto, draft, runhead, comment=comment))
         acks = (ROOT / 'templates' / 'acknowledgements.html').read_text(encoding='utf-8')
-        parts.append(front_page(manifest, 'Acknowledgements and authorship', acks, draft, runhead))
+        parts.append(front_page(manifest, 'Acknowledgements and authorship', acks, draft, runhead, comment=comment))
     for book in books:
         base = 1
         if len(books) > 1 and front_matter:
@@ -603,6 +640,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--topic'); ap.add_argument('--release', action='store_true'); ap.add_argument('--zip', action='store_true')
     ap.add_argument('--check', action='store_true'); ap.add_argument('--status', action='store_true')
+    ap.add_argument('--acute', action='store_true')
     args = ap.parse_args()
     manifest, sources, topics = load()
     for t in topics:
@@ -649,6 +687,12 @@ def main():
         out = OUT / 'preview-topic.pdf'
         n = render(build_book(manifest, sources, sel, ('acute', 'reference'), label, draft, front_matter=False), out)
         results.append((out, n))
+    elif args.acute:
+        if args.release: sys.exit('--acute is a draft for comment; it cannot be combined with --release')
+        sel = [t for t in built if t['sheets']['acute']]
+        out = OUT / f"George IM Acute Handbook {tag} - draft for comment.pdf"
+        results.append((out, render(build_book(manifest, sources, sel, ('acute',), manifest['books']['acute']['name'],
+                                               draft, comment=True), out)))
     else:
         jobs = [
             (('acute',), manifest['books']['acute']['name'], f"George IM Acute Handbook {tag}{suffix}.pdf"),
