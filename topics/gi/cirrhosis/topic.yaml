@@ -1,0 +1,18 @@
+title: "Decompensated cirrhosis: encephalopathy, SBP"
+short: Decompensated cirrhosis
+status: draft
+start: New
+priority: P1
+acute: true              # Acute Handbook sheet (manifest books)
+reference: true          # Reference Manual chapter (manifest books)
+deferred: false          # Tier 1: reference chapter to follow (not in this batch)
+version: 2026 v1
+effective: "[MM/YYYY]"
+review: "[MM/YYYY]"
+reviewed: "[MM/YYYY]"
+author: "[Author, Registrar IM]"
+editors: "[Editors]"
+based_on: "STG 2024 §1.2.3 and §1.3.8; SAASP 2026 Ch 8 (SBP); EASL 2018 and 2022 (where the STG is silent); local facts (R5, S6, L9, I10, M9)"
+approved_by: ""
+approved_rank: ""
+approved_date: ""
