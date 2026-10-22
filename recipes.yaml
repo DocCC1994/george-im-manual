@@ -224,3 +224,39 @@ iron-dextran-tdi:
   diluent: sodium chloride 0.9% or dextrose 5%
   over: 240
   layout: inline
+
+calcium-gluconate-bolus:
+  match: [calcium gluconate]
+  from: "calcium-emergencies acute (STG 2024 §8.10: 20 mL of 10% in 100 mL dextrose 5% over 20 min, with ECG monitoring)"
+  unit: mL
+  note: "of calcium gluconate 10%"
+  amount: 20
+  volume: 100
+  diluent: dextrose 5%
+  over: 20
+  pump: IVAC
+  layout: inline
+
+calcium-gluconate-maint:
+  match: [calcium gluconate]
+  from: "calcium-emergencies acute (STG 2024 §8.10: 15 mg/kg (= 1.7 mL/kg of 10%) in 1 000 mL sodium chloride 0.9% over 4 hours)"
+  unit: mg/kg
+  note: "(1.7 mL/kg of calcium gluconate 10%)"
+  amount: 15
+  volume: 1000
+  diluent: sodium chloride 0.9%
+  over: 240
+  pump: IVAC
+  layout: inline
+
+octreotide:
+  match: [octreotide]
+  from: "ugib acute (Baveno VII dose 50 mcg/hr, not in the STG; bag strength not from a source)"
+  unit: mg
+  amount: 0.5
+  volume: 50
+  diluent: sodium chloride 0.9%
+  check: "octreotide stocked at George (M9) and bag strength: no George or STG recipe"
+  dose_unit: mcg/hr
+  doses: [50]
+  layout: inline

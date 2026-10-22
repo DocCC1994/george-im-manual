@@ -1,0 +1,18 @@
+title: Thyroid storm and myxoedema coma
+short: Thyroid emergencies
+status: draft
+start: New
+priority: P1
+acute: true              # Acute Handbook sheet (manifest books)
+reference: true          # Reference Manual chapter (manifest books)
+deferred: true           # Tier 2: reference chapter deferred (manifest)
+version: 2026 v1
+effective: "[MM/YYYY]"
+review: "[MM/YYYY]"
+reviewed: "[MM/YYYY]"
+author: "[Author, Registrar IM]"
+editors: "[Editors]"
+based_on: "STG 2024 §8.18.5, §8.11, §23.8.1.3 and §23.8.1.5; JTA/JES 2016 and ATA 2016 (where the STG is silent); local facts (L10)"
+approved_by: ""
+approved_rank: ""
+approved_date: ""
