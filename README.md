@@ -6,6 +6,8 @@ python3 build.py                 # all draft PDFs: Acute Handbook, Reference Man
 python3 build.py --topic stemi   # topic-only draft preview -> out/preview-topic.pdf (Acute page(s) + Reference
                                  # section only; no cover, contents, How to read, acknowledgements or dividers);
                                  # --topic a,b,c previews a batch (e.g. poisons)
+python3 build.py --acute         # Acute Handbook only, "Draft for comment": cover, contents, open-questions page
+                                 # (CHECK/DECISION counts per topic), How to read, acknowledgements; no Reference
 python3 build.py --check         # house-rule checks: one line per problem (file:line) and a count; exit 1 on any
 python3 build.py --status        # one row per topic: acute/reference state, tier, priority, approved, open markers
 python3 build.py --release       # final version; refused while any CHECK/DECISION, empty approval line,

@@ -149,6 +149,7 @@ table.toc tr.part td { background: var(--band-dark); font-weight: 700; text-tran
 table.toc tr.sub td.name { padding-left: 6mm; font-style: italic; }
 table.toc td.pg { width: 12mm; text-align: right; }
 table.toc td.st { width: 24mm; font-size: 7.6pt; }
+table.toc.cmt td.n { width: 18mm; text-align: right; }
 a.pg::after, .pgref::after { content: target-counter(attr(href), page); }
 
 .divider { page: divider; break-before: page; padding-top: 90mm; text-align: center; }
