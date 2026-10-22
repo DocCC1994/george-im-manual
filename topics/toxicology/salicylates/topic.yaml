@@ -1,0 +1,18 @@
+title: Salicylates
+short: Salicylates
+status: draft
+start: New
+priority: P1
+acute: true              # Acute Handbook sheet (manifest books)
+reference: false         # Acute Handbook only (manifest books: [acute])
+deferred: false
+version: 2026 v1
+effective: "[MM/YYYY]"
+review: "[MM/YYYY]"
+reviewed: "[MM/YYYY]"
+author: "[Author, Registrar IM]"
+editors: "[Editors]"
+based_on: "New topic (no GRH protocol): STG 2024 §19.5.2 and Chapter 19 general measures; EXTRIP 2015"
+approved_by: ""
+approved_rank: ""
+approved_date: ""

@@ -1,0 +1,18 @@
+title: Paracetamol
+short: Paracetamol
+status: draft
+start: Rewrite (pilot; 2021)
+priority: P1
+acute: true              # Acute Handbook sheet (manifest books)
+reference: false         # Acute Handbook only (manifest books: [acute])
+deferred: false
+version: 2026 v1
+effective: "[MM/YYYY]"
+review: "[MM/YYYY]"
+reviewed: "[MM/YYYY]"
+author: "[Author, Registrar IM]"
+editors: "[Editors]"
+based_on: "GRH paracetamol toxicity guideline 2021, Rev 2 (Dr M Tulleken, Dr TJ Gould); George EC two-bag NAC sheet; STG 2024 §19.5.1"
+approved_by: ""
+approved_rank: ""
+approved_date: ""
