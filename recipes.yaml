@@ -260,3 +260,52 @@ octreotide:
   dose_unit: mcg/hr
   doses: [50]
   layout: inline
+
+alteplase:
+  match: [alteplase]
+  from: "stroke acute (STG 2024 §14.1.1 and GRH 2012: 0.9 mg/kg, maximum 90 mg, 10% as a bolus over 1 min, the rest over 60 min; vial 50 mg with 50 mL solvent = 1 mg/mL, from the package insert, to verify)"
+  unit: mg
+  preps:
+    - {amount: 50, volume: 50}
+  dose_unit: mg/kg/hr
+  doses: [0.81]                   # the 90% infusion part of 0.9 mg/kg, run over 60 min
+  weights: [50, 60, 70, 80, 90, 100]
+  layout: table
+
+phenytoin:
+  match: [phenytoin]
+  from: "status-epilepticus acute (STG 2024 §14.5 Table 1 and GRH 2022: 20 mg/kg in 200 mL sodium chloride 0.9%, not faster than 50 mg/min, usually 20–30 min)"
+  unit: mg/kg
+  note: "(not faster than 50 mg/min: above 75 kg run it over 40 min)"
+  amount: 20
+  volume: 200
+  diluent: sodium chloride 0.9% (never dextrose)
+  over: 30
+  pump: IVAC
+  layout: inline
+
+valproate:
+  match: [valproate, valproic]
+  from: "status-epilepticus acute (GRH 2022: 40 mg/kg, maximum 3 g, at up to 10 mg/kg/min; not in STG 2024 Table 1; 100 mL bag over 10 min as in ESETT, not from a George source)"
+  unit: mg/kg
+  note: "(maximum 3 g)"
+  amount: 40
+  volume: 100
+  diluent: sodium chloride 0.9%
+  over: 10
+  pump: IVAC
+  layout: inline
+
+midazolam:
+  match: [midazolam]
+  from: "status-epilepticus acute (STG 2024 §14.5 Table 1: 0.05–0.5 mg/kg/hr after a 0.1–0.2 mg/kg bolus; 1 mg/mL syringe not from a George source)"
+  unit: mg
+  amount: 50
+  volume: 50
+  diluent: sodium chloride 0.9%
+  check: "George ICU midazolam syringe strength"
+  dose_unit: mg/kg/hr
+  formula: true
+  doses: [0.1, 0.2, 0.5]
+  weights: [70]
+  layout: inline

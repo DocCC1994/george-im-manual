@@ -723,3 +723,71 @@ halt-it-2020:
   label: HALT-IT
   citation: "HALT-IT Trial Collaborators. Effects of a high-dose 24-h infusion of tranexamic acid on death and thromboembolic events in patients with acute gastrointestinal bleeding (HALT-IT): an international randomised, double-blind, placebo-controlled trial. Lancet 2020;395(10241):1927–1936."
   url: https://doi.org/10.1016/S0140-6736(20)30848-5
+stg-ch1-sbp:
+  label: STG 2024 §1.3.8
+  citation: "National Department of Health. Hospital Level (Adults) STGs and EML, 6th ed. 2024 (updated December 2025), Chapter 1 Alimentary tract, §1.3.8 Bacterial peritonitis (spontaneous bacterial peritonitis), pp 1.23–1.24."
+  url: https://www.health.gov.za/nhi-edp-stgs-eml/
+saasp-2026-sbp:
+  label: SAASP 2026
+  citation: "South African Antibiotic Stewardship Programme. A Guide to Antibiotic Prescribing for Adults in South Africa, 2nd ed. 2026, Ch 8 Intra-abdominal infection: spontaneous bacterial peritonitis, pp 38–39 (algorithm and footnotes)."
+  url: https://www.fidssa.co.za/saasp
+easl-decomp-2018:
+  label: EASL 2018
+  citation: "European Association for the Study of the Liver. EASL Clinical Practice Guidelines for the management of patients with decompensated cirrhosis. J Hepatol 2018;69(2):406–460 (not read for this draft)."
+  url: https://doi.org/10.1016/j.jhep.2018.03.024
+easl-he-2022:
+  label: EASL 2022
+  citation: "European Association for the Study of the Liver. EASL Clinical Practice Guidelines on the management of hepatic encephalopathy. J Hepatol 2022;77(3):807–824 (not read for this draft)."
+  url: https://doi.org/10.1016/j.jhep.2022.06.001
+stg-ch1-alf:
+  label: STG 2024 §1.2.2
+  citation: "National Department of Health. Hospital Level (Adults) STGs and EML, 6th ed. 2024 (updated December 2025), Chapter 1 Alimentary tract, §1.2.1 Hepatitis, non-viral and §1.2.2 Liver failure, acute, pp 1.8–1.10; §1.2.4.1 Hepatitis B, acute, p 1.13."
+  url: https://www.health.gov.za/nhi-edp-stgs-eml/
+easl-alf-2017:
+  label: EASL 2017
+  citation: "European Association for the Study of the Liver. EASL Clinical Practical Guidelines on the management of acute (fulminant) liver failure. J Hepatol 2017;66(5):1047–1081 (not read for this draft)."
+  url: https://doi.org/10.1016/j.jhep.2016.12.003
+stg-ch14-stroke:
+  label: STG 2024 §14.1
+  citation: "National Department of Health. Hospital Level (Adults) STGs and EML, 6th ed. 2024 (updated December 2025), Chapter 14 Neurological disorders, §14.1.1 Stroke, §14.1.2 TIA, §14.1.3 Subarachnoid haemorrhage, pp 14.1–14.6."
+  url: https://www.health.gov.za/nhi-edp-stgs-eml/
+grh-stroke-2020:
+  label: GRH 2020
+  citation: "George Hospital Internal Medicine. Assessment and management of acute stroke and transient ischaemic attack (Dr T Gould; Drs Veenstra and Ganya), effective 01/01/2020, with thrombolysis eligibility criteria."
+  url: https://drive.google.com/file/d/1QvQSmFaiy40lAxmEmjd51yZ-AfKAeQ3_/view
+grh-lysis-2012:
+  label: GRH 2012
+  citation: "George Hospital Internal Medicine. Protocol: thrombolysis in stroke (Dr Van Rooyen; approved Dr M Viljoen), implemented 20/11/2012, with checklist, monitoring chart and NIHSS."
+  url: https://drive.google.com/file/d/1z4HznehZJtoO0RDqscVSCSFV53CqyNEA/view
+eso-ivt-2021:
+  label: ESO 2021
+  citation: "Berge E, Whiteley W, Audebert H, et al. European Stroke Organisation (ESO) guidelines on intravenous thrombolysis for acute ischaemic stroke. Eur Stroke J 2021;6(1):I–LXII (not read for this draft)."
+  url: https://doi.org/10.1177/2396987321989865
+aha-ich-2022:
+  label: AHA/ASA 2022
+  citation: "Greenberg SM, Ziai WC, Cordonnier C, et al. 2022 Guideline for the management of patients with spontaneous intracerebral hemorrhage: a guideline from the American Heart Association/American Stroke Association. Stroke 2022;53(7):e282–e361 (not read for this draft)."
+  url: https://doi.org/10.1161/STR.0000000000000407
+grh-se-2022:
+  label: GRH 2022
+  citation: "George Hospital Internal Medicine. Protocol on management of generalised convulsive status epilepticus, Revision 2, effective 01/10/2022 (Dr M Tulleken, Dr T Gould), after Western Cape circular H127 of 2022."
+  url: https://drive.google.com/file/d/13baDEu_M9vVzR1lc-j7ItATySLQTa_iQ/view
+stg-ch14-seizure:
+  label: STG 2024 §14.4
+  citation: "National Department of Health. Hospital Level (Adults) STGs and EML, 6th ed. 2024 (updated December 2025), Chapter 14, §14.4 Epileptic seizures, §14.5.1 Seizures in adolescents and adults (causes, general measures, after the seizure), §14.6 Epilepsy (definition), pp 14.7–14.18."
+  url: https://www.health.gov.za/nhi-edp-stgs-eml/
+esett-2019:
+  label: ESETT
+  citation: "Kapur J, Elm J, Chamberlain JM, et al. Randomized trial of three anticonvulsant medications for status epilepticus. N Engl J Med 2019;381(22):2103–2113."
+  url: https://doi.org/10.1056/NEJMoa1905795
+stg-ch20-delirium:
+  label: STG 2024 §20.8
+  citation: "National Department of Health. Hospital Level (Adults) STGs and EML, 6th ed. 2024 (updated December 2025), Chapter 20 Emergencies and injuries, §20.8 Delirium, pp 20.13–20.15; §14.2 Dementia (Wernicke's syndrome, thiamine), p 14.7."
+  url: https://www.health.gov.za/nhi-edp-stgs-eml/
+stg-ch15-alcohol:
+  label: STG 2024 §15.8.1
+  citation: "National Department of Health. Hospital Level (Adults) STGs and EML, 6th ed. 2024 (updated December 2025), Chapter 15, §15.8.1 Alcohol withdrawal and §15.8.1.1 Alcohol withdrawal delirium (delirium tremens), pp 15.31–15.33."
+  url: https://www.health.gov.za/nhi-edp-stgs-eml/
+ciwa-ar-1989:
+  label: CIWA-Ar
+  citation: "Sullivan JT, Sykora K, Schneiderman J, Naranjo CA, Sellers EM. Assessment of alcohol withdrawal: the revised Clinical Institute Withdrawal Assessment for Alcohol scale (CIWA-Ar). Br J Addict 1989;84(11):1353–1357."
+  url: https://doi.org/10.1111/j.1360-0443.1989.tb00737.x

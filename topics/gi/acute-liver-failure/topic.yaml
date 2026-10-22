@@ -1,0 +1,18 @@
+title: Acute liver failure
+short: Acute liver failure
+status: draft
+start: New
+priority: P1
+acute: true              # Acute Handbook sheet (manifest books)
+reference: true          # Reference Manual chapter (manifest books)
+deferred: true           # Tier 2: reference chapter deferred (manifest)
+version: 2026 v1
+effective: "[MM/YYYY]"
+review: "[MM/YYYY]"
+reviewed: "[MM/YYYY]"
+author: "[Author, Registrar IM]"
+editors: "[Editors]"
+based_on: "STG 2024 §1.2.1, §1.2.2 and §1.2.4.1; EASL 2017 (where the STG is silent); local facts (R5, L7, L9, I10, S1)"
+approved_by: ""
+approved_rank: ""
+approved_date: ""
