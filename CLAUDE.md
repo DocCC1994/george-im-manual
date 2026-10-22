@@ -167,7 +167,7 @@ retrofitted unless the owner names one. Seven parts, in this order:
 
 ## Status (18 Oct 2026)
 - Built: cardiology/stemi, cardiology/nste-acs, cardiology/heart-failure, endocrine/dka-hhs. Build: 0 errors.
-- 57 topics in manifest.yaml after the 22 Oct 2026 cytopenia and spinal cord split (see "Syllabus architecture"). ~123 open
+- 62 topics in manifest.yaml after the 22 Oct 2026 cytopenia and spinal cord split (see "Syllabus architecture"). ~123 open
   CHECK/DECISION markers (18 Oct count).
 - Next topics (owner, 21 Oct 2026), after the open PRs are cleared: CAP, acute asthma, meningitis, severe malaria.
   Meningitis keeps bacterial, TB and cryptococcal meningitis in one topic (owner, 21 Oct 2026); no separate crypto topic. Severe malaria takes the expanded title (rickettsiosis, VHF red flags) when its
