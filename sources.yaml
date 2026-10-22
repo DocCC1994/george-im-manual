@@ -9,6 +9,14 @@ stg-full:
   label: STG 2024 (full)
   citation: "National Department of Health. Hospital Level (Adults) STGs and EML, 6th ed. 2024 (full text)."
   url: https://www.health.gov.za/wp-content/uploads/2025/07/Hospital-Level-Adults-Standard-Treatment-Guidelines-and-Essential-Medicines-List-6th-Edition-2024.pdf
+grh-op-2016:
+  label: GRH 2016
+  citation: "George Hospital Internal Medicine Unit. Guideline on the management of organophosphate toxicity. Rev 1, effective 01/02/2016 (Dr TF Roos, Dr T Gould)."
+  url: https://drive.google.com/file/d/1a5AO_kHK-zkt-PkSXnrXnZ1os1RiUDxB/view
+tbh-caustic:
+  label: Tygerberg ENT
+  citation: "van der Meer G, Division of Otorhinolaryngology, Stellenbosch University (Tygerberg). Caustic ingestion departmental guidelines. Undated (Drive copy 2021)."
+  url: https://drive.google.com/file/d/1kV83CUYryTc7rDAcbz6hWlmK0-cOzCfV/view
 ndoh-sk-2023:
   label: NDoH 2023
   citation: "National Department of Health. Notice: Streptokinase 1 500 000 IU injection discontinuation, 10 December 2023."

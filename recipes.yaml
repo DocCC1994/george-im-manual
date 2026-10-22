@@ -16,6 +16,19 @@
 #   over        minutes for a single dose given over a set time (magnesium); renders the bag and its mL/hr
 #   layout      inline (text inside the author's paragraph) or table
 
+atropine:
+  match: [atropine]
+  from: organophosphates acute (STG 2024 §19.18.2 infusion table, 1 mg/mL ampoules)
+  unit: mg
+  ampoule: 1                      # 1 mg/mL ampoule
+  amount: 40
+  volume: 200
+  diluent: sodium chloride 0.9%
+  dose_unit: mg/hr
+  doses: [2, 4, 6, 8, 12]
+  check: "George atropine ampoule strength (1 mg/mL or 0.5 mg/mL; 100 mg/10 mL stocked?) and diluent"
+  layout: inline
+
 insulin:
   match: [insulin]
   from: dka-hhs acute (STG 2025; GRH 2024 syringe driver)

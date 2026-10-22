@@ -30,6 +30,7 @@ h1, h2, h3, h4, h5, h6 { bookmark-level: none; }
 
 /* ---------- page shell ---------- */
 .sheet { break-before: page; position: relative; }
+/* paired half-page topics (toxicology): the second topic follows the first on the same page */
 .sheet.paired { break-before: auto; margin-top: 5mm; }
 .sheet.paired > .toc-link { display: none; }
 .runhead { string-set: runhead content(text); height: 0; overflow: hidden; margin: 0; }
