@@ -470,6 +470,62 @@ sun-iron-2026:
   citation: "Van der Merwe J (Division of Clinical Pharmacology, Stellenbosch University). Too much of a good thing: acute iron toxicity. Academic meeting, 25 May 2026 (Drive copy); severity bands and desferrioxamine indications from AfriTox."
   url: https://drive.google.com/file/d/1pdHbfO7NaBlwrfpsAf9vhDl4uuKZ2d3r/view
 
+stg-ch20-arrest:
+  label: STG 2024 §20.1
+  citation: "National Department of Health. Hospital Level (Adults) STGs and EML, 6th ed. 2024 (updated December 2025), Chapter 20 Emergencies and injuries, §20.1 Cardiac arrest in adults, p 20.4 (cautious fluid during CPR in tamponade)."
+  url: https://www.health.gov.za/nhi-edp-stgs-eml/
+stg-ch20-obstructive:
+  label: STG 2024 §20.12.4
+  citation: "National Department of Health. Hospital Level (Adults) STGs and EML, 6th ed. 2024 (updated December 2025), Chapter 20 Emergencies and injuries, §20.12.4 Obstructive shock, pp 20.24–20.25."
+  url: https://www.health.gov.za/nhi-edp-stgs-eml/
+stg-ch21-onc:
+  label: STG 2024 §21.1.3.2
+  citation: "National Department of Health. Hospital Level (Adults) STGs and EML, 6th ed. 2024 (updated December 2025), Chapter 21 Oncologic emergencies, §21.1.3.2 Malignant pericardial effusion, pp 21.2–21.3."
+  url: https://www.health.gov.za/nhi-edp-stgs-eml/
+stg-ch7-aki:
+  label: STG 2024 §7.1.4
+  citation: "National Department of Health. Hospital Level (Adults) STGs and EML, 6th ed. 2024 (updated December 2025), Chapter 7 Kidney and urological disorders, §7.1.4 Acute kidney injury: acute dialysis indications, p 7.9."
+  url: https://www.health.gov.za/nhi-edp-stgs-eml/
+stg-ch16-tb:
+  label: STG 2024 §16.9–16.10
+  citation: "National Department of Health. Hospital Level (Adults) STGs and EML, 6th ed. 2024 (updated December 2025), Chapter 16 Respiratory disorders, §16.9 Tuberculosis, pulmonary and §16.10 Tuberculosis, pleural, pp 16.19–16.21."
+  url: https://www.health.gov.za/nhi-edp-stgs-eml/
+harrison-281:
+  label: Harrison 22e
+  citation: "Loscalzo J. Pericardial disease. In: Harrison's Principles of Internal Medicine, 22nd ed. McGraw Hill; 2025. Chapter 281, pp 2078–2084 (Drive copy)."
+  url: https://drive.google.com/file/d/1TRImx6y-ivKCvVkL-elJsrvPz8zyZZE1/view
+herbst-sun:
+  label: Herbst
+  citation: "Herbst P (Division of Cardiology, Stellenbosch University and Tygerberg Hospital). Pericardial effusion and tamponade. Lecture slides, SUNecho (Drive copy 2018)."
+  url: https://drive.google.com/file/d/1lc2NE1OsZ0Nz9Es9yjXJ0gF9QQhGjSqn/view
+tb-pericarditis-note:
+  label: Teaching note 2020
+  citation: "An approach to tuberculous pericarditis. Undated local teaching document (Drive copy, October 2020), section 'Our current Rx'. Author and unit not stated."
+  url: https://drive.google.com/file/d/11xQTefTMleLxBLvR2AWIDrUrBOmt3v2q/view
+esc-peri-2015:
+  label: ESC 2015
+  citation: "Adler Y, Charron P, Imazio M, et al. 2015 ESC Guidelines for the diagnosis and management of pericardial diseases. Eur Heart J 2015;36(42):2921–2964. Not read for this draft (cited from background knowledge; CHECK)."
+  url: https://doi.org/10.1093/eurheartj/ehv318
+impi-2014:
+  label: IMPI
+  citation: "Mayosi BM, Ntsekhe M, Bosch J, et al. Prednisolone and Mycobacterium indicus pranii in tuberculous pericarditis. N Engl J Med 2014;371:1121–1130."
+  url: https://doi.org/10.1056/NEJMoa1407380
+icap-2013:
+  label: ICAP
+  citation: "Imazio M, Brucato A, Cemin R, et al. A randomized trial of colchicine for acute pericarditis (ICAP). N Engl J Med 2013;369:1522–1528."
+  url: https://doi.org/10.1056/NEJMoa1208536
+reuter-2006:
+  label: Reuter 2006
+  citation: "Reuter H, Burgess LJ, van Vuuren W, Doubell AF. Diagnosing tuberculous pericarditis. QJM 2006;99:827–839 (Tygerberg diagnostic score)."
+  url: https://pubmed.ncbi.nlm.nih.gov/?term=Reuter+Burgess+Doubell+Diagnosing+tuberculous+pericarditis
+pandie-2014:
+  label: Pandie 2014
+  citation: "Pandie S, Peter JG, Kerbelker ZS, et al. Diagnostic accuracy of quantitative PCR (Xpert MTB/RIF) for tuberculous pericarditis compared to adenosine deaminase and unstimulated interferon-γ in a high burden setting: a prospective study. BMC Med 2014;12:101. Cited from background knowledge (CHECK)."
+  url: https://pubmed.ncbi.nlm.nih.gov/?term=Pandie+Xpert+tuberculous+pericarditis+adenosine+deaminase+interferon
+cope-2005:
+  label: COPE
+  citation: "Imazio M, Bobbio M, Cecchi E, et al. Colchicine in addition to conventional therapy for acute pericarditis: results of the COlchicine for acute PEricarditis (COPE) trial. Circulation 2005;112:2012–2016."
+  url: https://pubmed.ncbi.nlm.nih.gov/?term=COPE+colchicine+acute+pericarditis+Imazio+2005
 stg-ch19-decon:
   label: STG 2024 §19
   citation: "National Department of Health. Hospital Level (Adults) STGs and EML, 6th ed. 2024 (updated December 2025), Chapter 19 Poisoning: general measures, gut decontamination (Table 19.2, activated charcoal), sodium bicarbonate alkalinisation, haemodialysis, referral."
