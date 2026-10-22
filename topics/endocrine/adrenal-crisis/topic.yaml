@@ -1,0 +1,18 @@
+title: Adrenal crisis
+short: Adrenal crisis
+status: draft
+start: New
+priority: P1
+acute: true              # Acute Handbook sheet (manifest books)
+reference: true          # Reference Manual chapter (manifest books)
+deferred: true           # Tier 2: reference chapter deferred (manifest)
+version: 2026 v1
+effective: "[MM/YYYY]"
+review: "[MM/YYYY]"
+reviewed: "[MM/YYYY]"
+author: "[Author, Registrar IM]"
+editors: "[Editors]"
+based_on: "STG 2024 §8.2 and §23.8.2.2; ESE/Endocrine Society 2024 glucocorticoid-induced adrenal insufficiency guideline (where the STG is silent); local facts (L10)"
+approved_by: ""
+approved_rank: ""
+approved_date: ""

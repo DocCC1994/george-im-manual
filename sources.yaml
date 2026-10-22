@@ -667,3 +667,59 @@ saasp-2026-ipc:
   label: SAASP 2026
   citation: "South African Antibiotic Stewardship Programme (SAASP). A guide to antibiotic prescribing for adults in South Africa, 2026. Ch 4 Infection prevention and control (droplet precautions as reverse barrier care, p 23); Ch 19 Hospital-acquired infection (pp 66–68)."
   url: https://www.fidssa.co.za/saasp
+stg-ch8-adrenal:
+  label: STG 2024 §8.2
+  citation: "National Department of Health. Hospital Level (Adults) STGs and EML, 6th ed. 2024 (updated December 2025), Chapter 8 Endocrine disorders, §8.2 Adrenal insufficiency (Addison disease), pp 8.1–8.3; and §23.8.2.2 Addisonian crisis, pp 23.31–23.32."
+  url: https://www.health.gov.za/nhi-edp-stgs-eml/
+ese-ai-2024:
+  label: ESE/ES 2024
+  citation: "Beuschlein F, Else T, Bancos I, et al. European Society of Endocrinology and Endocrine Society joint clinical guideline: diagnosis and therapy of glucocorticoid-induced adrenal insufficiency. Eur J Endocrinol 2024;190(5):G25–G51 (not read for this draft)."
+  url: https://doi.org/10.1093/ejendo/lvae029
+stg-ch8-thyroid:
+  label: STG 2024 §8.18.5
+  citation: "National Department of Health. Hospital Level (Adults) STGs and EML, 6th ed. 2024 (updated December 2025), Chapter 8, §8.18.5 Thyroid crisis, pp 8.34–8.35; Chapter 23, §23.8.1.3 Thyroid crisis and §23.8.1.5 Myxoedema coma, pp 23.29–23.31."
+  url: https://www.health.gov.za/nhi-edp-stgs-eml/
+jta-storm-2016:
+  label: JTA/JES 2016
+  citation: "Satoh T, Isozaki O, Suzuki A, et al. Guidelines for the management of thyroid storm from The Japan Thyroid Association and Japan Endocrine Society (first edition). Endocr J 2016;63(12):1025–1064 (not read for this draft)."
+  url: https://doi.org/10.1507/endocrj.EJ16-0336
+ata-thyrotox-2016:
+  label: ATA 2016
+  citation: "Ross DS, Burch HB, Cooper DS, et al. 2016 American Thyroid Association guidelines for diagnosis and management of hyperthyroidism and other causes of thyrotoxicosis. Thyroid 2016;26(10):1343–1421 (not read for this draft)."
+  url: https://doi.org/10.1089/thy.2016.0229
+stg-ch8-ca:
+  label: STG 2024 §8.9–8.10
+  citation: "National Department of Health. Hospital Level (Adults) STGs and EML, 6th ed. 2024 (updated December 2025), Chapter 8, §8.9 Hypercalcaemia, including primary hyperparathyroidism and §8.10 Hypocalcaemia, pp 8.21–8.23; §21.1.1.1 Hypercalcaemia of malignancy, p 21.1."
+  url: https://www.health.gov.za/nhi-edp-stgs-eml/
+sfe-ca-2016:
+  label: SfE 2016
+  citation: "Society for Endocrinology Endocrine Emergency Guidance: Walsh J, Gittoes N, Selby P. Emergency management of acute hypercalcaemia in adult patients. Endocr Connect 2016;5(5):G9–G11; and Turner J, Gittoes N, Selby P. Emergency management of acute hypocalcaemia in adult patients. Endocr Connect 2016;5(5):G7–G8 (not read for this draft)."
+  url: https://doi.org/10.1530/EC-16-0055
+stg-ch23-renal:
+  label: STG 2024 §23.4
+  citation: "National Department of Health. Hospital Level (Adults) STGs and EML, 6th ed. 2024 (updated December 2025), Chapter 23 Adult critical care, §23.4 Renal support (Table 23.1 KDIGO staging) and §23.4.1 Kidney replacement therapy, pp 23.5–23.8."
+  url: https://www.health.gov.za/nhi-edp-stgs-eml/
+kdigo-aki-2012:
+  label: KDIGO 2012
+  citation: "Kidney Disease: Improving Global Outcomes (KDIGO) Acute Kidney Injury Work Group. KDIGO clinical practice guideline for acute kidney injury. Kidney Int Suppl 2012;2(1):1–138 (staging as reproduced in STG Table 23.1)."
+  url: https://kdigo.org/guidelines/acute-kidney-injury/
+stg-ch1-cirrhosis:
+  label: STG 2024 §1.2.3
+  citation: "National Department of Health. Hospital Level (Adults) STGs and EML, 6th ed. 2024 (updated December 2025), Chapter 1 Alimentary tract, §1.2.3 Portal hypertension and cirrhosis, pp 1.11–1.12; §1.1.8 Peptic ulcer, pp 1.7–1.8."
+  url: https://www.health.gov.za/nhi-edp-stgs-eml/
+stg-ch23-blood:
+  label: STG 2024 §23.5
+  citation: "National Department of Health. Hospital Level (Adults) STGs and EML, 6th ed. 2024 (updated December 2025), Chapter 23, §23.5.2–23.5.7 Anaemia, platelets, plasma, cryoprecipitate, tranexamic acid and massive transfusion, pp 23.9–23.15; §23.7.2 Stress ulcer prophylaxis (pantoprazole IV), p 23.25."
+  url: https://www.health.gov.za/nhi-edp-stgs-eml/
+esge-nvugih-2021:
+  label: ESGE 2021
+  citation: "Gralnek IM, Stanley AJ, Morris AJ, et al. Endoscopic diagnosis and management of nonvariceal upper gastrointestinal hemorrhage (NVUGIH): European Society of Gastrointestinal Endoscopy (ESGE) Guideline – Update 2021. Endoscopy 2021;53(3):300–332 (not read for this draft)."
+  url: https://doi.org/10.1055/a-1369-5274
+baveno-vii:
+  label: Baveno VII
+  citation: "de Franchis R, Bosch J, Garcia-Tsao G, Reiberger T, Ripoll C; Baveno VII Faculty. Baveno VII – Renewing consensus in portal hypertension. J Hepatol 2022;76(4):959–974 (not read for this draft)."
+  url: https://doi.org/10.1016/j.jhep.2021.12.022
+halt-it-2020:
+  label: HALT-IT
+  citation: "HALT-IT Trial Collaborators. Effects of a high-dose 24-h infusion of tranexamic acid on death and thromboembolic events in patients with acute gastrointestinal bleeding (HALT-IT): an international randomised, double-blind, placebo-controlled trial. Lancet 2020;395(10241):1927–1936."
+  url: https://doi.org/10.1016/S0140-6736(20)30848-5
