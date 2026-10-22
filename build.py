@@ -149,7 +149,7 @@ def render_recipe(rid, where):
     if r.get('over'):                                           # single dose run over a set time (magnesium)
         p = preps[0]
         return (f"{num(p['amount'])} {r['unit']}{' ' + esc(r['note']) if r.get('note') else ''} in {vol(p['volume'])}"
-                f"{' ' + esc(r['diluent']) if r.get('diluent') else ''} over {num(r['over'])} min"
+                f"{' ' + esc(r['diluent']) if r.get('diluent') else ''} over {num(r['over'] / 60) + ' hrs' if r['over'] > 60 else num(r['over']) + ' min'}"
                 f" = {num(p['volume'] * 60 / r['over'])} mL/hr{' on ' + esc(r['pump']) if r.get('pump') else ''}")
     du, doses, weights = r['dose_unit'], r['doses'], r.get('weights')
     if r.get('layout') == 'table':

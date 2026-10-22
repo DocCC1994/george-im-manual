@@ -1,0 +1,18 @@
+title: Tricyclic antidepressants
+short: TCA
+status: draft
+start: Rewrite (2021)
+priority: P1
+acute: true              # Acute Handbook sheet (manifest books)
+reference: false         # Acute Handbook only (manifest books: [acute])
+deferred: false
+version: 2026 v1
+effective: "[MM/YYYY]"
+review: "[MM/YYYY]"
+reviewed: "[MM/YYYY]"
+author: "[Author, Registrar IM]"
+editors: "[Editors]"
+based_on: "GRH TCA overdose protocol 2021, Rev 2 (Dr M Tulleken, Dr T Gould); STG 2024 §19.6.1"
+approved_by: ""
+approved_rank: ""
+approved_date: ""
