@@ -1,0 +1,18 @@
+title: Carbamazepine and phenytoin
+short: Carbamazepine, phenytoin
+status: draft
+start: Rewrite (undated) + phenytoin
+priority: P1
+acute: true              # Acute Handbook sheet (manifest books)
+reference: false         # Acute Handbook only (manifest books: [acute])
+deferred: false
+version: 2026 v1
+effective: "[MM/YYYY]"
+review: "[MM/YYYY]"
+reviewed: "[MM/YYYY]"
+author: "[Author, Registrar IM]"
+editors: "[Editors]"
+based_on: "STG 2024 Chapter 19 general measures and Table 19.2; EXTRIP 2014 and 2016 (no GRH protocol found on Drive)"
+approved_by: ""
+approved_rank: ""
+approved_date: ""

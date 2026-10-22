@@ -493,6 +493,55 @@ cope-2005:
   label: COPE
   citation: "Imazio M, Bobbio M, Cecchi E, et al. Colchicine in addition to conventional therapy for acute pericarditis: results of the COlchicine for acute PEricarditis (COPE) trial. Circulation 2005;112:2012–2016."
   url: https://pubmed.ncbi.nlm.nih.gov/?term=COPE+colchicine+acute+pericarditis+Imazio+2005
+stg-ch19-decon:
+  label: STG 2024 §19
+  citation: "National Department of Health. Hospital Level (Adults) STGs and EML, 6th ed. 2024 (updated December 2025), Chapter 19 Poisoning: general measures, gut decontamination (Table 19.2, activated charcoal), sodium bicarbonate alkalinisation, haemodialysis, referral."
+  url: https://www.health.gov.za/wp-content/uploads/2025/07/Hospital-Level-Adults-Standard-Treatment-Guidelines-and-Essential-Medicines-List-6th-Edition-2024.pdf
+stg-ch19-paracetamol:
+  label: STG 2024 §19.5.1
+  citation: "National Department of Health. Hospital Level (Adults) STGs and EML, 6th ed. 2024 (updated December 2025), §19.5.1 Paracetamol poisoning, Figure 19.1 treatment nomogram (Daly et al., Med J Aust 2008)."
+  url: https://www.health.gov.za/wp-content/uploads/2025/07/Hospital-Level-Adults-Standard-Treatment-Guidelines-and-Essential-Medicines-List-6th-Edition-2024.pdf
+stg-ch19-salicylate:
+  label: STG 2024 §19.5.2
+  citation: "National Department of Health. Hospital Level (Adults) STGs and EML, 6th ed. 2024 (updated December 2025), §19.5.2 Salicylate poisoning, Table 19.3."
+  url: https://www.health.gov.za/wp-content/uploads/2025/07/Hospital-Level-Adults-Standard-Treatment-Guidelines-and-Essential-Medicines-List-6th-Edition-2024.pdf
+stg-ch19-tca:
+  label: STG 2024 §19.6.1
+  citation: "National Department of Health. Hospital Level (Adults) STGs and EML, 6th ed. 2024 (updated December 2025), §19.6.1 Tricyclic antidepressant poisoning."
+  url: https://www.health.gov.za/wp-content/uploads/2025/07/Hospital-Level-Adults-Standard-Treatment-Guidelines-and-Essential-Medicines-List-6th-Edition-2024.pdf
+stg-ch14-se:
+  label: STG 2024 §14.5
+  citation: "National Department of Health. Hospital Level (Adults) STGs and EML, 6th ed. 2024 (updated December 2025), §14.5 Status epilepticus."
+  url: https://www.health.gov.za/wp-content/uploads/2025/07/Hospital-Level-Adults-Standard-Treatment-Guidelines-and-Essential-Medicines-List-6th-Edition-2024.pdf
+grh-paracetamol-2021:
+  label: GRH 2021
+  citation: "George Hospital, Internal Medicine Unit. Guideline on the management of paracetamol toxicity. Revision 2, effective 4 March 2021, review 2023 (Dr M Tulleken, Dr TJ Gould). Drive: GEORGE IM Handbook."
+  url: https://drive.google.com/file/d/15avkO0REe6F5IH-tRtkH2WtuDORCdPa8/view
+grh-ec-nac:
+  label: George EC NAC sheet
+  citation: "George Hospital emergency centre. Paracetamol OD NAC (Parvolex) 2 bag regimen (staff Google Doc, updated 15 October 2026)."
+  url: https://docs.google.com/document/d/12ZVwRBGoGyIDOTcFj2UCcdgN6JLOwGWKyVi05SVUsc0/edit
+grh-tca-2021:
+  label: GRH 2021
+  citation: "George Hospital, Department of Internal Medicine. Protocol on management of tricyclic antidepressant overdose. Revision 2, effective 11 March 2021, review 2023 (Dr M Tulleken, Dr T Gould). Drive: GEORGE IM Handbook."
+  url: https://drive.google.com/file/d/1IdX3oBkpeFZtajfOPfoOvB6I4UDb-O0b/view
+anz-paracetamol-2020:
+  label: ANZ 2020
+  citation: "Chiew AL, Reith D, Pomerleau A, et al. Updated guidelines for the management of paracetamol poisoning in Australia and New Zealand. Med J Aust 2020;212(4):175–183."
+  url: https://doi.org/10.5694/mja2.50428
+extrip-salicylate-2015:
+  label: EXTRIP 2015
+  citation: "Juurlink DN, Gosselin S, Kielstein JT, et al. Extracorporeal treatment for salicylate poisoning: systematic review and recommendations from the EXTRIP Workgroup. Ann Emerg Med 2015;66(2):165–181."
+  url: https://doi.org/10.1016/j.annemergmed.2015.03.031
+extrip-carbamazepine-2014:
+  label: EXTRIP 2014
+  citation: "Ghannoum M, Yates C, Galvao TF, et al. Extracorporeal treatment for carbamazepine poisoning: systematic review and recommendations from the EXTRIP workgroup. Clin Toxicol 2014;52(10):993–1004."
+  url: https://doi.org/10.3109/15563650.2014.973572
+extrip-phenytoin-2016:
+  label: EXTRIP 2016
+  citation: "Anseeuw K, Mowry JB, Burdmann EA, et al. Extracorporeal treatment in phenytoin poisoning: systematic review and recommendations from the EXTRIP workgroup. Am J Kidney Dis 2016;67(2):187–197."
+  url: https://doi.org/10.1053/j.ajkd.2015.08.031
+
 stg-ch2-anaemia:
   label: STG 2024 §2.1
   citation: "National Department of Health. Hospital Level (Adults) STGs and EML, 6th ed. 2024 (updated Dec 2025), Chapter 2: Blood and blood forming organs, §2.1 Anaemia (2.1.1 iron deficiency to 2.1.6 sickle cell), pp 2.1–2.10."
