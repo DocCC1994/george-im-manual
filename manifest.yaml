@@ -3,7 +3,7 @@
 # Topic list = the 47 topics in the project plan, plus infective endocarditis and valvular heart disease (added Oct 2026).
 # Syllabus restructure (21 Oct 2026): Suspected TB in the EC removed; First seizure merged into Status epilepticus;
 # topics added (ECG/ABG approach, tamponade, pneumothorax/pleural, calcium, cord compression/GBS, cytopenias,
-# sympathomimetics); Severe malaria expanded; carbamazepine widened to phenytoin; toxicology reordered.
+# sympathomimetics); severe anaemia split out of cytopenias (22 Oct 2026, pending Craig's decision); Severe malaria expanded; carbamazepine widened to phenytoin; toxicology reordered.
 # `books:` limits a topic to one book (default: both). See CLAUDE.md "Syllabus architecture".
 # Phased Reference Manual (21 Oct 2026): `reference_tier: 1` = Active, write the reference page with the topic;
 # `reference_tier: 2, deferred: true` = Deferred backlog, write the Acute sheet only unless Craig asks for the
@@ -86,7 +86,8 @@ systems:
       - {id: anticoagulant-bleeding, title: Bleeding on anticoagulants and reversal, start: New (from warfarin 2012), priority: P1, reference_tier: 2, deferred: true}
       - {id: transfusion, title: Red cell transfusion, start: Rewrite (2015), priority: P1, reference_tier: 2, deferred: true}
       - {id: tls, title: Tumour lysis syndrome, start: Rewrite (GSH 2018), priority: P1, reference_tier: 2, deferred: true}
-      - {id: cytopenias, title: "Severe anaemia, severe thrombocytopenia (including TTP/MAHA) and pancytopenia: acute emergencies and initial workup", short: Severe cytopenias, start: New (added), priority: P1, reference_tier: 1}
+      - {id: severe-anaemia, title: Severe anaemia, start: New (split from cytopenias; GRH IDA 2022), priority: P1, reference_tier: 1}
+      - {id: cytopenias, title: "Severe thrombocytopenia (including TTP/MAHA) and pancytopenia: acute emergencies and initial workup", short: Thrombocytopenia and pancytopenia, start: New (added), priority: P1, reference_tier: 1}
   - id: critical-care
     name: Allergy and critical care
     topics:

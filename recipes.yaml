@@ -113,3 +113,25 @@ azithromycin:
   over: 60
   pump: IVAC
   layout: inline
+
+iron-dextran:
+  match: [iron dextran, CosmoFer]
+  from: "severe-anaemia acute (STG 2024 §2.1.1: 100–200 mg in 100 mL, maximum 100 mL over 30 min)"
+  unit: mg
+  note: "(or 100 mg)"
+  amount: 200
+  volume: 100
+  diluent: sodium chloride 0.9% or dextrose 5%
+  over: 30
+  layout: inline
+
+iron-dextran-tdi:
+  match: [iron dextran, CosmoFer]
+  from: "severe-anaemia acute (STG 2024 §2.1.1: total dose infusion up to 20 mg/kg in 500 mL over 4–6 hours; 4 hours is the fastest)"
+  unit: mg/kg
+  note: "(at most; the calculated total dose)"
+  amount: 20
+  volume: 500
+  diluent: sodium chloride 0.9% or dextrose 5%
+  over: 240
+  layout: inline

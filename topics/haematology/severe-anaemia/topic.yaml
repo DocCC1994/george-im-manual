@@ -1,0 +1,20 @@
+title: Severe anaemia
+reference_title: "Severe anaemia: workup, transfusion and the causes not to miss"
+short: Severe anaemia
+status: draft
+start: New (split from cytopenias; GRH IDA 2022)
+priority: P1
+acute: true              # Acute Handbook sheet (manifest books)
+reference: true          # Reference Manual chapter (manifest books)
+deferred: false          # Tier 1: reference chapter written with the topic
+version: 2026 v1
+effective: "[MM/YYYY]"
+review: "[MM/YYYY]"
+reviewed: "[MM/YYYY]"
+author: "[Author, Registrar IM]"
+editors: "[Editors]"
+co_reviewer: "[Haematologist, George]"
+based_on: "Owner's synthesised draft (Severe_Anaemia_draft1, 22 Oct 2026); GRH IDA protocol rev 1 (2022, Dr C Vanzaghi; Drs Prinsloo and Gould); STG 2024 §2.1, §2.6, §23.5.2"
+approved_by: ""
+approved_rank: ""
+approved_date: ""
