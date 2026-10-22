@@ -1,0 +1,18 @@
+title: Hypoglycaemia
+short: Hypoglycaemia
+status: draft
+start: New
+priority: P1
+acute: true              # Acute Handbook sheet (manifest books)
+reference: false         # Acute Handbook only (manifest books: [acute])
+deferred: false
+version: 2026 v1
+effective: "[MM/YYYY]"
+review: "[MM/YYYY]"
+reviewed: "[MM/YYYY]"
+author: "[Author, Registrar IM]"
+editors: "[Editors]"
+based_on: "STG 2024 §8.6.1; JBDS hospital hypoglycaemia guideline 2023 (where the STG is silent); local facts (M15, M25)"
+approved_by: ""
+approved_rank: ""
+approved_date: ""
