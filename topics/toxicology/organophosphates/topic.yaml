@@ -1,0 +1,18 @@
+title: Organophosphates and carbamates
+short: Organophosphates
+status: draft
+start: Rewrite (2016)
+priority: P1
+acute: true              # Acute Handbook sheet only (manifest books: [acute])
+reference: false
+deferred: false
+version: 2026 v1
+effective: "[MM/YYYY]"
+review: "[MM/YYYY]"
+reviewed: "[MM/YYYY]"
+author: "[Author, Registrar IM]"
+editors: "[Editors]"
+based_on: "GRH organophosphate toxicity guideline 2016, Rev 1 (Dr TF Roos, Dr T Gould); STG 2024 §19.1 and §19.18.1–19.18.2"
+approved_by: ""
+approved_rank: ""
+approved_date: ""
