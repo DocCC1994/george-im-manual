@@ -615,3 +615,55 @@ mint-2023:
   label: MINT
   citation: "Carson JL, Brooks MM, Hébert PC, et al. Restrictive or liberal transfusion strategy in myocardial infarction and anemia. N Engl J Med 2023;389:2446–2456."
   url: https://doi.org/10.1056/NEJMoa2307983
+stg-ch16-empyema:
+  label: STG 2024 §16.8
+  citation: "National Department of Health. Hospital Level (Adults) STGs and EML, 6th ed. 2024 (updated December 2025), Chapter 16 Respiratory disorders, §16.8 Empyema, pp 16.18–16.19."
+  url: https://www.health.gov.za/nhi-edp-stgs-eml/
+grh-pleural-2016:
+  label: GRH 2016
+  citation: "George Hospital, Internal Medicine Unit. Guideline on investigation and management of a pleural effusion. Revision 1, effective 29/03/2016 (Dr M Smith, Dr T Gould). Drive: GEORGE IM Handbook."
+  url: https://drive.google.com/file/d/1kVMCnu775NVLcN3_xp8Wo-2fko1QiuwJ/view
+bts-pleural-2023:
+  label: BTS 2023
+  citation: "Roberts ME, Rahman NM, Maskell NA, et al. British Thoracic Society guideline for pleural disease. Thorax 2023;78(Suppl 3):s1–s42."
+  url: https://doi.org/10.1136/thorax-2022-219784
+stg-ch2-fn:
+  label: STG 2024 §2.2
+  citation: "National Department of Health. Hospital Level (Adults) STGs and EML, 6th ed. 2024 (updated December 2025), Chapter 2 Blood and blood forming organs, §2.2 Febrile neutropenia, pp 2.11–2.12 (also §21.1.2.1)."
+  url: https://www.health.gov.za/nhi-edp-stgs-eml/
+esmo-fn-2016:
+  label: ESMO 2016
+  citation: "Klastersky J, de Naurois J, Rolston K, et al. Management of febrile neutropaenia: ESMO Clinical Practice Guidelines. Ann Oncol 2016;27(Suppl 5):v111–v118."
+  url: https://doi.org/10.1093/annonc/mdw325
+stg-ch8-hypo:
+  label: STG 2024 §8.6.1
+  citation: "National Department of Health. Hospital Level (Adults) STGs and EML, 6th ed. 2024 (updated December 2025), Chapter 8 Endocrine disorders, §8.6.1 Hypoglycaemia, pp 8.12–8.13."
+  url: https://www.health.gov.za/nhi-edp-stgs-eml/
+jbds-hypo-2023:
+  label: JBDS 2023
+  citation: "Joint British Diabetes Societies for Inpatient Care. The hospital management of hypoglycaemia in adults with diabetes mellitus. 4th ed, 2023."
+  url: https://abcd.care/resource/current/jbds-01-hospital-management-hypoglycaemia-adults-diabetes-mellitus
+stg-ch7-na:
+  label: STG 2024 §7.2.4
+  citation: "National Department of Health. Hospital Level (Adults) STGs and EML, 6th ed. 2024 (updated December 2025), Chapter 7 Nephrological/urological disorders, §7.2.4 Hyponatraemia (Figure 7.2, Table 7.2), pp 7.14–7.16."
+  url: https://www.health.gov.za/nhi-edp-stgs-eml/
+grh-hypona-2024:
+  label: GRH 2024
+  citation: "George Hospital, Internal Medicine Unit. Protocol on management of hyponatremia. Revision 2, effective 04/2024, review 04/2026 (Dr J de Blocq, Dr A Vermeulen). Drive: Unit protocols, Metabolic."
+  url: https://drive.google.com/file/d/1tMOGfT3KNYSl760OvmGRxZgNcgbV2wPV/view
+eu-hypona-2014:
+  label: ESE/ESICM/ERBP 2014
+  citation: "Spasovski G, Vanholder R, Allolio B, et al. Clinical practice guideline on diagnosis and treatment of hyponatraemia. Eur J Endocrinol 2014;170(3):G1–G47."
+  url: https://doi.org/10.1530/EJE-13-1020
+stg-ch7-k:
+  label: STG 2024 §7.1.4
+  citation: "National Department of Health. Hospital Level (Adults) STGs and EML, 6th ed. 2024 (updated December 2025), Chapter 7, §7.1.4 Acute kidney injury: Hyperkalaemia (emergency measures) and acute dialysis, pp 7.9–7.10; §7.2.1 refers here."
+  url: https://www.health.gov.za/nhi-edp-stgs-eml/
+ukka-k-2023:
+  label: UKKA 2023
+  citation: "UK Kidney Association. Clinical practice guideline: treatment of acute hyperkalaemia in adults. 2023 (update of the 2020 guideline)."
+  url: https://ukkidney.org/health-professionals/guidelines/treatment-acute-hyperkalaemia-adults
+saasp-2026-ipc:
+  label: SAASP 2026
+  citation: "South African Antibiotic Stewardship Programme (SAASP). A guide to antibiotic prescribing for adults in South Africa, 2026. Ch 4 Infection prevention and control (droplet precautions as reverse barrier care, p 23); Ch 19 Hospital-acquired infection (pp 66–68)."
+  url: https://www.fidssa.co.za/saasp

@@ -1,0 +1,18 @@
+title: Pneumothorax and acute pleural emergencies
+short: Pneumothorax and pleural
+status: draft
+start: New (added)
+priority: P1
+acute: true              # Acute Handbook sheet (manifest books)
+reference: true          # Reference Manual chapter (manifest books)
+deferred: true           # Tier 2: reference chapter deferred (manifest)
+version: 2026 v1
+effective: "[MM/YYYY]"
+review: "[MM/YYYY]"
+reviewed: "[MM/YYYY]"
+author: "[Author, Registrar IM]"
+editors: "[Editors]"
+based_on: "STG 2024 §16.8 and §16.10; GRH pleural effusion guideline 2016 (Rev 1, local practice only); BTS pleural disease guideline 2023 (where the STG is silent); local facts"
+approved_by: ""
+approved_rank: ""
+approved_date: ""

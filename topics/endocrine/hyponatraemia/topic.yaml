@@ -1,0 +1,18 @@
+title: Hyponatraemia
+short: Hyponatraemia
+status: draft
+start: Rewrite (2016)
+priority: P1
+acute: true              # Acute Handbook sheet (manifest books)
+reference: true          # Reference Manual chapter (manifest books; Tier 1, not yet written)
+deferred: false
+version: 2026 v1
+effective: "[MM/YYYY]"
+review: "[MM/YYYY]"
+reviewed: "[MM/YYYY]"
+author: "[Author, Registrar IM]"
+editors: "[Editors]"
+based_on: "GRH hyponatraemia protocol 2024, Rev 2 (Dr J de Blocq, Dr A Vermeulen); STG 2024 §7.2.4; ESE/ESICM/ERBP hyponatraemia guideline 2014 (where the STG is silent); local facts (L6, M13)"
+approved_by: ""
+approved_rank: ""
+approved_date: ""
