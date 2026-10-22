@@ -127,6 +127,51 @@ azithromycin:
   pump: IVAC
   layout: inline
 
+nac-1:
+  match: [acetylcysteine, NAC]
+  from: "paracetamol acute (STG 2024 §19.5.1 two-bag regimen; George EC NAC sheet; ampoule 200 mg/mL to verify)"
+  unit: mg/kg
+  note: "(1 mL/kg of acetylcysteine 200 mg/mL)"
+  amount: 200
+  volume: 500
+  diluent: dextrose 5%
+  over: 240
+  pump: IVAC
+  layout: inline
+
+nac-2:
+  match: [acetylcysteine, NAC]
+  from: "paracetamol acute (STG 2024 §19.5.1 two-bag regimen; George EC NAC sheet)"
+  unit: mg/kg
+  note: "(0.5 mL/kg of acetylcysteine 200 mg/mL)"
+  amount: 100
+  volume: 1000
+  diluent: dextrose 5%
+  over: 960
+  pump: IVAC
+  layout: inline
+
+bicarbonate-salicylate:
+  match: [bicarbonate]
+  from: "salicylates acute (STG 2024 §19.5.2: maintenance 150-200 mL/hr)"
+  unit: mmol
+  note: "(150 mL of sodium bicarbonate 8.4%, added to dextrose 5% 1 L after removing 150 mL)"
+  amount: 150
+  volume: 1000
+  dose_unit: mmol/hr
+  doses: [22.5, 30]
+  layout: inline
+
+bicarbonate-tca:
+  match: [bicarbonate]
+  from: "tca acute (GRH TCA protocol 2021: 150 mL 8.4% in dextrose 5% 1 L at 250 mL/hr)"
+  unit: mmol
+  note: "(150 mL of sodium bicarbonate 8.4%, added to dextrose 5% 1 L after removing 150 mL)"
+  amount: 150
+  volume: 1000
+  dose_unit: mmol/hr
+  doses: [37.5]
+
 iron-dextran:
   match: [iron dextran, CosmoFer]
   from: "severe-anaemia acute (STG 2024 §2.1.1: 100–200 mg in 100 mL, maximum 100 mL over 30 min)"
