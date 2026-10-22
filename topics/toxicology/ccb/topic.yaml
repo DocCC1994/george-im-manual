@@ -1,0 +1,18 @@
+title: "Calcium channel blockers"
+short: CCB poisoning
+status: draft
+start: Rewrite (2024 draft)
+priority: P1
+acute: true              # Acute Handbook sheet only (manifest books: [acute])
+reference: false
+deferred: false          # one-book topic: never deferred
+version: 2026 v1
+effective: "[MM/YYYY]"
+review: "[MM/YYYY]"
+reviewed: "[MM/YYYY]"
+author: "[Author, Registrar IM]"
+editors: "[Editors]"
+based_on: "GRH CCB toxicity guideline Rev 5 2024 draft (Dr J de Blocq, Dr A Vermeulen; Rev 3 2021, Dr S Manie, Dr T Gould); STG 2024 §19.11"
+approved_by: ""
+approved_rank: ""
+approved_date: ""

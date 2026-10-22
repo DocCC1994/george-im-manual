@@ -113,3 +113,35 @@ azithromycin:
   over: 60
   pump: IVAC
   layout: inline
+
+insulin-hiet:
+  match: [insulin]
+  from: "ccb acute (GRH CCB protocol 2024 draft, Rev 5: 4000 units in 200 mL dextrose 5% via IVAC, 0.5 up to 10 units/kg/hr; local facts M14)"
+  unit: units
+  note: "Actrapid (40 mL of 100 units/mL)"
+  amount: 4000
+  volume: 200
+  diluent: dextrose 5%
+  check: "bag strength (GRH 2021 used 2000 units in 200 mL)"
+  dose_unit: units/kg/hr
+  start: 0.5
+  titrate: "increase by 50% every 20 min until MAP ≥ 65 and HR ≥ 60, up to 10 units/kg/hr"
+  formula: true
+  doses: [0.5, 1, 5, 10]
+  weights: [70]
+  layout: inline
+
+desferrioxamine:
+  match: [desferrioxamine, deferoxamine]
+  from: "iron acute (STG 2024 §19.7: 15 mg/kg/hr to 80 mg/kg; vial reconstitution from the Desferal PI; bag strength not from a source)"
+  unit: mg
+  note: "(10 vials of 500 mg, each reconstituted with 5 mL water for injection)"
+  amount: 5000
+  volume: 500
+  diluent: sodium chloride 0.9%
+  check: "bag strength: no George or STG recipe"
+  dose_unit: mg/kg/hr
+  formula: true
+  doses: [15]
+  weights: [50, 70, 90]
+  layout: inline
