@@ -125,8 +125,8 @@ read `books:`; a one-book topic simply has no file for the other book.
 - **Tier 1, Active Reference** (`reference_tier: 1` in manifest.yaml): the topic thread writes the reference page
   too, after the acute sheet. Topics: STEMI and NSTE-ACS (ACS), heart failure, hypertensive emergencies,
   pericardial effusion and cardiac tamponade, sepsis, meningitis, DKA/HHS, hyponatraemia, AKI, decompensated
-  cirrhosis, stroke, status epilepticus (with the first-seizure block), severe anaemia (`severe-anaemia`,
-  split from cytopenias 22 Oct 2026) and severe thrombocytopenia/pancytopenia (`cytopenias`); and the two Reference-only topics, valvular heart disease and ECG/ABG.
+  cirrhosis, stroke, status epilepticus (with the first-seizure block), severe cytopenias (`cytopenias`: the
+  severe haematology workup); and the two Reference-only topics, valvular heart disease and ECG/ABG.
 - **Tier 2, Deferred backlog** (`reference_tier: 2, deferred: true`): every other topic that has both books. The
   topic thread writes topic.yaml, acute.html and editor.html only, no reference.html, unless the owner explicitly
   asks for that topic's Reference section. Reference pages already written for Tier 2 topics stay as they are.
