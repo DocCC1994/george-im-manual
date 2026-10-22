@@ -29,7 +29,7 @@ PREFIX = {'acute': 'acute', 'reference': 'ref', 'editor': 'editor'}
 BOOK_OF_PREFIX = {'acute': 'acute', 'ref': 'reference', 'editor': 'editor'}
 DRAFT_WM = 'DRAFT – not for clinical use'
 COMMENT_WM = 'DRAFT FOR COMMENT – not for clinical use'
-STATUS_LABEL = {'planned': 'Planned', 'draft': 'Draft', 'review': 'Under review', 'signed-off': 'Signed off'}
+STATUS_LABEL = {'planned': 'Planned', 'draft': 'Draft', 'review': 'Under review', 'signed-off': 'Approved'}
 
 
 class Log:
@@ -290,6 +290,15 @@ def foot(manifest, topic, book_name, sheet_title):
             f'<span><a class="btn" href="{mail}">Suggest an edit</a></span></div>')
 
 
+def stamp(topic, comment=False):
+    """Status stamp printed at the foot of every page of a sheet, so a forwarded page shows its own state."""
+    if topic['status'] == 'signed-off':
+        return (f"APPROVED: {topic.get('approved_by') or '?'}, {topic.get('approved_rank') or '?'}, "
+                f"{topic.get('approved_date') or '?'} · {topic['version']}")
+    label = 'DRAFT FOR COMMENT' if comment else STATUS_LABEL[topic['status']].upper()
+    return f"{label} – NOT FOR CLINICAL USE · {topic['version']} · Built {BUILD_DATE}"
+
+
 def meta_row(topic):
     return (f'<tr><td class="meta"><span>Version: {esc(topic["version"])}</span>'
             f'<span>Effective date: {esc(topic.get("effective", "[MM/YYYY]"))}</span>'
@@ -300,7 +309,7 @@ def bm(level, label):
     return f'<div class="bm" style="bookmark-level:{level}">{esc(label)}</div>' if level else ''
 
 
-def render_sheet(manifest, sources, known_ids, topic, book, sh, bm_base, first_in_system):
+def render_sheet(manifest, sources, known_ids, topic, book, sh, bm_base, first_in_system, comment=False):
     a = sh['attrs']
     title = a.get('title') or book_title(topic, book)
     if a.get('part'): title += f" ({a['part']})"
@@ -316,7 +325,7 @@ def render_sheet(manifest, sources, known_ids, topic, book, sh, bm_base, first_i
     band = esc(title) + (f'<small>{esc(subtitle)}</small>' if subtitle else '')
     return f'''
 <section class="{classes}" id="{sh['id']}">
-<div class="runhead">{esc(runhead)}</div>{marks}
+<div class="runhead">{esc(runhead)}</div><div class="wm">{esc(stamp(topic, comment))}</div>{marks}
 <div class="toc-link"><a href="#contents">Back to contents</a></div>
 <table class="hdr"><tr><td class="h1">{band}</td></tr>{meta_row(topic)}</table>
 {body}
@@ -443,7 +452,7 @@ def build_book(manifest, sources, topics, books, label, draft, with_cover=True, 
             for sh in t['sheets'][book]:
                 first_sys = t['system'] not in seen
                 seen.add(t['system'])
-                parts.append(render_sheet(manifest, sources, known, t, book, sh, base, first_sys))
+                parts.append(render_sheet(manifest, sources, known, t, book, sh, base, first_sys, comment))
     body = ''.join(parts)
     if not front_matter:                     # no contents page to go back to (the link is absolutely placed)
         body = body.replace('<div class="toc-link"><a href="#contents">Back to contents</a></div>', '')
