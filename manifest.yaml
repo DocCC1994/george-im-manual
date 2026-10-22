@@ -86,6 +86,7 @@ systems:
       - {id: anticoagulant-bleeding, title: Bleeding on anticoagulants and reversal, start: New (from warfarin 2012), priority: P1, reference_tier: 2, deferred: true}
       - {id: transfusion, title: Red cell transfusion, start: Rewrite (2015), priority: P1, reference_tier: 2, deferred: true}
       - {id: tls, title: Tumour lysis syndrome, start: Rewrite (GSH 2018), priority: P1, reference_tier: 2, deferred: true}
+      - {id: severe-anaemia, title: Severe anaemia, start: New (split from cytopenias; GRH IDA 2022), priority: P1, reference_tier: 1}
       - {id: cytopenias, title: "Severe anaemia, severe thrombocytopenia (including TTP/MAHA) and pancytopenia: acute emergencies and initial workup", short: Severe cytopenias, start: New (added), priority: P1, reference_tier: 1}
   - id: critical-care
     name: Allergy and critical care

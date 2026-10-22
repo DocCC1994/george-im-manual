@@ -437,3 +437,43 @@ mcc-artesunate-2017:
   label: MCC Section 21, 2017
   citation: "Medicines Control Council. Section 21 approval for artesunate (Artesun), emergency stock 20 vials, George Hospital (applicant Dr TJ Gould), 19 May 2017, ref S170517/51; new authorisation every six months."
   url: https://drive.google.com/file/d/1H-JwncQ01Mru6hPb2rcFzA5X-tBLthu-/view
+stg-ch2-anaemia:
+  label: STG 2024 §2.1
+  citation: "National Department of Health. Hospital Level (Adults) STGs and EML, 6th ed. 2024 (updated Dec 2025), Chapter 2: Blood and blood forming organs, §2.1 Anaemia (2.1.1 iron deficiency to 2.1.6 sickle cell), pp 2.1–2.10."
+  url: https://www.health.gov.za/nhi-edp-stgs-eml/
+stg-ch2-ttp:
+  label: STG 2024 §2.6
+  citation: "National Department of Health. Hospital Level (Adults) STGs and EML, 6th ed. 2024 (updated Dec 2025), Chapter 2, §2.6 Thrombotic thrombocytopenic purpura–haemolytic uraemic syndrome (TTP-HUS), pp 2.21–2.22."
+  url: https://www.health.gov.za/nhi-edp-stgs-eml/
+stg-ch23-anaemia:
+  label: STG 2024 §23.5.2
+  citation: "National Department of Health. Hospital Level (Adults) STGs and EML, 6th ed. 2024 (updated Dec 2025), Chapter 23: Adult critical care, §23.5.2 Anaemia in critical care (transfusion triggers, one unit at a time), pp 23.9–23.10."
+  url: https://www.health.gov.za/nhi-edp-stgs-eml/
+grh-ida-2022:
+  label: GRH IDA 2022
+  citation: "George Hospital, Department of Internal Medicine. Protocol on investigation and management of iron deficiency anaemia, Revision 1, 2022 (Dr C Vanzaghi; Drs Prinsloo and Gould). Drive: GEORGE IM Handbook."
+  url: https://drive.google.com/file/d/1MVkdxf_-AhUX8C_oGT9pQI0D8M5mEz5C/view
+grh-acd-2016:
+  label: GRH 2016
+  citation: "George Hospital, Internal Medicine. Approach to anaemia of chronic disease. Student intern presentation, 20 Jan 2016 (N Lerotholi, K Sekwati); local practice only. Drive: GEORGE IM Handbook."
+  url: https://drive.google.com/file/d/1_Kof_Z0bi4Ez6VdhCzQu3ZFi-LkC-Nh8/view
+mgh-wb-2025:
+  label: MGH 2025
+  citation: "Massachusetts General Hospital. MGH Housestaff Manual (White Book) 2025–26, Hematology: pancytopenia and anemia, pp 125–126."
+  url: https://drive.google.com/file/d/1SoGDcAq6gfrvKjVD76cI7Gd1E5_POUms/view
+mgh-hemeonc-2022:
+  label: HemeOnc 2022
+  citation: "MGH Hematology/Oncology Handbook 2022–2023, Benign hematology: erythrocyte disorders, pp 12–17."
+  url: https://drive.google.com/file/d/18FVQpK0DRapW84ZNib7tY-L3JktVBV4K/view
+utd-anaemia-dx-2026:
+  label: UpToDate
+  citation: "Means RT, Brodsky RA. Diagnostic approach to anemia in adults. UpToDate, topic 7133 v94.0, last updated 23 Sep 2026."
+  url: https://www.uptodate.com/contents/diagnostic-approach-to-anemia-in-adults
+tricc-1999:
+  label: TRICC
+  citation: "Hébert PC, Wells G, Blajchman MA, et al. A multicenter, randomized, controlled clinical trial of transfusion requirements in critical care. N Engl J Med 1999;340:409–417."
+  url: https://doi.org/10.1056/NEJM199902113400601
+mint-2023:
+  label: MINT
+  citation: "Carson JL, Brooks MM, Hébert PC, et al. Restrictive or liberal transfusion strategy in myocardial infarction and anemia. N Engl J Med 2023;389:2446–2456."
+  url: https://doi.org/10.1056/NEJMoa2307983
