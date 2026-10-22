@@ -1,0 +1,18 @@
+title: "Digoxin"
+short: Digoxin toxicity
+status: draft
+start: New
+priority: P1
+acute: true              # Acute Handbook sheet only (manifest books: [acute])
+reference: false
+deferred: false          # one-book topic: never deferred
+version: 2026 v1
+effective: "[MM/YYYY]"
+review: "[MM/YYYY]"
+reviewed: "[MM/YYYY]"
+author: "[Author, Registrar IM]"
+editors: "[Editors]"
+based_on: "STG 2024 §3.3 and Table 19.2 (no STG digoxin poisoning section); Pincus 2016; Austin Clinical Toxicology 2022. No GRH protocol"
+approved_by: ""
+approved_rank: ""
+approved_date: ""

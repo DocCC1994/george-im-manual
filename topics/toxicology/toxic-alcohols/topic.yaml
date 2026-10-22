@@ -1,0 +1,18 @@
+title: "Methanol and ethylene glycol"
+short: Toxic alcohols
+status: draft
+start: Rewrite (2021)
+priority: P1
+acute: true              # Acute Handbook sheet only (manifest books: [acute])
+reference: false
+deferred: false          # one-book topic: never deferred
+version: 2026 v1
+effective: "[MM/YYYY]"
+review: "[MM/YYYY]"
+reviewed: "[MM/YYYY]"
+author: "[Author, Registrar IM]"
+editors: "[Editors]"
+based_on: "GRH methanol and ethylene glycol guideline Rev 2 2021 (Dr WFvC Reyneke, Dr TJ Gould); STG 2024 §19.17"
+approved_by: ""
+approved_rank: ""
+approved_date: ""

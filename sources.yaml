@@ -437,6 +437,39 @@ mcc-artesunate-2017:
   label: MCC Section 21, 2017
   citation: "Medicines Control Council. Section 21 approval for artesunate (Artesun), emergency stock 20 vials, George Hospital (applicant Dr TJ Gould), 19 May 2017, ref S170517/51; new authorisation every six months."
   url: https://drive.google.com/file/d/1H-JwncQ01Mru6hPb2rcFzA5X-tBLthu-/view
+stg-ch19-poison:
+  label: STG 2024, Ch 19
+  citation: "National Department of Health. Hospital Level (Adults) STGs and EML, 6th ed. 2024 (updated December 2025), Chapter 19 Poisoning: §19 decontamination and Table 19.2, §19.7 Iron, §19.10 Isoniazid, §19.11 Calcium channel blocker and beta-blocker, §19.17 Alcohols (pp 19.13–19.35)."
+  url: https://www.health.gov.za/nhi-edp-stgs-eml/
+grh-ccb-2024:
+  label: GRH 2024
+  citation: "George Hospital, Internal Medicine Unit. Guideline on the management of calcium channel blocker toxicity. Revision 5, effective 10/08/2024, review 08/2026, marked 'not final' (Dr J de Blocq, Dr A Vermeulen); builds on Revision 3, 2021 (Dr S Manie, Dr T Gould). Drive: GEORGE IM Handbook."
+  url: https://drive.google.com/file/d/1B7IPsoMZwxrznYHDrboVAbrhqX9seusL/view
+grh-inh-2021:
+  label: GRH 2021
+  citation: "George Hospital, Internal Medicine Department. Guideline on the management of isoniazid toxicity. Revision 1, effective 01/06/2021 (Dr WFvC Reyneke, Dr TJ Gould). Drive: Unit protocols > Poisoning."
+  url: https://drive.google.com/file/d/1jSt2mTR5NEIUeDF0a9I_rUGe2OWpNtiN/view
+grh-toxalc-2021:
+  label: GRH 2021
+  citation: "George Hospital, Internal Medicine Department. Guideline on the management of methanol and ethylene glycol toxicity. Revision 2, effective 01/05/2021 (Dr WFvC Reyneke, Dr TJ Gould). Drive: Unit protocols > Poisoning."
+  url: https://drive.google.com/file/d/1RiYkzFFzuYXORUk910u4ThoiDiygp--B/view
+pincus-digoxin-2016:
+  label: Pincus 2016
+  citation: "Pincus M. Management of digoxin toxicity. Aust Prescr 2016;39(1):18–20."
+  url: https://www.nps.org.au/australian-prescriber/articles/management-of-digoxin-toxicity
+austin-digifab-2022:
+  label: Austin 2022
+  citation: "Austin Clinical Toxicology Service (Melbourne). Digoxin immune Fab guideline, version 3, 2/2022."
+  url: https://austin.org.au/Assets/Files/Digoxin%20Immune%20Fab%20Guideline_ZK%20edits%20(final)[2].pdf
+desferal-pi:
+  label: Desferal PI
+  citation: "Novartis. Desferal (deferoxamine mesylate for injection) prescribing information: reconstitution of the 500 mg vial and IV use in acute iron intoxication."
+  url: https://www.drugs.com/pro/desferal.html
+sun-iron-2026:
+  label: SU 2026
+  citation: "Van der Merwe J (Division of Clinical Pharmacology, Stellenbosch University). Too much of a good thing: acute iron toxicity. Academic meeting, 25 May 2026 (Drive copy); severity bands and desferrioxamine indications from AfriTox."
+  url: https://drive.google.com/file/d/1pdHbfO7NaBlwrfpsAf9vhDl4uuKZ2d3r/view
+
 stg-ch20-arrest:
   label: STG 2024 §20.1
   citation: "National Department of Health. Hospital Level (Adults) STGs and EML, 6th ed. 2024 (updated December 2025), Chapter 20 Emergencies and injuries, §20.1 Cardiac arrest in adults, p 20.4 (cautious fluid during CPR in tamponade)."

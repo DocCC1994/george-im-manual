@@ -1,0 +1,18 @@
+title: "Iron"
+short: Iron poisoning
+status: draft
+start: New (split from other-poisons)
+priority: P1
+acute: true              # Acute Handbook sheet only (manifest books: [acute])
+reference: false
+deferred: false          # one-book topic: never deferred
+version: 2026 v1
+effective: "[MM/YYYY]"
+review: "[MM/YYYY]"
+reviewed: "[MM/YYYY]"
+author: "[Author, Registrar IM]"
+editors: "[Editors]"
+based_on: "STG 2024 §19.7; Stellenbosch Clinical Pharmacology academic meeting 2026 (AfriTox). No GRH protocol"
+approved_by: ""
+approved_rank: ""
+approved_date: ""

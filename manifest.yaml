@@ -113,6 +113,7 @@ systems:
       - {id: digoxin, title: Digoxin, start: New, priority: P1, books: [acute]}
       - {id: theophylline, title: Theophylline, start: Rewrite (2021), priority: P1, books: [acute]}
       - {id: isoniazid, title: Isoniazid, start: Rewrite (2021), priority: P1, books: [acute]}
+      - {id: iron, title: Iron, start: New (split from other-poisons), priority: P1, books: [acute]}
       - {id: organophosphates, title: Organophosphates and carbamates, start: Rewrite (2016), priority: P1, books: [acute]}
       - {id: toxic-alcohols, title: Methanol and ethylene glycol, start: Rewrite (2021), priority: P1, books: [acute]}
       - {id: sympathomimetics, title: "Sympathomimetics and amphetamine derivatives (tik, ecstasy, cocaine)", start: New (added), priority: P2, books: [acute]}
@@ -122,4 +123,3 @@ systems:
       - {id: carbon-monoxide, title: Carbon monoxide, start: New, priority: P1, books: [acute]}
       - {id: paraffin, title: Paraffin and other hydrocarbons, start: New, priority: P1, books: [acute]}
       - {id: corrosives, title: Corrosive ingestion, start: New, priority: P1, books: [acute]}
-      - {id: iron, title: Iron, start: New, priority: P1, books: [acute]}
