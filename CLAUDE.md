@@ -115,7 +115,7 @@ read `books:`; a one-book topic simply has no file for the other book.
   causes; emergency pericardiocentesis); Pneumothorax and acute pleural emergencies (tension and secondary
   pneumothorax, complicated parapneumonic effusion/empyema, ICD and thoracentesis rules); Hypercalcaemic crisis
   and severe hypocalcaemia; Acute spinal cord syndrome (`spinal-cord`: compression, cauda equina and myelopathy,
-  approach in our setting) and Guillain-Barré syndrome (`gbs`, own topic; split 22 Oct 2026, pending the owner).
+  approach in our setting) and Guillain-Barré syndrome (`gbs`, own topic; split confirmed by the owner, 22 Oct 2026).
 - **Cytopenias (owner, 22 Oct 2026)**: one topic per cytopenia, then pancytopenia, in this order: Severe anaemia
   (`severe-anaemia`), Severe thrombocytopenia including TTP/MAHA (`thrombocytopenia`: red flags such as TTP/DIC
   where platelet transfusion is contraindicated), Severe neutropenia (`neutropenia`: causes and workup; fever with

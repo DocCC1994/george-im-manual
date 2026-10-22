@@ -5,7 +5,7 @@
 # topics added (ECG/ABG approach, tamponade, pneumothorax/pleural, calcium, cord compression/GBS, cytopenias,
 # sympathomimetics); Severe malaria expanded; carbamazepine widened to phenytoin; toxicology reordered.
 # 22 Oct 2026 (Craig): cytopenias split, one topic per cytopenia (severe anaemia, thrombocytopenia, neutropenia),
-# then pancytopenia; cord-compression-gbs became spinal-cord (acute spinal cord syndrome) and gbs (pending Craig).
+# then pancytopenia; cord-compression-gbs became spinal-cord (acute spinal cord syndrome) and gbs (Craig confirmed the split, 22 Oct 2026).
 # `books:` limits a topic to one book (default: both). See CLAUDE.md "Syllabus architecture".
 # Phased Reference Manual (21 Oct 2026): `reference_tier: 1` = Active, write the reference page with the topic;
 # `reference_tier: 2, deferred: true` = Deferred backlog, write the Acute sheet only unless Craig asks for the
