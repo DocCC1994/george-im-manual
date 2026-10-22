@@ -86,6 +86,7 @@ systems:
       - {id: anticoagulant-bleeding, title: Bleeding on anticoagulants and reversal, start: New (from warfarin 2012), priority: P1, reference_tier: 2, deferred: true}
       - {id: transfusion, title: Red cell transfusion, start: Rewrite (2015), priority: P1, reference_tier: 2, deferred: true}
       - {id: tls, title: Tumour lysis syndrome, start: Rewrite (GSH 2018), priority: P1, reference_tier: 2, deferred: true}
+      - {id: severe-anaemia, title: Severe anaemia, start: New (split from cytopenias; GRH IDA 2022), priority: P1, reference_tier: 1}
       - {id: cytopenias, title: "Severe anaemia, severe thrombocytopenia (including TTP/MAHA) and pancytopenia: acute emergencies and initial workup", short: Severe cytopenias, start: New (added), priority: P1, reference_tier: 1}
   - id: critical-care
     name: Allergy and critical care
@@ -107,7 +108,13 @@ systems:
       - {id: digoxin, title: Digoxin, start: New, priority: P1, books: [acute]}
       - {id: theophylline, title: Theophylline, start: Rewrite (2021), priority: P1, books: [acute]}
       - {id: isoniazid, title: Isoniazid, start: Rewrite (2021), priority: P1, books: [acute]}
-      - {id: organophosphates, title: Organophosphates, start: Rewrite (2016), priority: P1, books: [acute]}
+      - {id: organophosphates, title: Organophosphates and carbamates, start: Rewrite (2016), priority: P1, books: [acute]}
       - {id: toxic-alcohols, title: Methanol and ethylene glycol, start: Rewrite (2021), priority: P1, books: [acute]}
       - {id: sympathomimetics, title: "Sympathomimetics and amphetamine derivatives (tik, ecstasy, cocaine)", start: New (added), priority: P2, books: [acute]}
-      - {id: other-poisons, title: "Iron, paraquat, paraffin, carbon monoxide, corrosives", start: New, priority: P1, books: [acute]}
+      # other-poisons split into one entry per poison (22 Oct 2026). Pairs share a page: paraquat + carbon monoxide,
+      # paraffin + corrosives (the second carries data-cls="paired"); keep each pair adjacent.
+      - {id: paraquat, title: Paraquat, start: New, priority: P1, books: [acute]}
+      - {id: carbon-monoxide, title: Carbon monoxide, start: New, priority: P1, books: [acute]}
+      - {id: paraffin, title: Paraffin and other hydrocarbons, start: New, priority: P1, books: [acute]}
+      - {id: corrosives, title: Corrosive ingestion, start: New, priority: P1, books: [acute]}
+      - {id: iron, title: Iron, start: New, priority: P1, books: [acute]}
