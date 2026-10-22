@@ -4,6 +4,8 @@
 # Syllabus restructure (21 Oct 2026): Suspected TB in the EC removed; First seizure merged into Status epilepticus;
 # topics added (ECG/ABG approach, tamponade, pneumothorax/pleural, calcium, cord compression/GBS, cytopenias,
 # sympathomimetics); Severe malaria expanded; carbamazepine widened to phenytoin; toxicology reordered.
+# 22 Oct 2026 (Craig): cytopenias split, one topic per cytopenia (severe anaemia, thrombocytopenia, neutropenia),
+# then pancytopenia; cord-compression-gbs became spinal-cord (acute spinal cord syndrome) and gbs (pending Craig).
 # `books:` limits a topic to one book (default: both). See CLAUDE.md "Syllabus architecture".
 # Phased Reference Manual (21 Oct 2026): `reference_tier: 1` = Active, write the reference page with the topic;
 # `reference_tier: 2, deferred: true` = Deferred backlog, write the Acute sheet only unless Craig asks for the
@@ -79,14 +81,17 @@ systems:
       - {id: stroke, title: Acute stroke and thrombolysis, start: Merge (2020 + 2012), priority: P1, reference_tier: 1}
       - {id: status-epilepticus, title: Status epilepticus, start: Rewrite (2022) + first seizure block, priority: P1, reference_tier: 1}
       - {id: delirium-withdrawal, title: Delirium and alcohol withdrawal, start: New, priority: P1, reference_tier: 2, deferred: true}
-      - {id: cord-compression-gbs, title: "Acute spinal cord compression, cauda equina and Guillain-Barré syndrome", start: New (added), priority: P1, reference_tier: 2, deferred: true}
+      - {id: spinal-cord, title: "Acute spinal cord syndrome: compression, cauda equina and myelopathy", short: Acute spinal cord syndrome, start: New (added), priority: P1, reference_tier: 1}
+      - {id: gbs, title: Guillain-Barré syndrome, start: New (split from cord compression), priority: P1, reference_tier: 2, deferred: true}
   - id: haematology
     name: Haematology and oncology
     topics:
       - {id: anticoagulant-bleeding, title: Bleeding on anticoagulants and reversal, start: New (from warfarin 2012), priority: P1, reference_tier: 2, deferred: true}
       - {id: transfusion, title: Red cell transfusion, start: Rewrite (2015), priority: P1, reference_tier: 2, deferred: true}
       - {id: tls, title: Tumour lysis syndrome, start: Rewrite (GSH 2018), priority: P1, reference_tier: 2, deferred: true}
-      - {id: cytopenias, title: "Severe anaemia, severe thrombocytopenia (including TTP/MAHA) and pancytopenia: acute emergencies and initial workup", short: Severe cytopenias, start: New (added), priority: P1, reference_tier: 1}
+      - {id: thrombocytopenia, title: "Severe thrombocytopenia (including TTP/MAHA)", short: Severe thrombocytopenia, start: New (split from cytopenias), priority: P1, reference_tier: 1}
+      - {id: neutropenia, title: "Severe neutropenia: causes and initial workup", short: Severe neutropenia, start: New (split from cytopenias; fever goes to neutropenic-sepsis), priority: P1, reference_tier: 1}
+      - {id: pancytopenia, title: "Pancytopenia: acute emergencies and initial workup", short: Pancytopenia, start: New (split from cytopenias), priority: P1, reference_tier: 1}
   - id: critical-care
     name: Allergy and critical care
     topics:

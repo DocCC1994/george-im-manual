@@ -114,10 +114,14 @@ read `books:`; a one-book topic simply has no file for the other book.
 - **Added, not started, both books**: Pericardial effusion and cardiac tamponade (TB, uraemic and malignant
   causes; emergency pericardiocentesis); Pneumothorax and acute pleural emergencies (tension and secondary
   pneumothorax, complicated parapneumonic effusion/empyema, ICD and thoracentesis rules); Hypercalcaemic crisis
-  and severe hypocalcaemia; Acute spinal cord compression, cauda equina and Guillain-Barré syndrome; Severe
-  anaemia, severe thrombocytopenia (including TTP/MAHA) and pancytopenia: acute emergencies and initial workup
-  (red flags such as TTP/DIC where platelet transfusion is contraindicated; pre-transfusion bloods to draw on
-  admission).
+  and severe hypocalcaemia; Acute spinal cord syndrome (`spinal-cord`: compression, cauda equina and myelopathy,
+  approach in our setting) and Guillain-Barré syndrome (`gbs`, own topic; split 22 Oct 2026, pending the owner).
+- **Cytopenias (owner, 22 Oct 2026)**: one topic per cytopenia, then pancytopenia, in this order: Severe anaemia
+  (`severe-anaemia`), Severe thrombocytopenia including TTP/MAHA (`thrombocytopenia`: red flags such as TTP/DIC
+  where platelet transfusion is contraindicated), Severe neutropenia (`neutropenia`: causes and workup; fever with
+  neutropenia stays in Neutropenic sepsis, `neutropenic-sepsis`), Pancytopenia
+  (`pancytopenia`: acute emergencies and initial workup). Each draws its pre-transfusion bloods on admission.
+  Tumour lysis syndrome (`tls`) stays its own topic in Haematology and oncology.
 - **STEMI**: streptokinase stays first-line from available stock at George and first choice in the dose box.
 
 ### Phased Reference Manual (owner, 21 Oct 2026)
@@ -125,8 +129,9 @@ read `books:`; a one-book topic simply has no file for the other book.
 - **Tier 1, Active Reference** (`reference_tier: 1` in manifest.yaml): the topic thread writes the reference page
   too, after the acute sheet. Topics: STEMI and NSTE-ACS (ACS), heart failure, hypertensive emergencies,
   pericardial effusion and cardiac tamponade, sepsis, meningitis, DKA/HHS, hyponatraemia, AKI, decompensated
-  cirrhosis, stroke, status epilepticus (with the first-seizure block), severe cytopenias (`cytopenias`: the
-  severe haematology workup); and the two Reference-only topics, valvular heart disease and ECG/ABG.
+  cirrhosis, stroke, status epilepticus (with the first-seizure block), acute spinal cord syndrome, the cytopenias
+  (severe anaemia, thrombocytopenia, neutropenia, pancytopenia); and the two Reference-only topics, valvular heart
+  disease and ECG/ABG.
 - **Tier 2, Deferred backlog** (`reference_tier: 2, deferred: true`): every other topic that has both books. The
   topic thread writes topic.yaml, acute.html and editor.html only, no reference.html, unless the owner explicitly
   asks for that topic's Reference section. Reference pages already written for Tier 2 topics stay as they are.
@@ -162,7 +167,7 @@ retrofitted unless the owner names one. Seven parts, in this order:
 
 ## Status (18 Oct 2026)
 - Built: cardiology/stemi, cardiology/nste-acs, cardiology/heart-failure, endocrine/dka-hhs. Build: 0 errors.
-- 54 topics in manifest.yaml after the 21 Oct 2026 restructure (see "Syllabus architecture"). ~123 open
+- 57 topics in manifest.yaml after the 22 Oct 2026 cytopenia and spinal cord split (see "Syllabus architecture"). ~123 open
   CHECK/DECISION markers (18 Oct count).
 - Next topics (owner, 21 Oct 2026), after the open PRs are cleared: CAP, acute asthma, meningitis, severe malaria.
   Meningitis keeps bacterial, TB and cryptococcal meningitis in one topic (owner, 21 Oct 2026); no separate crypto topic. Severe malaria takes the expanded title (rickettsiosis, VHF red flags) when its
