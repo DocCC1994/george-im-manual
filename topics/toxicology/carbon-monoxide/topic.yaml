@@ -1,0 +1,18 @@
+title: Carbon monoxide
+short: Carbon monoxide
+status: draft
+start: New
+priority: P1
+acute: true              # Acute Handbook sheet only (manifest books: [acute])
+reference: false
+deferred: false
+version: 2026 v1
+effective: "[MM/YYYY]"
+review: "[MM/YYYY]"
+reviewed: "[MM/YYYY]"
+author: "[Author, Registrar IM]"
+editors: "[Editors]"
+based_on: "STG 2024 §19.20"
+approved_by: ""
+approved_rank: ""
+approved_date: ""
